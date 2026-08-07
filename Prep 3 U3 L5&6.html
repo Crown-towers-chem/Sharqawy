@@ -1,0 +1,710 @@
+﻿<div style="position:sticky; top:0; background-color:#ffffff; padding:15px 0; text-align:center; font-family:Arial, sans-serif; box-shadow:0 4px 6px rgba(0,0,0,0.1); z-index:1000; display:flex; flex-direction:column; align-items:center;">
+  <h2 style="margin:2px 0; color:#333; text-align:center;">Ms. Rehab younis</h2>
+  
+<div style="margin-top:8px;">
+    <a href="tel:+201203563630" style="display:inline-block; background-color:#007BFF; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      📞 01203563630
+    </a>
+    <a href="https://wa.me/+201203563630" target="_blank" style="display:inline-block; background-color:#25D366; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      💬 تواصل عبر الواتس
+    </a>
+  </div>
+</div><!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>Unit 3: Let's Talk & Smart Robots (Lessons 5 & 6) - Prep 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --A: #0f766e; --A2: #0d5c55; --blue4: #ccfbf1; --blue5: #f0fdfa;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --radius: 14px; --stop: #EF4444; --pause: #94A3B8;
+            --highlight-bg: rgba(37,99,235,0.13);
+            --word-highlight: #fde047;
+            --fab-bg: #1e293b; --fab-text: #fff;
+        }
+        [data-theme="ocean"] {
+            --A: #1d4ed8; --A2: #1e3a8a; --blue4: #dbeafe; --blue5: #eff6ff;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --stop: #EF4444; --highlight-bg: rgba(37,99,235,0.13);
+            --fab-bg: #1e3a8a; --fab-text: #fff;
+        }
+        [data-theme="garden"] {
+            --A: #15803d; --A2: #14532d; --blue4: #dcfce7; --blue5: #f0fdf4;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --stop: #EF4444; --highlight-bg: rgba(21,128,61,0.13);
+            --fab-bg: #14532d; --fab-text: #fff;
+        }
+        [data-theme="sunset"] {
+            --A: #c2410c; --A2: #9a3412; --blue4: #ffedd5; --blue5: #fff7ed;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --stop: #EF4444; --highlight-bg: rgba(194,65,12,0.13);
+            --fab-bg: #9a3412; --fab-text: #fff;
+        }
+        [data-theme="dark"] {
+            --A: #2dd4bf; --A2: #0d9488; --blue4: #134e4a; --blue5: #0f172a;
+            --text: #f8fafc; --text2: #94a3b8; --card: #1e293b; --border: #334155;
+            --bg: #0f172a; --stop: #f87171; --pause: #64748b; --highlight-bg: rgba(45,212,191,0.15);
+            --word-highlight: #facc15; --fab-bg: #facc15; --fab-text: #1e293b;
+        }
+        *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+        body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:100px;overflow-x:hidden;transition:background .3s,color .3s;}
+        body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(135deg,rgba(37,99,235,.03) 25%,transparent 25%),linear-gradient(225deg,rgba(37,99,235,.03) 25%,transparent 25%),linear-gradient(315deg,rgba(37,99,235,.03) 25%,transparent 25%),linear-gradient(45deg,rgba(37,99,235,.03) 25%,transparent 25%);background-size:30px 30px;z-index:-1;pointer-events:none;}
+        .hero{color:#fff;text-align:center;padding:28px 20px 22px;margin-bottom:24px;background:linear-gradient(135deg, var(--A), var(--A2));}
+        .hero .emoji-big{font-size:2.8rem;display:block;margin-bottom:8px;}
+        .hero h1{font-size:1.55rem;font-weight:900;}
+        .hero .sub{font-size:.9rem;opacity:.85;margin-top:5px;font-family:'Cairo',sans-serif;font-weight:600;}
+        .toolbar{max-width:780px;margin:0 auto 24px;padding:0 16px;text-align:center;}
+        .toolbar-inner{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:9px 20px;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+        .toolbar label{font-weight:800;color:var(--A);font-size:13px;}
+        input[type=range]{width:100px;accent-color:var(--A);}
+        .rate-badge{font-weight:900;font-size:13px;color:var(--A);min-width:34px;}
+        select{padding:5px 8px;border-radius:6px;border:1px solid var(--border);font-weight:600;background:var(--card);color:var(--text);}
+        .theme-switcher{display:flex;align-items:center;gap:8px;margin-left:auto;}
+        .theme-btn{-webkit-appearance:none;appearance:none;border:2px solid transparent;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;color:#fff;letter-spacing:.5px;transition:all .2s;}
+        .theme-btn.t-teal{background:linear-gradient(135deg,#0f766e,#2dd4bf);}
+        .theme-btn.t-ocean{background:linear-gradient(135deg,#1d4ed8,#0ea5e9);}
+        .theme-btn.t-garden{background:linear-gradient(135deg,#15803d,#4ade80);}
+        .theme-btn.t-sunset{background:linear-gradient(135deg,#c2410c,#f97316);}
+        .theme-btn.t-dark{background:linear-gradient(135deg,#1e293b,#475569);color:#e2e8f0;}
+        .theme-btn.active{border-color:#fff;box-shadow:0 0 0 2px currentColor;transform:scale(1.08);}
+        .container{max-width:780px;margin:auto;padding:0 16px;}
+        .section-block{background:var(--card);border-radius:var(--radius);margin-bottom:22px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid var(--border);}
+        .sec-title{color:#fff;font-size:.85rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:12px 18px;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--A),var(--A2));}
+        .sec-title::before{content:"";display:inline-block;width:6px;height:6px;background:rgba(255,255,255,.5);border-radius:50%;flex-shrink:0;}
+        .sec-body{padding:16px;}
+        .sec-play-bar{display:flex;gap:7px;margin-bottom:16px;flex-wrap:wrap;align-items:center;}
+        .big-btn{-webkit-appearance:none;appearance:none;border:none;border-radius:9px;padding:10px 17px;font-size:13px;font-weight:800;cursor:pointer;color:#fff;display:inline-flex;align-items:center;gap:5px;transition:transform .12s;font-family:'Nunito',sans-serif;}
+        .big-btn:active{transform:scale(.95);}
+        .big-btn.pause-btn{background:var(--pause);}
+        .big-btn.stop-btn{background:var(--stop);}
+        .big-btn.play-all-btn{background:linear-gradient(135deg, var(--A), var(--A2)); margin-left: 12px;}
+        .info-box{background:#FAFAFA;border:1px solid var(--border);border-radius:11px;padding:13px;margin-bottom:14px;}
+        [data-theme="dark"] .info-box{background:#0f172a;}
+        .info-title{display:flex;align-items:center;gap:5px;font-weight:900;font-size:.78rem;margin-bottom:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--A2);}
+        .vocab{display:flex;flex-wrap:wrap;gap:7px;}
+        .pill{padding:8px 13px;border-radius:8px;background:var(--card);border:1px solid var(--blue4);text-align:center;cursor:pointer;flex:1 1 auto;min-width:78px;transition:all .15s;}
+        .pill:active{transform:scale(.96);}
+        .pill .en{font-weight:800;font-size:14px;display:block;color:var(--A);}
+        .pill .tr{font-size:11px;color:var(--text2);font-family:'Cairo',sans-serif;font-weight:600;}
+        .story-card{background:var(--blue5);border:1px solid var(--blue4);border-left:4px solid var(--A);border-radius:11px;padding:15px 17px;margin-bottom:13px;}
+        
+        .sentence {
+            display: block;
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            transition: background .2s;
+            line-height: 1.8;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text);
+            background: rgba(255,255,255,0.4);
+        }
+        [data-theme="dark"] .sentence { background: rgba(255,255,255,0.05); }
+        
+        .sentence .word{transition: background 0.15s; border-radius:3px; padding:0 1px;}
+        .sentence .word.highlight{background: var(--word-highlight);}
+        .sentence.active-sent{
+            background: var(--highlight-bg);
+            outline:2px solid var(--A);
+            outline-offset:1px;
+        }
+        .sentence .speaker-label {
+            display: inline-block;
+            font-weight: 900;
+            color: var(--A2);
+            margin-right: 10px;
+            background: var(--blue4);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .pill.active-sent{background: var(--highlight-bg); outline:2px solid var(--A); outline-offset:1px;}
+        .rule-item.active-sent{background: var(--highlight-bg); outline:2px solid var(--A); outline-offset:1px;}
+        
+        .story-ar{font-family:'Cairo',sans-serif;color:var(--text2);font-size:14px;text-align:right;direction:rtl;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-weight:600;line-height:2;}
+        .rules-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:13px;}
+        .rule-item{display:flex;align-items:flex-start;gap:10px;background:var(--blue5);border:1px solid var(--blue4);border-radius:9px;padding:11px 13px;cursor:pointer;transition:all .2s;}
+        .rule-item .rule-text{flex:1;}
+        .rule-item .rule-text .en{font-size:15px;font-weight:700;color:var(--text);}
+        .rule-item .rule-text .ar{font-family:'Cairo',sans-serif;font-size:12px;color:var(--text2);text-align:right;direction:rtl;font-weight:600;margin-top:2px;}
+        footer{text-align:center;margin-top:14px;padding:16px;color:var(--text2);font-size:11px;}
+        footer strong{color:var(--A);}
+        .voice-note{font-size:11px;color:#b45309;margin-top:4px;display:block;}
+        .fab-pause{
+            position: fixed; bottom: 24px; right: 24px; z-index: 999;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--fab-bg); color: var(--fab-text);
+            border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            font-size: 24px; display: none; align-items: center; justify-content: center;
+            cursor: pointer; transition: transform 0.2s, opacity 0.2s;
+        }
+        .fab-pause:active{transform: scale(0.9);}
+        .fab-pause.show{display: flex;}
+    </style>
+</head>
+<body>
+
+<div class="hero"><span class="emoji-big">🤖</span><h1>Unit 3: Let's Talk & Smart Robots</h1><p class="sub">Prep 3 - Lessons 5 & 6</p></div>
+
+<div class="toolbar"><div class="toolbar-inner">
+    <label for="rateRange">Speed</label><input id="rateRange" type="range" min="0.5" max="1.2" step="0.1" value="1"/>
+    <span class="rate-badge" id="rateBadge">1.0x</span>
+    <select id="voiceSelect" style="max-width:180px;"></select>
+    <span id="voiceNote" class="voice-note"></span>
+    <div class="theme-switcher">
+        <button class="theme-btn t-teal" onclick="setTheme('teal',this)">Teal</button>
+        <button class="theme-btn t-ocean" onclick="setTheme('ocean',this)">Ocean</button>
+        <button class="theme-btn t-garden" onclick="setTheme('garden',this)">Garden</button>
+        <button class="theme-btn t-sunset" onclick="setTheme('sunset',this)">Sunset</button>
+        <button class="theme-btn t-dark" onclick="setTheme('dark',this)">Dark</button>
+    </div>
+    <button class="big-btn play-all-btn" onclick="playAll()">🔊 Play All</button>
+</div></div>
+
+<main class="container">
+    <div id="sections-container"></div>
+</main>
+
+<button class="fab-pause" id="fabPause" onclick="toggleFabPause()" title="إيقاف / استئناف">⏯️</button>
+
+<script>
+// ===================== دالة تنظيف النص للصوت =====================
+function cleanForSpeech(text) {
+    let result = text;
+    result = result.replace(/\([^)]*\)/g, ' '); 
+    result = result.replace(/[→]/g, ' ');      
+    result = result.replace(/\s+/g, ' ').trim(); 
+    return result;
+}
+
+// ===================== بيانات المحتوى (Prep 3 - Unit 3 - Lessons 5 & 6) =====================
+
+// 1. Key Vocabulary (Lessons 5 & 6)
+const keyVocabL5L6 = [
+    ["creativity (n)", "إبداع"],
+    ["instant (adj)", "فوري"],
+    ["recognize (d)(v)", "يتعرف على / يميز"],
+    ["chance (n)", "فرصة"],
+    ["powerful (adj)", "قوي"],
+    ["drone (n)", "طائرة بدون طيار"],
+    ["assist(ed)(v)", "يساعد"],
+    ["protect(ed)(v)", "يحمي"]
+];
+
+// 2. Vocabulary on Reading (Lesson 5)
+const l5Vocab = [
+    ["definitely (adv)", "بالتأكيد"],
+    ["risk (n)", "مخاطرة"],
+    ["fluency (n)", "الطلاقة"],
+    ["maybe (adv)", "ربما"],
+    ["accuracy (n)", "الدقة"]
+];
+
+// 3. Vocabulary on Reading (Lesson 6)
+const l6Vocab = [
+    ["involve (d)(v)", "يتضمن / يشمل"],
+    ["mistakes (n)", "أخطاء"],
+    ["rules (n)", "قواعد"],
+    ["worried (adj)", "قلق"],
+    ["deliveries (n)", "عمليات التوصيل"],
+    ["safely (adv)", "بأمان"]
+];
+
+// 4. Collocations (Lessons 5 & 6)
+const collocationsData = [
+    ["do a job", "يقوم بوظيفة"],
+    ["do surgeries", "يجري عمليات جراحية"],
+    ["recognize emotions", "يتعرف على المشاعر"],
+    ["grow closer", "يقترب / يصبح أكثر قرباً"],
+    ["make ... easier", "يجعل ... أسهل"],
+    ["make a mistake", "يرتكب خطأً"],
+    ["make deliveries", "يقوم بالتوصيل"],
+    ["create chances", "يخلق فرصاً"],
+    ["create rules", "يضع / يبتكر قواعد"]
+];
+
+// 5. Synonyms and Antonyms (Lessons 5 & 6)
+const synData = [
+    {word: "exciting (adj)", syn: "wonderful / interesting"},
+    {word: "definitely (adv)", syn: "certainly / surely"},
+    {word: "powerful (adj)", syn: "strong / effective"},
+    {word: "clear (adj)", syn: "obvious / apparent"},
+    {word: "recognize (v)", syn: "identify / realize"},
+    {word: "involve (v)", syn: "include"}
+];
+
+const antData = [
+    {word: "exciting (adj)", ant: "boring"},
+    {word: "definitely (adv)", ant: "probably / possibly"},
+    {word: "powerful (adj)", ant: "powerless/ weak"},
+    {word: "clear (adj)", ant: "unclear / hidden"},
+    {word: "recognize (v)", ant: "ignore"},
+    {word: "involve (v)", ant: "exclude"}
+];
+
+// 6. Prefixes and Suffixes (Lessons 5 & 6)
+const morphData = [
+    {word: "describe (v) → descriptive (adj)", affix: "-ive", func: "تحول الفعل لصفة"},
+    {word: "power (n) → powerful (adj)", affix: "-ful", func: "تحول الاسم لصفة"},
+    {word: "interest (n) → interesting (adj)", affix: "-ing", func: "تحول الاسم والفعل إلى صفة"},
+    {word: "advance (v) → advanced (adj)", affix: "-d", func: "تحول الفعل إلى صفة"}
+];
+
+// 7. Conjugation of Irregular Verbs (Lessons 5 & 6)
+const conjData = [
+    {present: "forget", past: "forgot", pp: "forgotten"},
+    {present: "hear", past: "heard", pp: "heard"}
+];
+
+// 8. Reading Text - Lesson 5 (Dialogue 1)
+const readingTextL5_1 = [
+    {en: "Emman: Hi Ali, have you heard about how AI is becoming really advanced these days?", ar: "إيمان: مرحباً علي، هل سمعت عن كيف أصبح الذكاء الاصطناعي متقدماً جداً هذه الأيام؟"},
+    {en: "Ali: Yes! I think robots with AI will be able to do many new things in the future. They will be customized to help people in different ways.", ar: "علي: نعم! أعتقد أن الروبوتات المزودة بالذكاء الاصطناعي ستكون قادرة على فعل العديد من الأشياء الجديدة في المستقبل. سيتم تخصيصها لمساعدة الناس بطرق مختلفة."},
+    {en: "Emman: That's so exciting! But do you think AI will ever understand emotions like humans do?", ar: "إيمان: هذا مثير للغاية! لكن هل تعتقد أن الذكاء الاصطناعي سيفهم المشاعر يوماً كما يفعل البشر؟"},
+    {en: "Ali: Hmm, I'm not sure. I think that AI has limits, and understanding feelings is one of them. But maybe in the future, AI will be improved to recognize emotions better.", ar: "علي: همم، لست متأكداً. أعتقد أن الذكاء الاصطناعي له حدود، وفهم المشاعر هو أحدها. لكن ربما في المستقبل، سيتم تحسين الذكاء الاصطناعي ليتعرف على المشاعر بشكل أفضل."},
+    {en: "Emman: Wow, the future sounds amazing. With all this innovation, I believe many jobs will be changed by AI.", ar: "إيمان: واو، يبدو المستقبل مذهلاً. مع كل هذا الابتكار، أعتقد أن العديد من الوظائف ستتغير بفعل الذكاء الاصطناعي."},
+    {en: "Ali: True. AI will be used in schools, hospitals, and even at home to make life easier. I hope people will always remember to use AI carefully and not to forget its limits.", ar: "علي: صحيح. سيتم استخدام الذكاء الاصطناعي في المدارس والمستشفيات وحتى في المنزل لجعل الحياة أسهل. آمل أن يتذكر الناس دائماً استخدام الذكاء الاصطناعي بعناية وألا ينسوا حدوده."},
+    {en: "Ali: Definitely! Even though AI is powerful, it will be controlled by humans to keep everyone safe.", ar: "علي: بالتأكيد! على الرغم من أن الذكاء الاصطناعي قوي، إلا أنه سيكون تحت سيطرة البشر للحفاظ على سلامة الجميع."},
+    {en: "Emman: I can't wait to see what kind of robots will be created next!", ar: "إيمان: لا أستطيع الانتظار لرؤية نوع الروبوتات التي سيتم إنشاؤها بعد ذلك!"},
+    {en: "Ali: Me too! The future with AI will be interesting for sure.", ar: "علي: وأنا أيضاً! المستقبل مع الذكاء الاصطناعي سيكون مثيراً للاهتمام بالتأكيد."}
+];
+
+// 9. Reading Text - Lesson 5 (Dialogue 2)
+const readingTextL5_2 = [
+    {en: "Student A: Have you thought about how AI will change our lives in the future?", ar: "الطالب أ: هل فكرت في كيف سيغير الذكاء الاصطناعي حياتنا في المستقبل؟"},
+    {en: "Student B: Yes! I think smart robots will be customized to help in homes and schools.", ar: "الطالب ب: نعم! أعتقد أن الروبوتات الذكية سيتم تخصيصها للمساعدة في المنازل والمدارس."},
+    {en: "Student A: That's cool! AI will be more advanced soon and do many jobs.", ar: "الطالب أ: هذا رائع! سيكون الذكاء الاصطناعي أكثر تقدماً قريباً وسيقوم بالعديد من الوظائف."},
+    {en: "Student B: Do you think AI will learn to understand feelings like people?", ar: "الطالب ب: هل تعتقد أن الذكاء الاصطناعي سيتعلم فهم المشاعر مثل الناس؟"},
+    {en: "Student A: I don't know. AI still has some limits, but because of new ideas, it will improve a lot.", ar: "الطالب أ: لا أعرف. لا يزال للذكاء الاصطناعي بعض الحدود، ولكن بفضل الأفكار الجديدة، سيتحسن كثيراً."},
+    {en: "Student B: Yes. Also, AI will be controlled by people to keep us safe and helpful.", ar: "الطالب ب: نعم. أيضاً، سيكون الذكاء الاصطناعي تحت سيطرة الناس للحفاظ على سلامتنا وفائدتنا."},
+    {en: "Student A: I think people and technology will grow closer with AI.", ar: "الطالب أ: أعتقد أن الناس والتكنولوجيا سيقتربون أكثر مع الذكاء الاصطناعي."},
+    {en: "Student B: Me too! AI will create many new chances for everyone.", ar: "الطالب ب: وأنا أيضاً! سيخلق الذكاء الاصطناعي العديد من الفرص الجديدة للجميع."}
+];
+
+// 10. Reading Text - Lesson 6 (Email)
+const readingTextL6 = [
+    {en: "To: Sandy", ar: "إلى: ساندي"},
+    {en: "From: Nader", ar: "من: نادر"},
+    {en: "Subject: The Future use of AI", ar: "الموضوع: الاستخدام المستقبلي للذكاء الاصطناعي"},
+    {en: "Hi Sandy,", ar: "مرحباً ساندي،"},
+    {en: "How are you?", ar: "كيف حالك؟"},
+    {en: "I'm pleased to write this email to you. I've discovered some interesting facts about the use of Artificial Intelligence (AI) in the future.", ar: "يسعدني أن أكتب لك هذا الإيميل. لقد اكتشفت بعض الحقائق المثيرة للاهتمام حول استخدام الذكاء الاصطناعي (AI) في المستقبل."},
+    {en: "In the future, many things will be done by AI. Cars will be driven by computers. Deliveries will be made by drones.", ar: "في المستقبل، سيتم تنفيذ العديد من الأشياء بواسطة الذكاء الاصطناعي. سيتم قيادة السيارات بواسطة أجهزة الكمبيوتر. سيتم إجراء عمليات التوصيل بواسطة الطائرات بدون طيار."},
+    {en: "New medicines will be discovered by AI, and information will be protected by special programs.", ar: "سيتم اكتشاف أدوية جديدة بواسطة الذكاء الاصطناعي، وستتم حماية المعلومات بواسطة برامج خاصة."},
+    {en: "Some people are worried. As they think mistakes will be made if humans are not involved. Rules will be created, so AI is used safely.", ar: "بعض الناس قلقون. حيث يعتقدون أنه سيتم ارتكاب أخطاء إذا لم يشارك البشر. سيتم وضع قواعد، بحيث يتم استخدام الذكاء الاصطناعي بأمان."},
+    {en: "I think AI will be used to help us, but it must be controlled by humans' creativity. What do you think?", ar: "أعتقد أنه سيتم استخدام الذكاء الاصطناعي لمساعدتنا، ولكن يجب التحكم فيه بإبداع البشر. ما رأيك؟"},
+    {en: "Best wishes, Yours, Nader", ar: "مع أطيب التمنيات، نادر"}
+];
+
+// 11. General Notes on Reading & Listening
+const grammarData = [
+    {word: "even - even though", meaning: "حتى - على الرغم من", example: "Even though AI is powerful, it will be controlled by humans."}
+];
+
+// 12. Important Expressions & Prepositions (Lessons 5 & 6)
+const expPrepData = [
+    ["keep ... safe", "يبقي... بأمان"],
+    ["go further", "يذهب أبعد"],
+    ["sound amazing", "يبدو رائعاً"],
+    ["focus on", "يركز على"],
+    ["customized to", "مخصص لـ"],
+    ["talk to you later", "أتحدث معك لاحقاً"],
+    ["hear about", "يسمع عن"],
+    ["ease of communication", "سهولة التواصل"],
+    ["in different ways", "بطرق مختلفة"],
+    ["instead of", "بدلاً من"],
+    ["according to", "وفقاً لـ"]
+];
+
+// ===================== دوال HTML المساعدة =====================
+function makeWordSpans(text) {
+    const words = text.trim().split(/\s+/);
+    return words.map((w, idx) => `<span class="word" data-word-index="${idx}">${w}</span>`).join(' ');
+}
+
+// ===================== بناء الواجهة =====================
+function buildAllSections() {
+    const container = document.getElementById('sections-container');
+
+    function makePills(wordsArray, sectionId) {
+        return wordsArray.map((w, i) => {
+            const id = `${sectionId}_p${i}`;
+            const wordHtml = makeWordSpans(w[0]);
+            const speakText = cleanForSpeech(w[0]);
+            return `<div class="pill" id="${id}" data-speak="${speakText}" onclick="playOne('${id}')"><span class="en">${wordHtml}</span><span class="tr">${w[1]}</span></div>`;
+        }).join('');
+    }
+
+    function makeRuleItem(icon, sectionId, index, speakText, arText, displayText) {
+        const id = `${sectionId}_${index}`;
+        const wordHtml = makeWordSpans(displayText || speakText);
+        const finalSpeak = cleanForSpeech(speakText);
+        return `<div class="rule-item" id="${id}" data-speak="${finalSpeak}" onclick="playOne('${id}')">
+            <span class="rule-icon">${icon}</span>
+            <div class="rule-text">
+                <span class="en">${wordHtml}</span>
+                <span class="ar">${arText || ''}</span>
+            </div>
+        </div>`;
+    }
+
+    function playBar(sectionId) {
+        return `<div class="sec-play-bar">
+            <button class="big-btn" style="background:linear-gradient(135deg,var(--A),var(--A2))" onclick="playSection('${sectionId}')">▶ Play</button>
+            <button class="big-btn pause-btn" onclick="pauseAll()">⏸ Pause</button>
+            <button class="big-btn stop-btn" onclick="stopAll()">⏹ Stop</button>
+        </div>`;
+    }
+
+    function makeStorySection(title, storyData) {
+        const speakerEmojis = {
+            "Emman": "👩",
+            "Ali": "👨",
+            "Student A": "🧑",
+            "Student B": "🧑"
+        };
+
+        return `<div class="story-card">
+            <div style="font-weight:bold;color:var(--A);margin-bottom:10px;">${title}</div>
+            ${storyData.map((s,i) => {
+                const id = `secStory_${title.replace(/\s/g,'')}_${i}`;
+                let enText = s.en;
+                let speaker = '';
+                let dialogueText = enText;
+
+                const colonIndex = enText.indexOf(': ');
+                if (colonIndex > 0) {
+                    speaker = enText.substring(0, colonIndex);
+                    dialogueText = enText.substring(colonIndex + 2);
+                }
+
+                const emoji = speakerEmojis[speaker] || '📖';
+                const wordHtml = makeWordSpans(dialogueText);
+                
+                let speakerHtml = '';
+                if (speaker) {
+                    speakerHtml = `<span class="speaker-label">${emoji} ${speaker}</span> `;
+                }
+
+                return `<div class="sentence" id="${id}" data-speak="${s.en}" onclick="playOne('${id}')">
+                    ${speakerHtml} ${wordHtml}
+                </div> `;
+            }).join('')}
+            <div class="story-ar">${storyData.map(s => s.ar).join(' ')}</div>
+        </div>`;
+    }
+
+    const sections = [];
+
+    // 1. Key Vocabulary (Lessons 5 & 6)
+    if (typeof keyVocabL5L6 !== 'undefined' && keyVocabL5L6.length > 0) {
+        sections.push({ title:"🔑 Key Vocabulary (Lessons 5 & 6)", id:"secKeyL5L6", content: `<div class="info-box"><div class="info-title">Key Vocabulary (Lessons 5 & 6)</div><div class="vocab">${makePills(keyVocabL5L6, "secKeyL5L6")}</div></div>` });
+    }
+
+    // 2. Vocabulary on Reading (Lesson 5)
+    if (typeof l5Vocab !== 'undefined' && l5Vocab.length > 0) {
+        sections.push({ title:"📚 Vocabulary on Reading (Lesson 5)", id:"secL5", content: `<div class="info-box"><div class="info-title">Vocabulary on Reading (Lesson 5)</div><div class="vocab">${makePills(l5Vocab, "secL5")}</div></div>` });
+    }
+
+    // 3. Vocabulary on Reading (Lesson 6)
+    if (typeof l6Vocab !== 'undefined' && l6Vocab.length > 0) {
+        sections.push({ title:"📚 Vocabulary on Reading (Lesson 6)", id:"secL6", content: `<div class="info-box"><div class="info-title">Vocabulary on Reading (Lesson 6)</div><div class="vocab">${makePills(l6Vocab, "secL6")}</div></div>` });
+    }
+
+    // 4. Collocations (Lessons 5 & 6)
+    if (typeof collocationsData !== 'undefined' && collocationsData.length > 0) {
+        sections.push({ title:"🤝 Collocations (Lessons 5 & 6)", id:"secCollocations", content: `<div class="rules-grid">${collocationsData.map((c,i) => makeRuleItem('🔗', 'secCollocations', i, c[0], c[1], c[0])).join('')}</div>` });
+    }
+
+    // 5. Synonyms and Antonyms (Lessons 5 & 6)
+    if (typeof synData !== 'undefined' && synData.length > 0) {
+        sections.push({ title:"🔄 Synonyms (Lessons 5 & 6)", id:"secSyn", content: `<div class="rules-grid">${synData.map((s,i) => makeRuleItem('↔️', 'secSyn', i, s.word + " | " + s.syn, s.syn, s.word)).join('')}</div>` });
+    }
+
+    if (typeof antData !== 'undefined' && antData.length > 0) {
+        sections.push({ title:"🚫 Antonyms (Lessons 5 & 6)", id:"secAnt", content: `<div class="rules-grid">${antData.map((a,i) => makeRuleItem('🛑', 'secAnt', i, a.word + " | " + a.ant, a.ant, a.word)).join('')}</div>` });
+    }
+
+    // 6. Prefixes and Suffixes (Lessons 5 & 6)
+    if (typeof morphData !== 'undefined' && morphData.length > 0) {
+        sections.push({ title:"🔚 Prefixes and Suffixes (Lessons 5 & 6)", id:"secMorph", content: `<div class="rules-grid">${morphData.map((p,i) => {
+            const speakText = cleanForSpeech(p.word) + " | " + p.affix;
+            return makeRuleItem('🔤', 'secMorph', i, speakText, p.affix + " " + p.func, p.word);
+        }).join('')}</div>` });
+    }
+
+    // 7. Conjugation of Irregular Verbs (Lessons 5 & 6)
+    if (typeof conjData !== 'undefined' && conjData.length > 0) {
+        sections.push({ title:"⏳ Conjugation of Irregular Verbs (Lessons 5 & 6)", id:"secConj", content: `<div class="rules-grid">${conjData.map((c,i) => {
+            const speakText = c.present + " | " + c.past + " | " + c.pp;
+            return makeRuleItem('🕒', 'secConj', i, speakText, 'مضارع / ماضي / تصريف ثالث', c.present + " → " + c.past + " → " + c.pp);
+        }).join('')}</div>` });
+    }
+
+    // 8. Reading Text - Lesson 5 (Dialogue 1)
+    if (typeof readingTextL5_1 !== 'undefined' && readingTextL5_1.length > 0) {
+        sections.push({ title:"📖 Reading Text - Lesson 5 (Dialogue 1)", id:"secReadL5_1", content: makeStorySection("Talking About AI (Emman & Ali)", readingTextL5_1) });
+    }
+
+    // 9. Reading Text - Lesson 5 (Dialogue 2)
+    if (typeof readingTextL5_2 !== 'undefined' && readingTextL5_2.length > 0) {
+        sections.push({ title:"📖 Reading Text - Lesson 5 (Dialogue 2)", id:"secReadL5_2", content: makeStorySection("AI and the Future (Student A & Student B)", readingTextL5_2) });
+    }
+
+    // 10. Reading Text - Lesson 6 (Email)
+    if (typeof readingTextL6 !== 'undefined' && readingTextL6.length > 0) {
+        sections.push({ title:"📖 Reading Text - Lesson 6", id:"secReadL6", content: makeStorySection("Smart Robots (Email from Nader)", readingTextL6) });
+    }
+
+    // 11. General Notes on Reading & Listening
+    if (typeof grammarData !== 'undefined' && grammarData.length > 0) {
+        sections.push({ title:"📚 General Notes on Reading & Listening", id:"secGrammar", content: `<div class="rules-grid">${grammarData.map((g,i) => {
+            const speakText = cleanForSpeech(g.word) + " | " + g.example;
+            return makeRuleItem('📌', 'secGrammar', i, speakText, g.meaning + " | " + g.example, g.word + " | " + g.example);
+        }).join('')}</div>` });
+    }
+
+    // 12. Important Expressions & Prepositions (Lessons 5 & 6)
+    if (typeof expPrepData !== 'undefined' && expPrepData.length > 0) {
+        sections.push({ title:"💬 Important Expressions & Prepositions (Lessons 5 & 6)", id:"secExpPrep", content: `<div class="rules-grid">${expPrepData.map((e,i) => makeRuleItem('💡', 'secExpPrep', i, e[0], e[1], e[0])).join('')}</div>` });
+    }
+
+    let html = '';
+    sections.forEach(sec => {
+        html += `<div class="section-block" id="${sec.id}">
+            <div class="sec-title">${sec.title}</div>
+            <div class="sec-body">
+                ${playBar(sec.id)}
+                ${sec.content}
+            </div>
+        </div>`;
+    });
+    container.innerHTML = html;
+}
+
+// ===================== نظام الصوت ومحرك النطق =====================
+const rateRange = document.getElementById('rateRange');
+const rateBadge = document.getElementById('rateBadge');
+const fabPause = document.getElementById('fabPause');
+
+const savedRate = localStorage.getItem('speechRate') || 1;
+rateRange.value = savedRate;
+rateBadge.textContent = parseFloat(savedRate).toFixed(1)+'x';
+rateRange.addEventListener('input', () => {
+    const val = parseFloat(rateRange.value).toFixed(1);
+    rateBadge.textContent = val+'x';
+    localStorage.setItem('speechRate', val);
+});
+
+let voices = [];
+function loadVoices() {
+    voices = window.speechSynthesis.getVoices();
+    populateVoiceSelect();
+}
+
+function populateVoiceSelect() {
+    const vs = document.getElementById('voiceSelect');
+    const note = document.getElementById('voiceNote');
+    const allVoices = voices;
+    if (!allVoices.length) return;
+
+    const normalizeLang = (lang) => lang.replace('_', '-');
+    const isLangMatch = (voiceLang, targetPrefix) => normalizeLang(voiceLang) === targetPrefix || normalizeLang(voiceLang).startsWith(targetPrefix + '-');
+
+    const usVoice = allVoices.find(v => isLangMatch(v.lang, 'en-US'));
+    const gbVoice = allVoices.find(v => isLangMatch(v.lang, 'en-GB'));
+
+    const options = [];
+    if (usVoice) options.push({ label: '🇺🇸 American', uri: usVoice.voiceURI });
+    if (gbVoice) options.push({ label: '🇬🇧 British', uri: gbVoice.voiceURI });
+    if (!options.length) {
+        note.textContent = '⚠️ No US/UK voice found.';
+        const anyEn = allVoices.filter(v => v.lang.startsWith('en')).slice(0,2);
+        anyEn.forEach(v => options.push({ label: v.name + ' ('+v.lang+')', uri: v.voiceURI }));
+    } else {
+        note.textContent = '';
+    }
+
+    const savedURI = localStorage.getItem('voiceURI');
+    vs.innerHTML = options.map(o => `<option value="${o.uri}">${o.label}</option>`).join('');
+    if (savedURI && options.some(o => o.uri === savedURI)) vs.value = savedURI;
+}
+
+document.getElementById('voiceSelect').addEventListener('change', function() {
+    localStorage.setItem('voiceURI', this.value);
+});
+
+function getSelectedVoice() {
+    const uri = localStorage.getItem('voiceURI');
+    return voices.find(v => v.voiceURI === uri) || null;
+}
+
+window._q = []; 
+window._qi = 0;
+window._currentUtterance = null;
+let currentHighlightedId = null;
+
+function clearAllHighlights() {
+    document.querySelectorAll('.active-sent').forEach(e => e.classList.remove('active-sent'));
+    currentHighlightedId = null;
+}
+
+function showFab(show) {
+    if (show) fabPause.classList.add('show');
+    else fabPause.classList.remove('show');
+}
+
+function updateFabIcon() {
+    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+        fabPause.innerHTML = '⏸️';
+    } else if (window.speechSynthesis.paused) {
+        fabPause.innerHTML = '▶️';
+    } else {
+        fabPause.innerHTML = '⏯️';
+    }
+}
+
+function playQueue() {
+    if (window._qi >= window._q.length) {
+        clearAllHighlights();
+        showFab(false);
+        return;
+    }
+    const item = window._q[window._qi];
+    
+    if (currentHighlightedId !== item.id) {
+        clearAllHighlights();
+        const el = document.getElementById(item.id);
+        if (el) {
+            el.classList.add('active-sent');
+            el.scrollIntoView({behavior:'smooth',block:'nearest'});
+            currentHighlightedId = item.id;
+        }
+    }
+
+    const u = new SpeechSynthesisUtterance(item.text);
+    u.rate = parseFloat(rateRange.value) || 1;
+    const voice = getSelectedVoice();
+    if (voice) u.voice = voice;
+
+    u.onstart = () => {
+        showFab(true);
+        updateFabIcon();
+    };
+
+    u.onend = function() {
+        window._qi++;
+        playQueue();
+    };
+
+    u.onerror = function(e) {
+        console.warn('Speech error', e);
+        window._qi++;
+        playQueue();
+    };
+
+    u.onpause = () => updateFabIcon();
+    u.onresume = () => updateFabIcon();
+
+    window._currentUtterance = u;
+    window.speechSynthesis.speak(u);
+}
+
+function splitAndQueue(textParts, id) {
+    textParts.forEach((p) => {
+        const trimmed = p.trim();
+        if (trimmed) {
+            window._q.push({id: id, text: trimmed});
+        }
+    });
+}
+
+function playSection(secId) {
+    stopAll();
+    const sec = document.getElementById(secId);
+    const els = [...sec.querySelectorAll('[data-speak]')];
+    els.forEach(el => {
+        const text = el.dataset.speak;
+        const parts = text.split('|').map(p => p.trim());
+        splitAndQueue(parts, el.id);
+    });
+    window._qi = 0;
+    playQueue();
+}
+
+function playAll() {
+    stopAll();
+    const els = [...document.querySelectorAll('[data-speak]')];
+    els.forEach(el => {
+        const text = el.dataset.speak;
+        const parts = text.split('|').map(p => p.trim());
+        splitAndQueue(parts, el.id);
+    });
+    window._qi = 0;
+    playQueue();
+}
+
+function playOne(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const text = el.dataset.speak;
+    
+    stopAll();
+    const parts = text.split('|').map(p => p.trim());
+    splitAndQueue(parts, id);
+    window._qi = 0;
+    playQueue();
+}
+
+function pauseAll() {
+    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+        window.speechSynthesis.pause();
+        updateFabIcon();
+    } else if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        updateFabIcon();
+    }
+}
+
+function stopAll() {
+    window._q = []; 
+    window._qi = 0;
+    clearAllHighlights();
+    if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+    }
+    showFab(false);
+}
+
+function toggleFabPause() {
+    pauseAll();
+}
+
+// ===================== الثيمات =====================
+function setTheme(theme, btn) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    localStorage.setItem('theme', theme);
+}
+const savedTheme = localStorage.getItem('theme') || 'teal';
+document.documentElement.setAttribute('data-theme', savedTheme);
+document.querySelectorAll('.theme-btn').forEach(b => {
+    if (b.classList.contains('t-'+savedTheme)) b.classList.add('active');
+});
+
+// ===================== بدء التشغيل =====================
+buildAllSections();
+loadVoices();
+setTimeout(loadVoices, 300);
+setTimeout(loadVoices, 1000);
+if (speechSynthesis.onvoiceschanged !== undefined) speechSynthesis.onvoiceschanged = loadVoices;
+</script>
+</body>
+</html>

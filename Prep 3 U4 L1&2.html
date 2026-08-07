@@ -1,0 +1,694 @@
+﻿<div style="position:sticky; top:0; background-color:#ffffff; padding:15px 0; text-align:center; font-family:Arial, sans-serif; box-shadow:0 4px 6px rgba(0,0,0,0.1); z-index:1000; display:flex; flex-direction:column; align-items:center;">
+  <h2 style="margin:2px 0; color:#333; text-align:center;">Ms. Rehab younis</h2>
+  
+<div style="margin-top:8px;">
+    <a href="tel:+201203563630" style="display:inline-block; background-color:#007BFF; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      📞 01203563630
+    </a>
+    <a href="https://wa.me/+201203563630" target="_blank" style="display:inline-block; background-color:#25D366; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      💬 تواصل عبر الواتس
+    </a>
+  </div>
+</div><!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>Unit 4: Screen Time & Egypt's Smart Future (Lessons 1 & 2) - Prep 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --A: #0f766e; --A2: #0d5c55; --blue4: #ccfbf1; --blue5: #f0fdfa;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --radius: 14px; --stop: #EF4444; --pause: #94A3B8;
+            --highlight-bg: rgba(37,99,235,0.13);
+            --word-highlight: #fde047;
+            --fab-bg: #1e293b; --fab-text: #fff;
+        }
+        [data-theme="ocean"] {
+            --A: #1d4ed8; --A2: #1e3a8a; --blue4: #dbeafe; --blue5: #eff6ff;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --stop: #EF4444; --highlight-bg: rgba(37,99,235,0.13);
+            --fab-bg: #1e3a8a; --fab-text: #fff;
+        }
+        [data-theme="garden"] {
+            --A: #15803d; --A2: #14532d; --blue4: #dcfce7; --blue5: #f0fdf4;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --stop: #EF4444; --highlight-bg: rgba(21,128,61,0.13);
+            --fab-bg: #14532d; --fab-text: #fff;
+        }
+        [data-theme="sunset"] {
+            --A: #c2410c; --A2: #9a3412; --blue4: #ffedd5; --blue5: #fff7ed;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --stop: #EF4444; --highlight-bg: rgba(194,65,12,0.13);
+            --fab-bg: #9a3412; --fab-text: #fff;
+        }
+        [data-theme="dark"] {
+            --A: #2dd4bf; --A2: #0d9488; --blue4: #134e4a; --blue5: #0f172a;
+            --text: #f8fafc; --text2: #94a3b8; --card: #1e293b; --border: #334155;
+            --bg: #0f172a; --stop: #f87171; --pause: #64748b; --highlight-bg: rgba(45,212,191,0.15);
+            --word-highlight: #facc15; --fab-bg: #facc15; --fab-text: #1e293b;
+        }
+        *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+        body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:100px;overflow-x:hidden;transition:background .3s,color .3s;}
+        body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(135deg,rgba(37,99,235,.03) 25%,transparent 25%),linear-gradient(225deg,rgba(37,99,235,.03) 25%,transparent 25%),linear-gradient(315deg,rgba(37,99,235,.03) 25%,transparent 25%),linear-gradient(45deg,rgba(37,99,235,.03) 25%,transparent 25%);background-size:30px 30px;z-index:-1;pointer-events:none;}
+        .hero{color:#fff;text-align:center;padding:28px 20px 22px;margin-bottom:24px;background:linear-gradient(135deg, var(--A), var(--A2));}
+        .hero .emoji-big{font-size:2.8rem;display:block;margin-bottom:8px;}
+        .hero h1{font-size:1.55rem;font-weight:900;}
+        .hero .sub{font-size:.9rem;opacity:.85;margin-top:5px;font-family:'Cairo',sans-serif;font-weight:600;}
+        .toolbar{max-width:780px;margin:0 auto 24px;padding:0 16px;text-align:center;}
+        .toolbar-inner{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:9px 20px;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+        .toolbar label{font-weight:800;color:var(--A);font-size:13px;}
+        input[type=range]{width:100px;accent-color:var(--A);}
+        .rate-badge{font-weight:900;font-size:13px;color:var(--A);min-width:34px;}
+        select{padding:5px 8px;border-radius:6px;border:1px solid var(--border);font-weight:600;background:var(--card);color:var(--text);}
+        .theme-switcher{display:flex;align-items:center;gap:8px;margin-left:auto;}
+        .theme-btn{-webkit-appearance:none;appearance:none;border:2px solid transparent;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;color:#fff;letter-spacing:.5px;transition:all .2s;}
+        .theme-btn.t-teal{background:linear-gradient(135deg,#0f766e,#2dd4bf);}
+        .theme-btn.t-ocean{background:linear-gradient(135deg,#1d4ed8,#0ea5e9);}
+        .theme-btn.t-garden{background:linear-gradient(135deg,#15803d,#4ade80);}
+        .theme-btn.t-sunset{background:linear-gradient(135deg,#c2410c,#f97316);}
+        .theme-btn.t-dark{background:linear-gradient(135deg,#1e293b,#475569);color:#e2e8f0;}
+        .theme-btn.active{border-color:#fff;box-shadow:0 0 0 2px currentColor;transform:scale(1.08);}
+        .container{max-width:780px;margin:auto;padding:0 16px;}
+        .section-block{background:var(--card);border-radius:var(--radius);margin-bottom:22px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid var(--border);}
+        .sec-title{color:#fff;font-size:.85rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:12px 18px;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--A),var(--A2));}
+        .sec-title::before{content:"";display:inline-block;width:6px;height:6px;background:rgba(255,255,255,.5);border-radius:50%;flex-shrink:0;}
+        .sec-body{padding:16px;}
+        .sec-play-bar{display:flex;gap:7px;margin-bottom:16px;flex-wrap:wrap;align-items:center;}
+        .big-btn{-webkit-appearance:none;appearance:none;border:none;border-radius:9px;padding:10px 17px;font-size:13px;font-weight:800;cursor:pointer;color:#fff;display:inline-flex;align-items:center;gap:5px;transition:transform .12s;font-family:'Nunito',sans-serif;}
+        .big-btn:active{transform:scale(.95);}
+        .big-btn.pause-btn{background:var(--pause);}
+        .big-btn.stop-btn{background:var(--stop);}
+        .big-btn.play-all-btn{background:linear-gradient(135deg, var(--A), var(--A2)); margin-left: 12px;}
+        .info-box{background:#FAFAFA;border:1px solid var(--border);border-radius:11px;padding:13px;margin-bottom:14px;}
+        [data-theme="dark"] .info-box{background:#0f172a;}
+        .info-title{display:flex;align-items:center;gap:5px;font-weight:900;font-size:.78rem;margin-bottom:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--A2);}
+        .vocab{display:flex;flex-wrap:wrap;gap:7px;}
+        .pill{padding:8px 13px;border-radius:8px;background:var(--card);border:1px solid var(--blue4);text-align:center;cursor:pointer;flex:1 1 auto;min-width:78px;transition:all .15s;}
+        .pill:active{transform:scale(.96);}
+        .pill .en{font-weight:800;font-size:14px;display:block;color:var(--A);}
+        .pill .tr{font-size:11px;color:var(--text2);font-family:'Cairo',sans-serif;font-weight:600;}
+        .story-card{background:var(--blue5);border:1px solid var(--blue4);border-left:4px solid var(--A);border-radius:11px;padding:15px 17px;margin-bottom:13px;}
+        
+        .sentence {
+            display: block;
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            transition: background .2s;
+            line-height: 1.8;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text);
+            background: rgba(255,255,255,0.4);
+        }
+        [data-theme="dark"] .sentence { background: rgba(255,255,255,0.05); }
+        
+        .sentence .word{transition: background 0.15s; border-radius:3px; padding:0 1px;}
+        .sentence .word.highlight{background: var(--word-highlight);}
+        .sentence.active-sent{
+            background: var(--highlight-bg);
+            outline:2px solid var(--A);
+            outline-offset:1px;
+        }
+        .sentence .speaker-label {
+            display: inline-block;
+            font-weight: 900;
+            color: var(--A2);
+            margin-right: 10px;
+            background: var(--blue4);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .pill.active-sent{background: var(--highlight-bg); outline:2px solid var(--A); outline-offset:1px;}
+        .rule-item.active-sent{background: var(--highlight-bg); outline:2px solid var(--A); outline-offset:1px;}
+        
+        .story-ar{font-family:'Cairo',sans-serif;color:var(--text2);font-size:14px;text-align:right;direction:rtl;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-weight:600;line-height:2;}
+        .rules-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:13px;}
+        .rule-item{display:flex;align-items:flex-start;gap:10px;background:var(--blue5);border:1px solid var(--blue4);border-radius:9px;padding:11px 13px;cursor:pointer;transition:all .2s;}
+        .rule-item .rule-text{flex:1;}
+        .rule-item .rule-text .en{font-size:15px;font-weight:700;color:var(--text);}
+        .rule-item .rule-text .ar{font-family:'Cairo',sans-serif;font-size:12px;color:var(--text2);text-align:right;direction:rtl;font-weight:600;margin-top:2px;}
+        footer{text-align:center;margin-top:14px;padding:16px;color:var(--text2);font-size:11px;}
+        footer strong{color:var(--A);}
+        .voice-note{font-size:11px;color:#b45309;margin-top:4px;display:block;}
+        .fab-pause{
+            position: fixed; bottom: 24px; right: 24px; z-index: 999;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--fab-bg); color: var(--fab-text);
+            border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            font-size: 24px; display: none; align-items: center; justify-content: center;
+            cursor: pointer; transition: transform 0.2s, opacity 0.2s;
+        }
+        .fab-pause:active{transform: scale(0.9);}
+        .fab-pause.show{display: flex;}
+    </style>
+</head>
+<body>
+
+<div class="hero"><span class="emoji-big">📱</span><h1>Unit 4: Screen Time & Egypt's Smart Future</h1><p class="sub">Prep 3 - Lessons 1 & 2</p></div>
+
+<div class="toolbar"><div class="toolbar-inner">
+    <label for="rateRange">Speed</label><input id="rateRange" type="range" min="0.5" max="1.2" step="0.1" value="1"/>
+    <span class="rate-badge" id="rateBadge">1.0x</span>
+    <select id="voiceSelect" style="max-width:180px;"></select>
+    <span id="voiceNote" class="voice-note"></span>
+    <div class="theme-switcher">
+        <button class="theme-btn t-teal" onclick="setTheme('teal',this)">Teal</button>
+        <button class="theme-btn t-ocean" onclick="setTheme('ocean',this)">Ocean</button>
+        <button class="theme-btn t-garden" onclick="setTheme('garden',this)">Garden</button>
+        <button class="theme-btn t-sunset" onclick="setTheme('sunset',this)">Sunset</button>
+        <button class="theme-btn t-dark" onclick="setTheme('dark',this)">Dark</button>
+    </div>
+    <button class="big-btn play-all-btn" onclick="playAll()">🔊 Play All</button>
+</div></div>
+
+<main class="container">
+    <div id="sections-container"></div>
+</main>
+
+<button class="fab-pause" id="fabPause" onclick="toggleFabPause()" title="إيقاف / استئناف">⏯️</button>
+
+<script>
+// ===================== دالة تنظيف النص للصوت =====================
+function cleanForSpeech(text) {
+    let result = text;
+    result = result.replace(/\([^)]*\)/g, ' '); 
+    result = result.replace(/[→]/g, ' ');      
+    result = result.replace(/\s+/g, ' ').trim(); 
+    return result;
+}
+
+// ===================== بيانات المحتوى (Prep 3 - Unit 4 - Lessons 1 & 2) =====================
+
+// 1. Key Vocabulary (Lessons 1 & 2)
+const keyVocabL1L2 = [
+    ["screen time (n)", "وقت استخدام الشاشة"],
+    ["scroll (ed) (v)", "يتصفح"],
+    ["entertainment (n)", "ترفيه - تسلية"],
+    ["physical (adj)", "بدني - جسدي"],
+    ["designer (n)", "مصمم"],
+    ["side effects", "آثار جانبية"],
+    ["smart citizens", "مواطنون أذكياء"],
+    ["expert (n) (adj)", "خبير / متخصص"],
+    ["balance (d) (v)", "يوازن"],
+    ["mentally (adv)", "عقلياً - ذهنياً"],
+    ["cutting-edge (adj)", "متطور - رائد"],
+    ["distractions (n)", "عوامل التشتت"]
+];
+
+// 2. Vocabulary on Reading (Lesson 1)
+const l1Vocab = [
+    ["total (adj)", "إجمالي / كامل"],
+    ["affect (ed) (v)", "يؤثر"],
+    ["headache (n)", "صداع / ألم الرأس"],
+    ["teenagers (n)", "مراهقون"],
+    ["trouble sleeping", "مشاكل في النوم"],
+    ["skill (n)", "مهارة"],
+    ["stressed (adj)", "متوتر"],
+    ["recommend (ed) (v)", "يوصي"]
+];
+
+// 3. Vocabulary on Reading (Lesson 2)
+const l2Vocab = [
+    ["designer (n)", "مصمم"],
+    ["wisely (adv)", "بحكمة"],
+    ["leader (n)", "قائد"],
+    ["habit (n)", "عادة"],
+    ["moving forward", "التقدم"],
+    ["focused (adj)", "مركز - منتبه"],
+    ["managing (n)", "إدارة"],
+    ["monorail (n)", "قطار أحادي السكة"],
+    ["Administrative Capital (n)", "العاصمة الإدارية"]
+];
+
+// 4. Definitions (Lessons 1 & 2)
+const defsData = [
+    {word: "physical", def: "related to the body"},
+    {word: "entertainment", def: "fun activities like games or watching TV"},
+    {word: "expert", def: "a person who knows a lot about something"},
+    {word: "balance", def: "to keep things equal or in the right amount"},
+    {word: "useful", def: "helpful for learning or completing work"},
+    {word: "screen time", def: "the time a person spends looking at a screen"},
+    {word: "focused", def: "not easily distracted; paying close attention to one thing"},
+    {word: "distraction", def: "something that takes attention away or stops you from paying attention"},
+    {word: "modern", def: "something new and advanced"},
+    {word: "smart", def: "uses technology wisely or being advanced"},
+    {word: "mentally", def: "related to the mind"},
+    {word: "scroll", def: "to move through social media or digital content"},
+    {word: "side effects", def: "unexpected and usually unpleasant results"}
+];
+
+// 5. Collocations (Lessons 1 & 2)
+const collocationsData = [
+    ["take breaks", "يأخذ فترات راحة"],
+    ["build a habit", "يبني عادة"],
+    ["do activities", "يمارس أنشطة"],
+    ["do schoolwork", "يقوم بالواجبات المدرسية"],
+    ["lose focus", "يفقد التركيز"],
+    ["cause headaches", "يسبب صداع"],
+    ["trouble sleeping", "اضطراب في النوم"],
+    ["spend time", "يقضي وقتاً"]
+];
+
+// 6. Synonyms and Antonyms (Lessons 1 & 2)
+const synData = [
+    {word: "useful", syn: "helpful"},
+    {word: "entertainment", syn: "enjoyment"},
+    {word: "balance", syn: "adjust / harmony"},
+    {word: "distracted", syn: "interrupt / disturbed"},
+    {word: "cutting-edge", syn: "advanced / modern"}
+];
+
+const antData = [
+    {word: "useful", ant: "ineffective"},
+    {word: "entertainment", ant: "boredom"},
+    {word: "balance", ant: "imbalance"},
+    {word: "distracted", ant: "focused / alert / concentrated"},
+    {word: "cutting-edge", ant: "undeveloped / outdated"}
+];
+
+// 7. Prefixes and Suffixes (Lessons 1 & 2)
+const morphData = [
+    {word: "entertain (v) → entertainment (n)", affix: "-ment", func: "تحول الفعل إلى اسم"},
+    {word: "mental (adj) → mentally (adv)", affix: "-ly", func: "تحول الصفة إلى ظرف"},
+    {word: "physical (adj) → physically (adv)", affix: "-ly", func: "تحول الصفة إلى ظرف"},
+    {word: "distract (v) → distraction (n)", affix: "-ion", func: "تحول الفعل إلى اسم"},
+    {word: "focus (v) → focused (adj)", affix: "-ed", func: "تحول الفعل إلى صفة"}
+];
+
+// 8. Reading Text (Lesson 1)
+const readingTextL1 = [
+    {en: "Screen time means the total time a person spends looking at screens. These screens can include phones, computers, tablets, or TVs.", ar: "يعني مصطلح وقت الشاشة إجمالي الوقت الذي يقضيه الشخص في النظر إلى الشاشات. يمكن أن تشمل هذه الشاشات الهواتف وأجهزة الكمبيوتر والأجهزة اللوحية أو أجهزة التلفزيون."},
+    {en: "Today, almost everyone uses screens for many activities. Students use laptops for homework, teenagers scroll through social media, and families watch movies on the weekend.", ar: "اليوم، يستخدم الجميع تقريباً الشاشات للعديد من الأنشطة. يستخدم الطلاب أجهزة الكمبيوتر المحمولة للواجبات المنزلية، ويتصفح المراهقون وسائل التواصل الاجتماعي، وتشاهد العائلات الأفلام في عطلة نهاية الأسبوع."},
+    {en: "But not all screen time is the same. Some of it is useful, like doing schoolwork or learning a new skill online. Other screen time, such as watching videos or playing games for hours, may not be helpful.", ar: "لكن ليس كل وقت الشاشة هو نفسه. بعضه مفيد، مثل أداء الواجبات المدرسية أو تعلم مهارة جديدة عبر الإنترنت. وقت الشاشة الآخر، مثل مشاهدة مقاطع الفيديو أو ممارسة الألعاب لساعات، قد لا يكون مفيداً."},
+    {en: "Experts say young people should not spend more than two hours a day on entertainment screen time. It's important to balance screen use with physical activity, face-to-face time with friends, and rest.", ar: "يقول الخبراء إنه لا ينبغي للشباب قضاء أكثر من ساعتين يومياً في وقت الشاشة الترفيهي. من المهم الموازنة بين استخدام الشاشة وممارسة النشاط البدني، والوقت الشخصي مع الأصدقاء، والراحة."},
+    {en: "Spending too much time on screens can also affect your health physically and mentally. It causes tired eyes, headaches, and trouble sleeping.", ar: "قضاء الكثير من الوقت أمام الشاشات يمكن أن يؤثر أيضاً على صحتك جسدياً وعقلياً. يسبب إرهاق العينين والصداع ومشاكل في النوم."},
+    {en: "Moreover, it can also make it harder to focus and may make you stressed. So, to avoid these side effects, you should take short breaks during meals, before bedtime, and while doing your homework.", ar: "علاوة على ذلك، يمكن أن يجعل التركيز أكثر صعوبة وقد يسبب لك التوتر. لذلك، لتجنب هذه الآثار الجانبية، يجب أن تأخذ فترات راحة قصيرة أثناء الوجبات، وقبل وقت النوم، وأثناء أداء واجباتك المنزلية."},
+    {en: "You should also do other activities away from screens.", ar: "يجب عليك أيضاً ممارسة أنشطة أخرى بعيداً عن الشاشات."}
+];
+
+// 9. Listening Text (Lesson 2)
+const listeningTextL2 = [
+    {en: "Hey friends, welcome back! Today we're talking about smart cities and smart habits.", ar: "مرحباً أيها الأصدقاء، مرحباً بعودتكم! اليوم نحن نتحدث عن المدن الذكية والعادات الذكية."},
+    {en: "Egypt is moving forward with amazing projects like the New Administrative Capital, the Monorail, and the Green River. These are built with cutting-edge technology and big ideas.", ar: "تتقدم مصر بمشاريع مذهلة مثل العاصمة الإدارية الجديدة، والمونوريل، والنهر الأخضر. هذه تم بناؤها بتكنولوجيا متطورة وأفكار كبيرة."},
+    {en: "But big projects need smart citizens - people who are focused, healthy, and use technology wisely.", ar: "لكن المشاريع الكبيرة تحتاج إلى مواطنين أذكياء - أشخاص مركزين، وأصحاء، ويستخدمون التكنولوجيا بحكمة."},
+    {en: "If we spend too much time scrolling or gaming, we lose energy and focus. That's why managing screen time is so important.", ar: "إذا قضينا الكثير من الوقت في التصفح أو ممارسة الألعاب، نفقد الطاقة والتركيز. لهذا السبب فإن إدارة وقت الشاشة مهمة جداً."},
+    {en: "Young people like us are the future engineers, designers, and leaders of Egypt. By building strong habits now - like turning off distractions and using technology for learning - we get ready to build a better country.", ar: "الشباب مثلنا هم مهندسو ومصممو وقادة مصر في المستقبل. من خلال بناء عادات قوية الآن - مثل إيقاف تشغيل المشتتات واستخدام التكنولوجيا للتعلم - نستعد لبناء بلد أفضل."}
+];
+
+// 10. General Notes on Reading & Listening
+const grammarData = [
+    {word: "similar - the same", meaning: "مشابه - متماثل", example: "Your daily habits are similar to my habits. Let's share ideas! / But not all screen time is the same."}
+];
+
+// 11. Important Expressions & Prepositions (Lessons 1 & 2)
+const expPrepData = [
+    ["away from screens", "بعيداً عن الشاشات"],
+    ["turn off", "يطفئ"],
+    ["during meals", "أثناء الوجبات"],
+    ["get ready", "يستعد"],
+    ["keep your mind healthy", "يحافظ على صحة عقلك"],
+    ["(Be) + used for + [inf. + ing]", "يستخدم في"],
+    ["balance ... with ...", "يوازن ... مع ..."],
+    ["scroll through", "يتصفح خلال"]
+];
+
+// ===================== دوال HTML المساعدة =====================
+function makeWordSpans(text) {
+    const words = text.trim().split(/\s+/);
+    return words.map((w, idx) => `<span class="word" data-word-index="${idx}">${w}</span>`).join(' ');
+}
+
+// ===================== بناء الواجهة =====================
+function buildAllSections() {
+    const container = document.getElementById('sections-container');
+
+    function makePills(wordsArray, sectionId) {
+        return wordsArray.map((w, i) => {
+            const id = `${sectionId}_p${i}`;
+            const wordHtml = makeWordSpans(w[0]);
+            const speakText = cleanForSpeech(w[0]);
+            return `<div class="pill" id="${id}" data-speak="${speakText}" onclick="playOne('${id}')"><span class="en">${wordHtml}</span><span class="tr">${w[1]}</span></div>`;
+        }).join('');
+    }
+
+    function makeRuleItem(icon, sectionId, index, speakText, arText, displayText) {
+        const id = `${sectionId}_${index}`;
+        const wordHtml = makeWordSpans(displayText || speakText);
+        const finalSpeak = cleanForSpeech(speakText);
+        return `<div class="rule-item" id="${id}" data-speak="${finalSpeak}" onclick="playOne('${id}')">
+            <span class="rule-icon">${icon}</span>
+            <div class="rule-text">
+                <span class="en">${wordHtml}</span>
+                <span class="ar">${arText || ''}</span>
+            </div>
+        </div>`;
+    }
+
+    function playBar(sectionId) {
+        return `<div class="sec-play-bar">
+            <button class="big-btn" style="background:linear-gradient(135deg,var(--A),var(--A2))" onclick="playSection('${sectionId}')">▶ Play</button>
+            <button class="big-btn pause-btn" onclick="pauseAll()">⏸ Pause</button>
+            <button class="big-btn stop-btn" onclick="stopAll()">⏹ Stop</button>
+        </div>`;
+    }
+
+    function makeStorySection(title, storyData) {
+        return `<div class="story-card">
+            <div style="font-weight:bold;color:var(--A);margin-bottom:10px;">${title}</div>
+            ${storyData.map((s,i) => {
+                const id = `secStory_${title.replace(/\s/g,'')}_${i}`;
+                let enText = s.en;
+                let speaker = '';
+                let dialogueText = enText;
+
+                const colonIndex = enText.indexOf(': ');
+                if (colonIndex > 0) {
+                    speaker = enText.substring(0, colonIndex);
+                    dialogueText = enText.substring(colonIndex + 2);
+                }
+
+                const emoji = speaker ? '💬' : '📖';
+                const wordHtml = makeWordSpans(dialogueText);
+                
+                let speakerHtml = '';
+                if (speaker) {
+                    speakerHtml = `<span class="speaker-label">${emoji} ${speaker}</span> `;
+                }
+
+                return `<div class="sentence" id="${id}" data-speak="${s.en}" onclick="playOne('${id}')">
+                    ${speakerHtml} ${wordHtml}
+                </div> `;
+            }).join('')}
+            <div class="story-ar">${storyData.map(s => s.ar).join(' ')}</div>
+        </div>`;
+    }
+
+    const sections = [];
+
+    // 1. Key Vocabulary (Lessons 1 & 2)
+    if (typeof keyVocabL1L2 !== 'undefined' && keyVocabL1L2.length > 0) {
+        sections.push({ title:"🔑 Key Vocabulary (Lessons 1 & 2)", id:"secKeyL1L2", content: `<div class="info-box"><div class="info-title">Key Vocabulary (Lessons 1 & 2)</div><div class="vocab">${makePills(keyVocabL1L2, "secKeyL1L2")}</div></div>` });
+    }
+
+    // 2. Vocabulary on Reading (Lesson 1)
+    if (typeof l1Vocab !== 'undefined' && l1Vocab.length > 0) {
+        sections.push({ title:"📚 Vocabulary on Reading (Lesson 1)", id:"secL1", content: `<div class="info-box"><div class="info-title">Vocabulary on Reading (Lesson 1)</div><div class="vocab">${makePills(l1Vocab, "secL1")}</div></div>` });
+    }
+
+    // 3. Vocabulary on Reading (Lesson 2)
+    if (typeof l2Vocab !== 'undefined' && l2Vocab.length > 0) {
+        sections.push({ title:"📚 Vocabulary on Reading (Lesson 2)", id:"secL2", content: `<div class="info-box"><div class="info-title">Vocabulary on Reading (Lesson 2)</div><div class="vocab">${makePills(l2Vocab, "secL2")}</div></div>` });
+    }
+
+    // 4. Definitions (Lessons 1 & 2)
+    if (typeof defsData !== 'undefined' && defsData.length > 0) {
+        sections.push({ title:"📝 Definitions (Lessons 1 & 2)", id:"secDefs", content: `<div class="rules-grid">${defsData.map((d,i) => {
+            const speakText = cleanForSpeech(d.word) + " | " + d.def;
+            return makeRuleItem('📖', 'secDefs', i, speakText, d.def, d.word);
+        }).join('')}</div>` });
+    }
+
+    // 5. Collocations (Lessons 1 & 2)
+    if (typeof collocationsData !== 'undefined' && collocationsData.length > 0) {
+        sections.push({ title:"🤝 Collocations (Lessons 1 & 2)", id:"secCollocations", content: `<div class="rules-grid">${collocationsData.map((c,i) => makeRuleItem('🔗', 'secCollocations', i, c[0], c[1], c[0])).join('')}</div>` });
+    }
+
+    // 6. Synonyms and Antonyms (Lessons 1 & 2)
+    if (typeof synData !== 'undefined' && synData.length > 0) {
+        sections.push({ title:"🔄 Synonyms (Lessons 1 & 2)", id:"secSyn", content: `<div class="rules-grid">${synData.map((s,i) => makeRuleItem('↔️', 'secSyn', i, s.word + " | " + s.syn, s.syn, s.word)).join('')}</div>` });
+    }
+
+    if (typeof antData !== 'undefined' && antData.length > 0) {
+        sections.push({ title:"🚫 Antonyms (Lessons 1 & 2)", id:"secAnt", content: `<div class="rules-grid">${antData.map((a,i) => makeRuleItem('🛑', 'secAnt', i, a.word + " | " + a.ant, a.ant, a.word)).join('')}</div>` });
+    }
+
+    // 7. Prefixes and Suffixes (Lessons 1 & 2)
+    if (typeof morphData !== 'undefined' && morphData.length > 0) {
+        sections.push({ title:"🔚 Prefixes and Suffixes (Lessons 1 & 2)", id:"secMorph", content: `<div class="rules-grid">${morphData.map((p,i) => {
+            const speakText = cleanForSpeech(p.word) + " | " + p.affix;
+            return makeRuleItem('🔤', 'secMorph', i, speakText, p.affix + " " + p.func, p.word);
+        }).join('')}</div>` });
+    }
+
+    // 8. Reading Text (Lesson 1)
+    if (typeof readingTextL1 !== 'undefined' && readingTextL1.length > 0) {
+        sections.push({ title:"📖 Reading Text (Lesson 1)", id:"secReadL1", content: makeStorySection("Screen Time", readingTextL1) });
+    }
+
+    // 9. Listening Text (Lesson 2)
+    if (typeof listeningTextL2 !== 'undefined' && listeningTextL2.length > 0) {
+        sections.push({ title:"🎧 Listening Text (Lesson 2)", id:"secListenL2", content: makeStorySection("Egypt's Smart Future", listeningTextL2) });
+    }
+
+    // 10. General Notes on Reading & Listening
+    if (typeof grammarData !== 'undefined' && grammarData.length > 0) {
+        sections.push({ title:"📚 General Notes on Reading & Listening", id:"secGrammar", content: `<div class="rules-grid">${grammarData.map((g,i) => {
+            const speakText = cleanForSpeech(g.word) + " | " + g.example;
+            return makeRuleItem('📌', 'secGrammar', i, speakText, g.meaning + " | " + g.example, g.word + " | " + g.example);
+        }).join('')}</div>` });
+    }
+
+    // 11. Important Expressions & Prepositions (Lessons 1 & 2)
+    if (typeof expPrepData !== 'undefined' && expPrepData.length > 0) {
+        sections.push({ title:"💬 Important Expressions & Prepositions (Lessons 1 & 2)", id:"secExpPrep", content: `<div class="rules-grid">${expPrepData.map((e,i) => makeRuleItem('💡', 'secExpPrep', i, e[0], e[1], e[0])).join('')}</div>` });
+    }
+
+    let html = '';
+    sections.forEach(sec => {
+        html += `<div class="section-block" id="${sec.id}">
+            <div class="sec-title">${sec.title}</div>
+            <div class="sec-body">
+                ${playBar(sec.id)}
+                ${sec.content}
+            </div>
+        </div>`;
+    });
+    container.innerHTML = html;
+}
+
+// ===================== نظام الصوت ومحرك النطق =====================
+const rateRange = document.getElementById('rateRange');
+const rateBadge = document.getElementById('rateBadge');
+const fabPause = document.getElementById('fabPause');
+
+const savedRate = localStorage.getItem('speechRate') || 1;
+rateRange.value = savedRate;
+rateBadge.textContent = parseFloat(savedRate).toFixed(1)+'x';
+rateRange.addEventListener('input', () => {
+    const val = parseFloat(rateRange.value).toFixed(1);
+    rateBadge.textContent = val+'x';
+    localStorage.setItem('speechRate', val);
+});
+
+let voices = [];
+function loadVoices() {
+    voices = window.speechSynthesis.getVoices();
+    populateVoiceSelect();
+}
+
+function populateVoiceSelect() {
+    const vs = document.getElementById('voiceSelect');
+    const note = document.getElementById('voiceNote');
+    const allVoices = voices;
+    if (!allVoices.length) return;
+
+    const normalizeLang = (lang) => lang.replace('_', '-');
+    const isLangMatch = (voiceLang, targetPrefix) => normalizeLang(voiceLang) === targetPrefix || normalizeLang(voiceLang).startsWith(targetPrefix + '-');
+
+    const usVoice = allVoices.find(v => isLangMatch(v.lang, 'en-US'));
+    const gbVoice = allVoices.find(v => isLangMatch(v.lang, 'en-GB'));
+
+    const options = [];
+    if (usVoice) options.push({ label: '🇺🇸 American', uri: usVoice.voiceURI });
+    if (gbVoice) options.push({ label: '🇬🇧 British', uri: gbVoice.voiceURI });
+    if (!options.length) {
+        note.textContent = '⚠️ No US/UK voice found.';
+        const anyEn = allVoices.filter(v => v.lang.startsWith('en')).slice(0,2);
+        anyEn.forEach(v => options.push({ label: v.name + ' ('+v.lang+')', uri: v.voiceURI }));
+    } else {
+        note.textContent = '';
+    }
+
+    const savedURI = localStorage.getItem('voiceURI');
+    vs.innerHTML = options.map(o => `<option value="${o.uri}">${o.label}</option>`).join('');
+    if (savedURI && options.some(o => o.uri === savedURI)) vs.value = savedURI;
+}
+
+document.getElementById('voiceSelect').addEventListener('change', function() {
+    localStorage.setItem('voiceURI', this.value);
+});
+
+function getSelectedVoice() {
+    const uri = localStorage.getItem('voiceURI');
+    return voices.find(v => v.voiceURI === uri) || null;
+}
+
+window._q = []; 
+window._qi = 0;
+window._currentUtterance = null;
+let currentHighlightedId = null;
+
+function clearAllHighlights() {
+    document.querySelectorAll('.active-sent').forEach(e => e.classList.remove('active-sent'));
+    currentHighlightedId = null;
+}
+
+function showFab(show) {
+    if (show) fabPause.classList.add('show');
+    else fabPause.classList.remove('show');
+}
+
+function updateFabIcon() {
+    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+        fabPause.innerHTML = '⏸️';
+    } else if (window.speechSynthesis.paused) {
+        fabPause.innerHTML = '▶️';
+    } else {
+        fabPause.innerHTML = '⏯️';
+    }
+}
+
+function playQueue() {
+    if (window._qi >= window._q.length) {
+        clearAllHighlights();
+        showFab(false);
+        return;
+    }
+    const item = window._q[window._qi];
+    
+    if (currentHighlightedId !== item.id) {
+        clearAllHighlights();
+        const el = document.getElementById(item.id);
+        if (el) {
+            el.classList.add('active-sent');
+            el.scrollIntoView({behavior:'smooth',block:'nearest'});
+            currentHighlightedId = item.id;
+        }
+    }
+
+    const u = new SpeechSynthesisUtterance(item.text);
+    u.rate = parseFloat(rateRange.value) || 1;
+    const voice = getSelectedVoice();
+    if (voice) u.voice = voice;
+
+    u.onstart = () => {
+        showFab(true);
+        updateFabIcon();
+    };
+
+    u.onend = function() {
+        window._qi++;
+        playQueue();
+    };
+
+    u.onerror = function(e) {
+        console.warn('Speech error', e);
+        window._qi++;
+        playQueue();
+    };
+
+    u.onpause = () => updateFabIcon();
+    u.onresume = () => updateFabIcon();
+
+    window._currentUtterance = u;
+    window.speechSynthesis.speak(u);
+}
+
+function splitAndQueue(textParts, id) {
+    textParts.forEach((p) => {
+        const trimmed = p.trim();
+        if (trimmed) {
+            window._q.push({id: id, text: trimmed});
+        }
+    });
+}
+
+function playSection(secId) {
+    stopAll();
+    const sec = document.getElementById(secId);
+    const els = [...sec.querySelectorAll('[data-speak]')];
+    els.forEach(el => {
+        const text = el.dataset.speak;
+        const parts = text.split('|').map(p => p.trim());
+        splitAndQueue(parts, el.id);
+    });
+    window._qi = 0;
+    playQueue();
+}
+
+function playAll() {
+    stopAll();
+    const els = [...document.querySelectorAll('[data-speak]')];
+    els.forEach(el => {
+        const text = el.dataset.speak;
+        const parts = text.split('|').map(p => p.trim());
+        splitAndQueue(parts, el.id);
+    });
+    window._qi = 0;
+    playQueue();
+}
+
+function playOne(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const text = el.dataset.speak;
+    
+    stopAll();
+    const parts = text.split('|').map(p => p.trim());
+    splitAndQueue(parts, id);
+    window._qi = 0;
+    playQueue();
+}
+
+function pauseAll() {
+    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+        window.speechSynthesis.pause();
+        updateFabIcon();
+    } else if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        updateFabIcon();
+    }
+}
+
+function stopAll() {
+    window._q = []; 
+    window._qi = 0;
+    clearAllHighlights();
+    if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+    }
+    showFab(false);
+}
+
+function toggleFabPause() {
+    pauseAll();
+}
+
+// ===================== الثيمات =====================
+function setTheme(theme, btn) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    localStorage.setItem('theme', theme);
+}
+const savedTheme = localStorage.getItem('theme') || 'teal';
+document.documentElement.setAttribute('data-theme', savedTheme);
+document.querySelectorAll('.theme-btn').forEach(b => {
+    if (b.classList.contains('t-'+savedTheme)) b.classList.add('active');
+});
+
+// ===================== بدء التشغيل =====================
+buildAllSections();
+loadVoices();
+setTimeout(loadVoices, 300);
+setTimeout(loadVoices, 1000);
+if (speechSynthesis.onvoiceschanged !== undefined) speechSynthesis.onvoiceschanged = loadVoices;
+</script>
+</body>
+</html>
