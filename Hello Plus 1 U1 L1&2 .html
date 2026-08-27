@@ -1,0 +1,871 @@
+﻿<div style="position:sticky; top:0; background-color:#ffffff; padding:15px 0; text-align:center; font-family:Arial, sans-serif; box-shadow:0 4px 6px rgba(0,0,0,0.1); z-index:1000; display:flex; flex-direction:column; align-items:center;">
+  <h3 style="margin:2px 0; color:#333; text-align:center;">Mr. Ameen Sharqawy</h2>
+
+  <div style="margin-top:8px;">
+    <a href="tel:+201279217092" style="display:inline-block; background-color:#007BFF; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      📞 01279217092
+    </a>
+    <a href="https://wa.me/+201279217092" target="_blank" style="display:inline-block; background-color:#25D366; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      💬 تواصل عبر الواتس
+    </a>
+  </div>
+</div><!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>Prep 1 Unit 1: Lessons 1 & 2 - Friends Matter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --A: #0f766e; --A2: #0d5c55; --blue4: #ccfbf1; --blue5: #f0fdfa;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --radius: 14px; --stop: #EF4444; --pause: #94A3B8;
+            --highlight-bg: rgba(37,99,235,0.13);
+            --word-highlight: #fde047;
+            --fab-bg: #1e293b; --fab-text: #fff;
+        }
+        [data-theme="ocean"] {
+            --A: #1d4ed8; --A2: #1e3a8a; --blue4: #dbeafe; --blue5: #eff6ff;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --stop: #EF4444; --highlight-bg: rgba(37,99,235,0.13);
+            --fab-bg: #1e3a8a; --fab-text: #fff;
+        }
+        [data-theme="garden"] {
+            --A: #15803d; --A2: #14532d; --blue4: #dcfce7; --blue5: #f0fdf4;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --stop: #EF4444; --highlight-bg: rgba(21,128,61,0.13);
+            --fab-bg: #14532d; --fab-text: #fff;
+        }
+        [data-theme="sunset"] {
+            --A: #c2410c; --A2: #9a3412; --blue4: #ffedd5; --blue5: #fff7ed;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --stop: #EF4444; --highlight-bg: rgba(194,65,12,0.13);
+            --fab-bg: #9a3412; --fab-text: #fff;
+        }
+        [data-theme="dark"] {
+            --A: #2dd4bf; --A2: #0d9488; --blue4: #134e4a; --blue5: #0f172a;
+            --text: #f8fafc; --text2: #94a3b8; --card: #1e293b; --border: #334155;
+            --bg: #0f172a; --stop: #f87171; --pause: #64748b; --highlight-bg: rgba(45,212,191,0.15);
+            --word-highlight: #facc15; --fab-bg: #facc15; --fab-text: #1e293b;
+        }
+        *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+        body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:100px;overflow-x:hidden;transition:background .3s,color .3s;}
+        body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(135deg,rgba(37,99,235,.03) 25%,transparent 25%),linear-gradient(225deg,rgba(37,99,235,.03) 25%,transparent 25%),linear-gradient(315deg,rgba(37,99,235,.03) 25%,transparent 25%),linear-gradient(45deg,rgba(37,99,235,.03) 25%,transparent 25%);background-size:30px 30px;z-index:-1;pointer-events:none;}
+        .hero{color:#fff;text-align:center;padding:28px 20px 22px;margin-bottom:24px;background:linear-gradient(135deg, var(--A), var(--A2));}
+        .hero .emoji-big{font-size:2.8rem;display:block;margin-bottom:8px;}
+        .hero h1{font-size:1.55rem;font-weight:900;}
+        .hero .sub{font-size:.9rem;opacity:.85;margin-top:5px;font-family:'Cairo',sans-serif;font-weight:600;}
+        .toolbar{max-width:780px;margin:0 auto 24px;padding:0 16px;text-align:center;}
+        .toolbar-inner{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:9px 20px;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+        .toolbar label{font-weight:800;color:var(--A);font-size:13px;}
+        input[type=range]{width:100px;accent-color:var(--A);}
+        .rate-badge{font-weight:900;font-size:13px;color:var(--A);min-width:34px;}
+        select{padding:5px 8px;border-radius:6px;border:1px solid var(--border);font-weight:600;background:var(--card);color:var(--text);}
+        .theme-switcher{display:flex;align-items:center;gap:8px;margin-left:auto;}
+        .theme-btn{-webkit-appearance:none;appearance:none;border:2px solid transparent;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;color:#fff;letter-spacing:.5px;transition:all .2s;}
+        .theme-btn.t-teal{background:linear-gradient(135deg,#0f766e,#2dd4bf);}
+        .theme-btn.t-ocean{background:linear-gradient(135deg,#1d4ed8,#0ea5e9);}
+        .theme-btn.t-garden{background:linear-gradient(135deg,#15803d,#4ade80);}
+        .theme-btn.t-sunset{background:linear-gradient(135deg,#c2410c,#f97316);}
+        .theme-btn.t-dark{background:linear-gradient(135deg,#1e293b,#475569);color:#e2e8f0;}
+        .theme-btn.active{border-color:#fff;box-shadow:0 0 0 2px currentColor;transform:scale(1.08);}
+        .container{max-width:780px;margin:auto;padding:0 16px;}
+        .section-block{background:var(--card);border-radius:var(--radius);margin-bottom:22px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid var(--border);}
+        .sec-title{color:#fff;font-size:.85rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:12px 18px;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--A),var(--A2));}
+        .sec-title::before{content:"";display:inline-block;width:6px;height:6px;background:rgba(255,255,255,.5);border-radius:50%;flex-shrink:0;}
+        .sec-body{padding:16px;}
+        .sec-play-bar{display:flex;gap:7px;margin-bottom:16px;flex-wrap:wrap;align-items:center;}
+        .big-btn{-webkit-appearance:none;appearance:none;border:none;border-radius:9px;padding:10px 17px;font-size:13px;font-weight:800;cursor:pointer;color:#fff;display:inline-flex;align-items:center;gap:5px;transition:transform .12s;font-family:'Nunito',sans-serif;}
+        .big-btn:active{transform:scale(.95);}
+        .big-btn.pause-btn{background:var(--pause);}
+        .big-btn.stop-btn{background:var(--stop);}
+        .big-btn.play-all-btn{background:linear-gradient(135deg, var(--A), var(--A2)); margin-left: 12px;}
+        .info-box{background:#FAFAFA;border:1px solid var(--border);border-radius:11px;padding:13px;margin-bottom:14px;}
+        [data-theme="dark"] .info-box{background:#0f172a;}
+        .info-title{display:flex;align-items:center;gap:5px;font-weight:900;font-size:.78rem;margin-bottom:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--A2);}
+        .vocab{display:flex;flex-wrap:wrap;gap:7px;}
+        .pill{padding:8px 13px;border-radius:8px;background:var(--card);border:1px solid var(--blue4);text-align:center;cursor:pointer;flex:1 1 auto;min-width:78px;transition:all .15s;}
+        .pill:active{transform:scale(.96);}
+        .pill .en{font-weight:800;font-size:14px;display:block;color:var(--A);}
+        .pill .tr{font-size:11px;color:var(--text2);font-family:'Cairo',sans-serif;font-weight:600;}
+        .story-card{background:var(--blue5);border:1px solid var(--blue4);border-left:4px solid var(--A);border-radius:11px;padding:15px 17px;margin-bottom:13px;}
+        
+        .sentence {
+            display: block;
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            transition: background .2s;
+            line-height: 1.8;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text);
+            background: rgba(255,255,255,0.4);
+        }
+        [data-theme="dark"] .sentence { background: rgba(255,255,255,0.05); }
+        
+        .sentence .word{transition: background 0.15s; border-radius:3px; padding:0 1px;}
+        .sentence .word.highlight{background: var(--word-highlight);}
+        .sentence.active-sent{
+            background: var(--highlight-bg);
+            outline:2px solid var(--A);
+            outline-offset:1px;
+        }
+        .sentence .speaker-label {
+            display: inline-block;
+            font-weight: 900;
+            color: var(--A2);
+            margin-right: 10px;
+            background: var(--blue4);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .pill.active-sent{background: var(--highlight-bg); outline:2px solid var(--A); outline-offset:1px;}
+        .rule-item.active-sent{background: var(--highlight-bg); outline:2px solid var(--A); outline-offset:1px;}
+        
+        .story-ar{font-family:'Cairo',sans-serif;color:var(--text2);font-size:14px;text-align:right;direction:rtl;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-weight:600;line-height:2;}
+        .rules-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:13px;}
+        .rule-item{display:flex;align-items:flex-start;gap:10px;background:var(--blue5);border:1px solid var(--blue4);border-radius:9px;padding:11px 13px;cursor:pointer;transition:all .2s;}
+        .rule-item .rule-text{flex:1;}
+        .rule-item .rule-text .en{font-size:15px;font-weight:700;color:var(--text);}
+        .rule-item .rule-text .ar{font-family:'Cairo',sans-serif;font-size:12px;color:var(--text2);text-align:right;direction:rtl;font-weight:600;margin-top:2px;}
+        footer{text-align:center;margin-top:14px;padding:16px;color:var(--text2);font-size:11px;}
+        footer strong{color:var(--A);}
+        .voice-note{font-size:11px;color:#b45309;margin-top:4px;display:block;}
+        .fab-pause{
+            position: fixed; bottom: 24px; right: 24px; z-index: 999;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--fab-bg); color: var(--fab-text);
+            border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            font-size: 24px; display: none; align-items: center; justify-content: center;
+            cursor: pointer; transition: transform 0.2s, opacity 0.2s;
+        }
+        .fab-pause:active{transform: scale(0.9);}
+        .fab-pause.show{display: flex;}
+    </style>
+</head>
+<body>
+
+<div class="hero"><span class="emoji-big">🤝</span><h1>Prep 1: Unit 1</h1><p class="sub">Lessons 1 & 2 - Friends Matter</p></div>
+
+<div class="toolbar"><div class="toolbar-inner">
+    <label for="rateRange">Speed</label><input id="rateRange" type="range" min="0.5" max="1.2" step="0.1" value="1"/>
+    <span class="rate-badge" id="rateBadge">1.0x</span>
+    <select id="voiceSelect" style="max-width:180px;"></select>
+    <span id="voiceNote" class="voice-note"></span>
+    <div class="theme-switcher">
+        <button class="theme-btn t-teal" onclick="setTheme('teal',this)">Teal</button>
+        <button class="theme-btn t-ocean" onclick="setTheme('ocean',this)">Ocean</button>
+        <button class="theme-btn t-garden" onclick="setTheme('garden',this)">Garden</button>
+        <button class="theme-btn t-sunset" onclick="setTheme('sunset',this)">Sunset</button>
+        <button class="theme-btn t-dark" onclick="setTheme('dark',this)">Dark</button>
+    </div>
+    <button class="big-btn play-all-btn" onclick="playAll()">🔊 Play All</button>
+</div></div>
+
+<main class="container">
+    <div id="sections-container"></div>
+</main>
+
+<button class="fab-pause" id="fabPause" onclick="toggleFabPause()" title="إيقاف / استئناف">⏯️</button>
+
+<script>
+// ===================== دالة تنظيف النص للصوت =====================
+function cleanForSpeech(text) {
+    let result = text;
+    result = result.replace(/\([^)]*\)/g, ' '); 
+    result = result.replace(/[→]/g, ' ');      
+    result = result.replace(/\s+/g, ' ').trim(); 
+    return result;
+}
+
+// ===================== بيانات المحتوى =====================
+// هذا القسم هو طبقة البيانات فقط. عند إعداد وحدة جديدة يمكن تعديل هذه المصفوفات،
+// حذف أي مصفوفة أو تركها فارغة، وإضافة مصفوفة/قسم جديد بنفس النمط.
+
+// 1. Main Vocabulary - Lesson 1
+const keyVocabL1 = [
+    ["buddy (n)", "صديق / رفيق"],
+    ["wheelchair (n)", "كرسي متحرك"],
+    ["apartment (n)", "شقة سكنية"],
+    ["mysteries (n)", "روايات بوليسية / أسرار غامضة"],
+    ["collect stamps (v)", "يجمع طوابع"],
+    ["timetable (n)", "جدول مواعيد"],
+    ["view (n)", "منظر طبيعي"],
+    ["text (v)", "يرسل رسالة نصية"],
+    ["clever (adj)", "ماهر / ذكي"],
+    ["interesting (adj)", "شيق / مثير للاهتمام"],
+    ["friendly (adj)", "ودود / لطيف"],
+    ["kind (adj)", "عطوف"],
+    ["lazy (adj)", "كسول"],
+    ["thoughtful (adj)", "مراعٍ لمشاعر الآخرين"],
+    ["responsible (adj)", "مسؤول"],
+    ["boring (adj)", "ممل"],
+    ["honest (adj)", "أمين / صادق"],
+    ["interested (adj)", "مهتم"],
+    ["dangerous (adj)", "خطير"],
+    ["surprised (adj)", "متفاجئ / مندهش"],
+    ["wonderful (adj)", "رائع"],
+    ["running (n)", "الجري"],
+    ["free time (n)", "وقت الفراغ"],
+    ["schoolwork (n)", "الواجب المدرسي"],
+    ["hobbies (n)", "هوايات"],
+    ["volunteer (v/n)", "يتطوع / متطوع"],
+    ["cycling (n)", "ركوب الدراجات"],
+    ["laugh (v)", "يضحك"],
+    ["believe (v)", "يصدق"]
+];
+
+// 2. Vocabulary on Reading and Listening - Lesson 1
+const l1Vocab = [
+    ["thoughtful (adj)", "مراعٍ لمشاعر الآخرين"],
+    ["help others", "يساعد الآخرين"],
+    ["volunteering (n)", "التطوع"],
+    ["mysteries (n)", "روايات بوليسية / أسرار غامضة"],
+    ["responsible (adj)", "مسؤول"],
+    ["car accident (n)", "حادث سيارة"],
+    ["wheelchair (n)", "كرسي متحرك"],
+    ["interested in", "مهتم بـ"],
+    ["try new things", "يجرب أشياء جديدة"],
+    ["schoolwork (n)", "الواجب المدرسي"],
+    ["New Friends Club", "نادي الأصدقاء الجدد"],
+    ["get better", "يتحسن"],
+    ["support (v)", "يدعم / يساند"]
+];
+
+// 3. Main Vocabulary - Lesson 2
+const keyVocabL2 = [
+    ["welcome (v/n)", "يرحب / ترحيب"],
+    ["buddy (n)", "صديق / رفيق"],
+    ["suggest (v)", "يقترح"],
+    ["show someone around", "يأخذ شخصًا في جولة"],
+    ["activities (n)", "أنشطة"],
+    ["old and new students", "الطلاب القدامى والجدد"],
+    ["play sports and games", "يمارس الرياضات والألعاب"],
+    ["speak to someone about", "يتحدث مع شخص عن"],
+    ["explain (v)", "يشرح / يفسر"],
+    ["gist (n)", "الخلاصة / النقطة الرئيسية"],
+    ["introduce (v)", "يقدم / يعرف"],
+    ["mirror (n)", "مرآة"]
+];
+
+// 4. Vocabulary on Reading and Listening - Lesson 2
+const l2Vocab = [
+    ["new students", "طلاب جدد"],
+    ["welcome buddy", "رفيق الترحيب"],
+    ["find their way around", "يجدون طريقهم حول المكان"],
+    ["New Friends Club", "نادي الأصدقاء الجدد"],
+    ["activities", "أنشطة"],
+    ["a great idea", "فكرة رائعة"],
+    ["photographs (n)", "صور فوتوغرافية"],
+    ["grandparents (n)", "الأجداد"],
+    ["fifteenth floor", "الطابق الخامس عشر"],
+    ["high up", "على ارتفاع عالٍ"],
+    ["amazing view", "منظر رائع"],
+    ["look out of the window", "ينظر من خلال النافذة"]
+];
+
+// 5. Collocations - Lessons 1 & 2
+const collocationsData = [
+    ["make new friends", "يكون صداقات جديدة"],
+    ["do homework", "يقوم بأداء الواجب المنزلي"],
+    ["do schoolwork", "يقوم بأداء الواجب المدرسي"],
+    ["do exercise", "يتدرب"],
+    ["have fun", "يستمتع"],
+    ["play the guitar", "يعزف على الجيتار"],
+    ["feel welcome", "يشعر أنه موضع ترحيب"],
+    ["get better", "يتحسن"]
+];
+
+// 6. Important Expressions & Prepositions
+const expressionsData = [
+    ["at different places", "في أماكن مختلفة"],
+    ["sounds like", "تبدو مثل"],
+    ["find their way around", "يجدون طريقهم حول"],
+    ["try new things", "يجرب أشياء جديدة"],
+    ["that's great", "هذا رائع"],
+    ["everybody's friend", "صديق الجميع"],
+    ["once a week", "مرة في الأسبوع"],
+    ["get home", "يصل للمنزل"],
+    ["be interested in", "مهتم بـ"],
+    ["be in a car accident", "في حادث سيارة"],
+    ["it's too high up", "على نحو مرتفع"],
+    ["show them around", "يأخذهم في جولة حول"],
+    ["on a school day", "في اليوم الدراسي"],
+    ["play on the computer", "يلعب على جهاز الكمبيوتر"],
+    ["find out about", "يكتشف عن"],
+    ["excited to + infinitive", "متحمس لـ + مصدر"],
+    ["on the fifteenth floor", "في الطابق الخامس عشر"],
+    ["be a good example for", "قدوة جيدة لـ"],
+    ["spend time with", "يقضي الوقت مع"],
+    ["go back to", "يعود إلى"],
+    ["look out of the window", "ينظر من خلال الشباك"],
+    ["decide to", "يقرر أن"],
+    ["welcome to", "أهلًا بك في / مرحبًا في"],
+    ["for the first time", "لأول مرة"],
+    ["in a wheelchair", "على كرسي متحرك"],
+    ["kind to", "عطوف على"]
+];
+
+// 6. Irregular verbs
+const conjData = [
+    {present: "meet", past: "met", pp: "met"},
+    {present: "give", past: "gave", pp: "given"},
+    {present: "sleep", past: "slept", pp: "slept"},
+    {present: "go", past: "went", pp: "gone"},
+    {present: "see", past: "saw", pp: "seen"}
+];
+
+// 7. Synonyms
+const synData = [
+    {word: "kind (adj)", syn: "friendly"},
+    {word: "smart (adj)", syn: "clever / intelligent"},
+    {word: "careful (adj)", syn: "cautious"},
+    {word: "dangerous (adj)", syn: "unsafe"},
+    {word: "difficult (adj)", syn: "hard / complex"},
+    {word: "honest (adj)", syn: "truthful"},
+    {word: "support (v)", syn: "help / aid / encourage"},
+    {word: "wonderful (adj)", syn: "amazing / great"}
+];
+
+// 8. Antonyms
+const antData = [
+    {word: "kind (adj)", ant: "unkind / unfriendly / cruel"},
+    {word: "smart (adj)", ant: "stupid / foolish"},
+    {word: "careful (adj)", ant: "careless"},
+    {word: "dangerous (adj)", ant: "safe"},
+    {word: "difficult (adj)", ant: "easy / simple"},
+    {word: "honest (adj)", ant: "dishonest"},
+    {word: "interesting (adj)", ant: "boring"},
+    {word: "friendly (adj)", ant: "unfriendly"}
+];
+
+// 9. Prefixes and suffixes
+const affixData = [
+    {word: "care → careful", affix: "-ful", func: "تحول الاسم إلى صفة"},
+    {word: "thought → thoughtful", affix: "-ful", func: "تحول الاسم إلى صفة"},
+    {word: "excite → excited", affix: "-ed", func: "تحول الفعل إلى صفة"},
+    {word: "interest → interested", affix: "-ed", func: "تحول الفعل إلى صفة"},
+    {word: "surprise → surprised", affix: "-ed", func: "تحول الفعل إلى صفة"},
+    {word: "danger → dangerous", affix: "-ous", func: "تحول الاسم إلى صفة"},
+    {word: "friend → friendly", affix: "-ly", func: "تحول الاسم إلى صفة"},
+    {word: "fun → funny", affix: "-y", func: "تحول الاسم إلى صفة"}
+];
+
+// 10. Definitions
+const defsData = [
+    {word: "honest", def: "someone who always tells the truth"},
+    {word: "boring", def: "someone or something that makes you feel tired and not interested"},
+    {word: "interesting", def: "someone or something that makes you want to know more"},
+    {word: "example", def: "a person who shows people a good way to do things"},
+    {word: "funny", def: "making you laugh"},
+    {word: "kind", def: "someone who always helps his or her friends"},
+    {word: "clever", def: "someone who can understand things easily"},
+    {word: "careful", def: "someone who thinks about what they are doing to avoid mistakes"},
+    {word: "friendly", def: "someone who likes being with other people and is nice to them"},
+    {word: "polite", def: "someone who always says please and thank you"},
+    {word: "wheelchair", def: "a chair with wheels for people who cannot walk"},
+    {word: "timetable", def: "a list that shows the times when something happens"},
+    {word: "buddy", def: "a friend"}
+];
+
+// 12. Reading Text 1 - Everybody's Friend (Lesson 1)
+const saraText = [
+    {en: "My friend Sara is one of the most thoughtful people I know.", ar: "صديقتي سارة واحدة من أكثر الأشخاص مراعاةً لمشاعر الآخرين الذين أعرفهم."},
+    {en: "She loves helping others and often spends her weekends volunteering at different places.", ar: "تحب مساعدة الآخرين، وغالبًا ما تقضي عطلات نهاية الأسبوع في التطوع في أماكن مختلفة."},
+    {en: "Sara is also very friendly and enjoys making new friends.", ar: "سارة ودودة جدًا أيضًا وتستمتع بتكوين صداقات جديدة."},
+    {en: "In her free time, she loves to read books, especially mysteries.", ar: "في وقت فراغها، تحب قراءة الكتب، وخاصةً الروايات البوليسية."},
+    {en: "Every Saturday, we play basketball together.", ar: "كل يوم سبت، نلعب كرة السلة معًا."},
+    {en: "Sara is also responsible and always helps her family at home.", ar: "سارة مسؤولة أيضًا وتساعد أسرتها دائمًا في المنزل."},
+    {en: "Sara was in a car accident and now she can't walk.", ar: "تعرضت سارة لحادث سيارة، والآن لا تستطيع المشي."},
+    {en: "She uses a wheelchair, but it doesn't stop her from having fun.", ar: "تستخدم كرسيًا متحركًا، لكنه لا يمنعها من الاستمتاع بوقتها."},
+    {en: "She's interested in everything and she often wants to try new things.", ar: "إنها مهتمة بكل شيء، وغالبًا ما تريد تجربة أشياء جديدة."},
+    {en: "For example, last week she started to play the guitar.", ar: "فعلى سبيل المثال، بدأت الأسبوع الماضي في العزف على الجيتار."},
+    {en: "She said it was difficult, but she loves learning new things.", ar: "قالت إن الأمر كان صعبًا، لكنها تحب تعلم أشياء جديدة."},
+    {en: "She's a good example for other people, and she also has lots of friends.", ar: "إنها مثال جيد للآخرين، ولديها أيضًا الكثير من الأصدقاء."},
+    {en: "Sara is always happy to help other students with their schoolwork.", ar: "سارة سعيدة دائمًا بمساعدة الطلاب الآخرين في واجباتهم المدرسية."},
+    {en: "She also goes to the New Friends Club once a week to meet new students.", ar: "وتذهب أيضًا إلى نادي الأصدقاء الجدد مرة أسبوعيًا لمقابلة الطلاب الجدد."},
+    {en: "Sara is very friendly and everybody likes being with her.", ar: "سارة ودودة جدًا والجميع يحبون أن يكونوا معها."},
+    {en: "Yesterday, she was helping a new student find their way around the school.", ar: "بالأمس، كانت تساعد طالبًا جديدًا في العثور على طريقه داخل المدرسة."},
+    {en: "Sara's friends are very important to her.", ar: "أصدقاء سارة مهمون جدًا بالنسبة إليها."},
+    {en: "They have helped her to get better after the accident by spending time with her and supporting her.", ar: "لقد ساعدوها على التحسن بعد الحادث من خلال قضاء الوقت معها ودعمها."},
+    {en: "She has to live her life in a wheelchair, but to her friends she's still the same wonderful Sara.", ar: "عليها أن تعيش حياتها على كرسي متحرك، لكنها بالنسبة لأصدقائها ما زالت سارة الرائعة نفسها."}
+];
+
+// 12. Reading Text 2 - Good Friends (Lesson 1)
+const friendsText = [
+    {en: "These are my good friends, Harvey and Kevin.", ar: "هذان صديقايا الجيدان، هارفي وكيفن."},
+    {en: "Harvey is very funny. We always laugh when he is with us and he is kind to everyone.", ar: "هارفي مرح جدًا. نضحك دائمًا عندما يكون معنا، وهو عطوف مع الجميع."},
+    {en: "Sometimes, he is a bit lazy and prefers to have fun than to do his schoolwork.", ar: "أحيانًا يكون كسولًا قليلًا ويفضل الاستمتاع بوقته على أداء واجبه المدرسي."},
+    {en: "He knows that he needs to work as well as play.", ar: "وهو يعرف أنه يحتاج إلى العمل وكذلك اللعب."},
+    {en: "He is very friendly and always helps his friends when they need him.", ar: "إنه ودود جدًا ويساعد أصدقاءه دائمًا عندما يحتاجون إليه."},
+    {en: "He is a very honest person, so I always believe what he says.", ar: "إنه شخص أمين جدًا، لذلك أصدق دائمًا ما يقوله."},
+    {en: "Kevin is very clever and he knows about so many things.", ar: "كيفن ذكي جدًا ويعرف الكثير عن أشياء عديدة."},
+    {en: "He has lots of hobbies. His latest hobby is collecting stamps.", ar: "لديه الكثير من الهوايات. وهوايته الأخيرة هي جمع الطوابع."},
+    {en: "Some people think he is boring when he talks too much about his hobbies, but I don't agree.", ar: "يعتقد بعض الناس أنه ممل عندما يتحدث كثيرًا عن هواياته، لكنني لا أوافقهم."},
+    {en: "I think he is very interesting.", ar: "أعتقد أنه شيق جدًا."},
+    {en: "He works hard, but he also enjoys sports like running and cycling.", ar: "يعمل بجد، لكنه يستمتع أيضًا برياضات مثل الجري وركوب الدراجات."},
+    {en: "He is always careful not to do anything too dangerous.", ar: "وهو حريص دائمًا على ألا يفعل أي شيء خطير جدًا."},
+    {en: "He's very polite and always says please and thank you.", ar: "إنه مؤدب جدًا ويقول دائمًا من فضلك وشكرًا."},
+    {en: "I am happy to have these two boys as my friends.", ar: "أنا سعيد بوجود هذين الولدين كصديقين لي."}
+];
+
+// 13. Reading Text 3 - An Email about a Visit (Lesson 2)
+const omarText = [
+    {en: "Hi Ahmed, How are you? What did you do yesterday?", ar: "مرحبًا أحمد، كيف حالك؟ ماذا فعلت بالأمس؟"},
+    {en: "Last night, I looked at some photographs I took last weekend.", ar: "الليلة الماضية، نظرت إلى بعض الصور التي التقطتها في عطلة نهاية الأسبوع الماضية."},
+    {en: "Last Saturday, we went to see my grandparents because it was Grandpa's birthday.", ar: "في السبت الماضي، ذهبنا لزيارة أجدادي لأنه كان عيد ميلاد جدي."},
+    {en: "He didn't know that we were coming. When we arrived, Grandpa was so surprised to see us.", ar: "لم يكن يعرف أننا قادمون. وعندما وصلنا، فوجئ جدي جدًا برؤيتنا."},
+    {en: "My grandparents live near the sea and I love their apartment.", ar: "يعيش أجدادي بالقرب من البحر، وأنا أحب شقتهم."},
+    {en: "My little sister doesn't like it because it's on the fifteenth floor.", ar: "لا تحب أختي الصغيرة ذلك لأنها في الطابق الخامس عشر."},
+    {en: "She thinks it's too high up.", ar: "تعتقد أنه مرتفع جدًا."},
+    {en: "While we were there, I tried to show her the amazing view from their living room.", ar: "وأثناء وجودنا هناك، حاولت أن أريها المنظر الرائع من غرفة المعيشة."},
+    {en: "But she didn't want to look out of the window. Oh, well, maybe next time.", ar: "لكنها لم ترغب في النظر من النافذة. حسنًا، ربما في المرة القادمة."},
+    {en: "Did you go anywhere last weekend? Email me soon if you can! Omar", ar: "هل ذهبت إلى أي مكان في عطلة نهاية الأسبوع الماضية؟ أرسل لي بريدًا سريعًا إذا استطعت! عمر"}
+];
+
+// 14. Reading Text 4 - Making People Feel Welcome (Lesson 2)
+const welcomeText = [
+    {en: "Jack: Hello, Oscar! There are five new students in our class this year.", ar: "جاك: مرحبًا أوسكار! يوجد خمسة طلاب جدد في فصلنا هذا العام."},
+    {en: "Mr Jackson wants us to help them.", ar: "يريد منا السيد جاكسون أن نساعدهم."},
+    {en: "Oscar: That's great, Jack. Why don't we give each student a welcome buddy?", ar: "أوسكار: هذا رائع يا جاك. ما رأيك أن نعطي كل طالب رفيق ترحيب؟"},
+    {en: "Jack: What's a buddy?", ar: "جاك: ما هو الرفيق؟"},
+    {en: "Oscar: The word buddy means friend. We can choose buddies for the new students.", ar: "أوسكار: كلمة رفيق تعني صديقًا. يمكننا اختيار رفقاء للطلاب الجدد."},
+    {en: "They can show them around the school.", ar: "يمكنهم أخذهم في جولة حول المدرسة."},
+    {en: "Jack: That's a great idea! At my sister's school, they have a New Friends Club.", ar: "جاك: هذه فكرة رائعة! في مدرسة أختي يوجد نادي الأصدقاء الجدد."},
+    {en: "They don't have buddies.", ar: "لكن ليس لديهم رفقاء."},
+    {en: "Oscar: What do they do at the New Friends Club?", ar: "أوسكار: ماذا يفعلون في نادي الأصدقاء الجدد؟"},
+    {en: "Jack: They have activities for the old and new students.", ar: "جاك: لديهم أنشطة للطلاب القدامى والجدد."},
+    {en: "Oscar: What activities do they do?", ar: "أوسكار: ما الأنشطة التي يمارسونها؟"},
+    {en: "Jack: They play sports and games.", ar: "جاك: يمارسون الرياضات والألعاب."},
+    {en: "Oscar: That sounds like a great idea, too! Let's speak to Mr Jackson about our ideas.", ar: "أوسكار: تبدو هذه فكرة رائعة أيضًا! لنتحدث مع السيد جاكسون عن أفكارنا."},
+    {en: "Jack: OK!", ar: "جاك: حسنًا!"}
+];
+
+// ===================== دوال HTML المساعدة =====================
+function makeWordSpans(text) {
+    const words = text.trim().split(/\s+/);
+    return words.map((w, idx) => `<span class="word" data-word-index="${idx}">${w}</span>`).join(' ');
+}
+
+// ===================== بناء الواجهة =====================
+function buildAllSections() {
+    const container = document.getElementById('sections-container');
+
+    function makePills(wordsArray, sectionId) {
+        return wordsArray.map((w, i) => {
+            const id = `${sectionId}_p${i}`;
+            const wordHtml = makeWordSpans(w[0]);
+            const speakText = cleanForSpeech(w[0]);
+            return `<div class="pill" id="${id}" data-speak="${speakText}" onclick="playOne('${id}')"><span class="en">${wordHtml}</span><span class="tr">${w[1]}</span></div>`;
+        }).join('');
+    }
+
+    function makeRuleItem(icon, sectionId, index, speakText, arText, displayText) {
+        const id = `${sectionId}_${index}`;
+        const wordHtml = makeWordSpans(displayText || speakText);
+        const finalSpeak = cleanForSpeech(speakText);
+        return `<div class="rule-item" id="${id}" data-speak="${finalSpeak}" onclick="playOne('${id}')">
+            <span class="rule-icon">${icon}</span>
+            <div class="rule-text">
+                <span class="en">${wordHtml}</span>
+                <span class="ar">${arText || ''}</span>
+            </div>
+        </div>`;
+    }
+
+    function playBar(sectionId) {
+        return `<div class="sec-play-bar">
+            <button class="big-btn" style="background:linear-gradient(135deg,var(--A),var(--A2))" onclick="playSection('${sectionId}')">▶ Play</button>
+            <button class="big-btn pause-btn" onclick="pauseAll()">⏸ Pause</button>
+            <button class="big-btn stop-btn" onclick="stopAll()">⏹ Stop</button>
+        </div>`;
+    }
+
+    function makeStorySection(title, storyData) {
+        return `<div class="story-card">
+            <div style="font-weight:bold;color:var(--A);margin-bottom:10px;">${title}</div>
+            ${storyData.map((s,i) => {
+                const safeTitle = title.replace(/[^A-Za-z0-9_-]/g, '');
+                const id = `secStory_${safeTitle}_${i}`;
+                const wordHtml = makeWordSpans(s.en);
+                return `<div class="sentence" id="${id}" data-speak="${s.en}" onclick="playOne('${id}')">
+                    ${wordHtml}
+                </div> `;
+            }).join('')}
+            <div class="story-ar">${storyData.map(s => s.ar).join(' ')}</div>
+        </div>`;
+    }
+
+    const sections = [];
+
+    // 1. Key Vocabulary Lesson 1
+    if (keyVocabL1 && keyVocabL1.length > 0) {
+        sections.push({ title:"🔑 Key Vocabulary (Lesson 1)", id:"secKeyL1", content: `<div class="info-box"><div class="info-title">Key Vocabulary (Lesson 1)</div><div class="vocab">${makePills(keyVocabL1, "secKeyL1")}</div></div>` });
+    }
+
+    // 2. Reading Vocabulary Lesson 1
+    if (l1Vocab && l1Vocab.length > 0) {
+        sections.push({ title:"📚 Vocabulary on Reading (Lesson 1)", id:"secL1", content: `<div class="info-box"><div class="info-title">Vocabulary on Reading and Listening (Lesson 1)</div><div class="vocab">${makePills(l1Vocab, "secL1")}</div></div>` });
+    }
+
+    // 3. Key Vocabulary Lesson 2
+    if (keyVocabL2 && keyVocabL2.length > 0) {
+        sections.push({ title:"🔑 Key Vocabulary (Lesson 2)", id:"secKeyL2", content: `<div class="info-box"><div class="info-title">Key Vocabulary (Lesson 2)</div><div class="vocab">${makePills(keyVocabL2, "secKeyL2")}</div></div>` });
+    }
+
+    // 4. Reading Vocabulary Lesson 2
+    if (l2Vocab && l2Vocab.length > 0) {
+        sections.push({ title:"📚 Vocabulary on Reading (Lesson 2)", id:"secL2", content: `<div class="info-box"><div class="info-title">Vocabulary on Reading and Listening (Lesson 2)</div><div class="vocab">${makePills(l2Vocab, "secL2")}</div></div>` });
+    }
+
+    // 5. Collocations
+    if (collocationsData && collocationsData.length > 0) {
+        sections.push({ title:"🔗 Collocations", id:"secCollocations", content: `<div class="rules-grid">${collocationsData.map((c,i) => makeRuleItem('🔗', 'secCollocations', i, c[0], c[1], c[0])).join('')}</div>` });
+    }
+
+    // 6. Important Expressions & Prepositions
+    if (expressionsData && expressionsData.length > 0) {
+        sections.push({ title:"📌 Important Expressions & Prepositions", id:"secExpressions", content: `<div class="rules-grid">${expressionsData.map((e,i) => makeRuleItem('📌', 'secExpressions', i, e[0], e[1], e[0])).join('')}</div>` });
+    }
+
+    // 7. Irregular Verbs
+    if (conjData && conjData.length > 0) {
+        sections.push({ title:"⏳ Irregular Verbs", id:"secConj", content: `<div class="rules-grid">${conjData.map((c,i) => {
+            const speakText = c.present + " | " + c.past + " | " + c.pp;
+            return makeRuleItem('🕒', 'secConj', i, speakText, 'مضارع / ماضي / تصريف ثالث', c.present + " → " + c.past + " → " + c.pp);
+        }).join('')}</div>` });
+    }
+
+    // 7. Synonyms
+    if (synData && synData.length > 0) {
+        sections.push({ title:"🔄 Synonyms", id:"secSyn", content: `<div class="rules-grid">${synData.map((s,i) => makeRuleItem('↔️', 'secSyn', i, s.word + " | " + s.syn, s.syn, s.word)).join('')}</div>` });
+    }
+
+    // 8. Antonyms
+    if (antData && antData.length > 0) {
+        sections.push({ title:"🚫 Antonyms", id:"secAnt", content: `<div class="rules-grid">${antData.map((a,i) => makeRuleItem('🛑', 'secAnt', i, a.word + " | " + a.ant, a.ant, a.word)).join('')}</div>` });
+    }
+
+    // 9. Prefixes & Suffixes
+    if (affixData && affixData.length > 0) {
+        sections.push({ title:"🔚 Prefixes & Suffixes", id:"secAffix", content: `<div class="rules-grid">${affixData.map((p,i) => {
+            const speakText = cleanForSpeech(p.word) + " | " + p.affix;
+            return makeRuleItem('🔤', 'secAffix', i, speakText, p.affix + " " + p.func, p.word);
+        }).join('')}</div>` });
+    }
+
+    // 10. Definitions
+    if (defsData && defsData.length > 0) {
+        sections.push({ title:"📝 Definitions", id:"secDefs", content: `<div class="rules-grid">${defsData.map((d,i) => {
+            const speakText = cleanForSpeech(d.word) + " | " + d.def;
+            return makeRuleItem('📖', 'secDefs', i, speakText, d.def, d.word);
+        }).join('')}</div>` });
+    }
+
+    // 12. Reading Text - Everybody's Friend (Lesson 1)
+    if (saraText && saraText.length > 0) {
+        sections.push({ title:"📖 Reading Text (Everybody's Friend - L1)", id:"secReadSara", content: makeStorySection("Everybody's Friend", saraText) });
+    }
+
+    // 12. Reading Text - Good Friends (Lesson 1)
+    if (friendsText && friendsText.length > 0) {
+        sections.push({ title:"📖 Reading Text (Good Friends - L1)", id:"secReadFriends", content: makeStorySection("Good Friends", friendsText) });
+    }
+
+    // 13. Reading Text - An Email about a Visit (Lesson 2)
+    if (omarText && omarText.length > 0) {
+        sections.push({ title:"📖 Reading Text (An Email - L2)", id:"secReadOmar", content: makeStorySection("An Email about a Visit", omarText) });
+    }
+
+    // 14. Dialogue - Making People Feel Welcome (Lesson 2)
+    if (welcomeText && welcomeText.length > 0) {
+        sections.push({ title:"💬 Dialogue (Making People Feel Welcome - L2)", id:"secDialogueWelcome", content: makeStorySection("Making People Feel Welcome", welcomeText) });
+    }
+
+    let html = '';
+    sections.forEach(sec => {
+        html += `<div class="section-block" id="${sec.id}">
+            <div class="sec-title">${sec.title}</div>
+            <div class="sec-body">
+                ${playBar(sec.id)}
+                ${sec.content}
+            </div>
+        </div>`;
+    });
+    container.innerHTML = html;
+}
+
+// ===================== نظام الصوت =====================
+const rateRange = document.getElementById('rateRange');
+const rateBadge = document.getElementById('rateBadge');
+const fabPause = document.getElementById('fabPause');
+
+const savedRate = localStorage.getItem('speechRate') || 1;
+rateRange.value = savedRate;
+rateBadge.textContent = parseFloat(savedRate).toFixed(1)+'x';
+rateRange.addEventListener('input', () => {
+    const val = parseFloat(rateRange.value).toFixed(1);
+    rateBadge.textContent = val+'x';
+    localStorage.setItem('speechRate', val);
+});
+
+let voices = [];
+let voiceLoadAttempt = 0;
+const MAX_VOICE_LOAD_ATTEMPTS = 6;
+const VOICE_RETRY_DELAYS = [0, 150, 400, 800, 1500, 2500];
+
+const normalizeVoiceLang = (lang) => String(lang || '').replace('_', '-');
+const isVoiceLangMatch = (voiceLang, targetLang) => {
+    const normalized = normalizeVoiceLang(voiceLang).toLowerCase();
+    const target = targetLang.toLowerCase();
+    return normalized === target || normalized.startsWith(target + '-');
+};
+const voiceQualityScore = (voice) => {
+    const name = String(voice.name || '').toLowerCase();
+    let score = 0;
+    if (name.includes('google')) score += 30;
+    if (name.includes('microsoft')) score += 25;
+    if (name.includes('samantha')) score += 20;
+    if (voice.localService) score += 2;
+    return score;
+};
+const sortVoicesByQuality = (voiceList) => [...voiceList].sort((a, b) => {
+    const scoreDifference = voiceQualityScore(b) - voiceQualityScore(a);
+    return scoreDifference || String(a.name || '').localeCompare(String(b.name || ''));
+});
+
+function loadVoices() {
+    const availableVoices = window.speechSynthesis.getVoices();
+    if (availableVoices.length) {
+        voices = availableVoices;
+        voiceLoadAttempt = 0;
+        populateVoiceSelect();
+        return;
+    }
+
+    if (voiceLoadAttempt < MAX_VOICE_LOAD_ATTEMPTS) {
+        const delay = VOICE_RETRY_DELAYS[voiceLoadAttempt] || VOICE_RETRY_DELAYS[VOICE_RETRY_DELAYS.length - 1];
+        voiceLoadAttempt++;
+        window.setTimeout(loadVoices, delay);
+    }
+}
+
+function populateVoiceSelect() {
+    const vs = document.getElementById('voiceSelect');
+    const note = document.getElementById('voiceNote');
+    if (!vs || !voices.length) return;
+
+    const englishVoices = voices.filter(v =>
+        isVoiceLangMatch(v.lang, 'en-US') || isVoiceLangMatch(v.lang, 'en-GB')
+    );
+    const displayedVoices = englishVoices.length ? sortVoicesByQuality(englishVoices) :
+        sortVoicesByQuality(voices.filter(v => normalizeVoiceLang(v.lang).toLowerCase().startsWith('en')));
+
+    if (!displayedVoices.length) {
+        note.textContent = '⚠️ No English voice found.';
+        return;
+    }
+
+    note.textContent = englishVoices.length ? '' : '⚠️ No US/UK voice found; showing English voices.';
+    const savedURI = localStorage.getItem('voiceURI');
+    const savedLang = localStorage.getItem('voiceLang');
+    vs.innerHTML = displayedVoices.map((voice) => {
+        const lang = normalizeVoiceLang(voice.lang);
+        const label = `${isVoiceLangMatch(lang, 'en-US') ? '🇺🇸 American' : isVoiceLangMatch(lang, 'en-GB') ? '🇬🇧 British' : 'English'} — ${voice.name} (${lang})`;
+        const option = document.createElement('option');
+        option.value = voice.voiceURI;
+        option.textContent = label;
+        option.dataset.lang = lang;
+        return option.outerHTML;
+    }).join('');
+
+    const savedOption = [...vs.options].find(option => option.value === savedURI) ||
+        [...vs.options].find(option => option.dataset.lang === savedLang);
+    vs.value = savedOption ? savedOption.value : vs.options[0].value;
+    const selected = voices.find(v => v.voiceURI === vs.value) || displayedVoices[0];
+    localStorage.setItem('voiceURI', selected.voiceURI);
+    localStorage.setItem('voiceLang', normalizeVoiceLang(selected.lang));
+}
+
+document.getElementById('voiceSelect').addEventListener('change', function() {
+    const selected = voices.find(v => v.voiceURI === this.value);
+    if (selected) {
+        localStorage.setItem('voiceURI', selected.voiceURI);
+        localStorage.setItem('voiceLang', normalizeVoiceLang(selected.lang));
+    }
+});
+
+function getSelectedVoice() {
+    const select = document.getElementById('voiceSelect');
+    const savedURI = localStorage.getItem('voiceURI');
+    const savedLang = localStorage.getItem('voiceLang');
+    const selectedURI = savedURI || (select && select.value);
+    return voices.find(v => v.voiceURI === selectedURI) ||
+        voices.find(v => savedLang && normalizeVoiceLang(v.lang) === savedLang) ||
+        voices.find(v => select && v.voiceURI === select.value) || null;
+}
+
+window._q = []; window._qi = 0;
+window._currentUtterance = null;
+let currentHighlightedId = null;
+
+function clearAllHighlights() {
+    document.querySelectorAll('.active-sent').forEach(e => e.classList.remove('active-sent'));
+    currentHighlightedId = null;
+}
+
+function showFab(show) {
+    if (show) fabPause.classList.add('show');
+    else fabPause.classList.remove('show');
+}
+
+function updateFabIcon() {
+    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+        fabPause.innerHTML = '⏸️';
+    } else if (window.speechSynthesis.paused) {
+        fabPause.innerHTML = '▶️';
+    } else {
+        fabPause.innerHTML = '⏯️';
+    }
+}
+
+function playQueue() {
+    if (window._qi >= window._q.length) {
+        clearAllHighlights();
+        showFab(false);
+        return;
+    }
+    const item = window._q[window._qi];
+    
+    if (currentHighlightedId !== item.id) {
+        clearAllHighlights();
+        const el = document.getElementById(item.id);
+        if (el) {
+            el.classList.add('active-sent');
+            el.scrollIntoView({behavior:'smooth',block:'nearest'});
+            currentHighlightedId = item.id;
+        }
+    }
+
+    const u = new SpeechSynthesisUtterance(item.text);
+    u.rate = parseFloat(rateRange.value) || 1;
+    const voice = getSelectedVoice();
+    // Set the language explicitly; several browsers otherwise ignore the selected voice.
+    u.lang = voice ? normalizeVoiceLang(voice.lang) : (localStorage.getItem('voiceLang') || 'en-US');
+    if (voice) u.voice = voice;
+
+    u.onstart = () => {
+        showFab(true);
+        updateFabIcon();
+    };
+
+    u.onend = function() {
+        window._qi++;
+        playQueue();
+    };
+
+    u.onerror = function(e) {
+        console.warn('Speech error', e);
+        window._qi++;
+        playQueue();
+    };
+
+    u.onpause = () => updateFabIcon();
+    u.onresume = () => updateFabIcon();
+
+    window._currentUtterance = u;
+    window.speechSynthesis.speak(u);
+}
+
+function splitAndQueue(textParts, id) {
+    textParts.forEach((p) => {
+        const trimmed = p.trim();
+        if (trimmed) {
+            window._q.push({id: id, text: trimmed});
+        }
+    });
+}
+
+function playSection(secId) {
+    stopAll();
+    const sec = document.getElementById(secId);
+    const els = [...sec.querySelectorAll('[data-speak]')];
+    els.forEach(el => {
+        const text = el.dataset.speak;
+        const parts = text.split('|').map(p => p.trim());
+        splitAndQueue(parts, el.id);
+    });
+    window._qi = 0;
+    playQueue();
+}
+
+function playAll() {
+    stopAll();
+    const els = [...document.querySelectorAll('[data-speak]')];
+    els.forEach(el => {
+        const text = el.dataset.speak;
+        const parts = text.split('|').map(p => p.trim());
+        splitAndQueue(parts, el.id);
+    });
+    window._qi = 0;
+    playQueue();
+}
+
+function playOne(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const text = el.dataset.speak;
+    
+    stopAll();
+    const parts = text.split('|').map(p => p.trim());
+    splitAndQueue(parts, id);
+    window._qi = 0;
+    playQueue();
+}
+
+function pauseAll() {
+    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+        window.speechSynthesis.pause();
+        updateFabIcon();
+    } else if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        updateFabIcon();
+    }
+}
+
+function stopAll() {
+    window._q = []; window._qi = 0;
+    clearAllHighlights();
+    window.speechSynthesis.cancel();
+    showFab(false);
+}
+
+function toggleFabPause() {
+    pauseAll();
+}
+
+// ===================== الثيمات =====================
+function setTheme(theme, btn) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    localStorage.setItem('theme', theme);
+}
+const savedTheme = localStorage.getItem('theme') || 'teal';
+document.documentElement.setAttribute('data-theme', savedTheme);
+document.querySelectorAll('.theme-btn').forEach(b => {
+    if (b.classList.contains('t-'+savedTheme)) b.classList.add('active');
+});
+
+// ===================== بدء التشغيل =====================
+buildAllSections();
+loadVoices();
+if (speechSynthesis.onvoiceschanged !== undefined) speechSynthesis.onvoiceschanged = loadVoices;
+</script>
+</body>
+</html>
