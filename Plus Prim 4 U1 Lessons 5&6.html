@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html><html lang="ar" dir="ltr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Writing paragraphs / Project</title><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#eef7ff;--card:#fff;--accent:#0569b3;--dark:#034a80;--highlight:#fff0a8;--speak:#075985;--button:#f2b705;--button-shadow:#bd8500;--text:#1f2937;--muted:#475569;--border:#76b9e8;--soft:#e4f2ff;--row:#f7fbff;--reading:#fffdf2;--glow:#ffd43b;--shadow:rgba(3,74,128,.16)}
+*{box-sizing:border-box}body{font-family:Cairo,Arial,sans-serif;background:radial-gradient(circle at 8% 4%,rgba(255,213,79,.28),transparent 22%),radial-gradient(circle at 95% 0%,rgba(118,185,232,.28),transparent 28%),var(--bg);margin:0;padding:20px;text-align:center;color:var(--text)}
+.container{max-width:1100px;margin:0 auto 50px;background:var(--card);border:4px solid var(--accent);border-radius:25px;box-shadow:0 18px 40px var(--shadow);padding:40px}
+h1{color:var(--accent);font-size:2.5em;margin:0 0 8px}h2{color:var(--dark);border-bottom:2px solid var(--border);display:inline-block;padding-bottom:5px;margin:0 0 8px}.lesson-badge{display:inline-block;padding:6px 18px;border-radius:20px;background:var(--accent);color:#fff;font-weight:700;margin:8px 0 12px}
+h3{background:linear-gradient(135deg,var(--highlight),var(--soft));border-right:7px solid var(--accent);color:var(--dark);padding:12px 16px;border-radius:10px;margin:30px 0 12px;text-align:right;direction:ltr;font-size:1.38em}.section-number{color:var(--accent);font-weight:800}
+.speech-controls{background:var(--soft);border:1px solid var(--border);padding:15px;border-radius:15px;margin-bottom:18px;display:flex;flex-wrap:wrap;justify-content:center;gap:15px;align-items:center}.control-group{display:flex;align-items:center;gap:8px;font-weight:700}#speed-value{min-width:35px;color:var(--accent)}select{padding:5px 8px;border:1px solid var(--border);border-radius:8px;background:#fff}.theme-switcher{display:flex;gap:8px;align-items:center}.theme-dot{width:26px;height:26px;border-radius:50%;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1px #999}.theme-dot.active{box-shadow:0 0 0 2px #111827}
+.table-wrap{width:100%;overflow:visible}table{width:100%;min-width:0;table-layout:fixed;border-collapse:separate;border-spacing:0;margin-top:12px;text-align:right;border-radius:15px;overflow:hidden;box-shadow:0 5px 14px var(--shadow)}th,td{border:1px solid var(--border);padding:10px 11px;vertical-align:middle;overflow-wrap:anywhere}th{background:var(--accent);color:#fff;font-size:1.02em}td:nth-child(odd){background:var(--row)}td:nth-child(even){background:#fff}.english-cell{text-align:left!important;direction:ltr!important}.arabic-cell{text-align:right!important;direction:rtl!important}
+.play-btn{background:var(--button);color:#17202a;border:0;padding:11px 22px;border-radius:12px;cursor:pointer;font-size:1.03em;font-weight:700;box-shadow:0 5px var(--button-shadow);margin:8px 0 12px}.play-btn:active{transform:translateY(3px);box-shadow:0 2px var(--button-shadow)}.text-play-btn{display:block;margin-left:auto;margin-right:auto}
+.vocab-element,.english-sentence,.dialogue-text{cursor:pointer;transition:.2s;padding:4px 8px;border-radius:5px;display:inline-block;font-family:Roboto,Arial,sans-serif;font-weight:700;color:#123b68;border:2px solid transparent;direction:ltr!important;text-align:left;max-width:100%;overflow-wrap:anywhere}.vocab-element:hover,.english-sentence:hover,.dialogue-text:hover{background:var(--highlight)}.english-sentence{display:block;margin-bottom:4px;color:#111827;line-height:1.55}.speaking-highlight{background:var(--speak)!important;color:#fff!important;border-color:var(--glow)!important;box-shadow:0 0 15px var(--glow);transform:scale(1.01)}
+.arabic-translation{display:block;text-align:right;direction:rtl!important;color:var(--muted);border-bottom:1px dashed #cbd5e1;margin-bottom:12px;padding:3px 8px 6px;font-size:1.02em;font-weight:700}.reading-block{margin-bottom:16px;padding:17px 20px;background:var(--reading);border:1px solid var(--border);border-radius:12px;text-align:left}.reading-heading{color:var(--accent);font-size:1.25em;font-weight:700;margin:0 0 8px;text-align:left;direction:ltr}.dialogue-line{margin:8px 0;text-align:left;direction:ltr}.speaker{display:inline-block;min-width:75px;font-weight:700;color:var(--accent)}.speaker.alt{color:#a21caf}.floating-stop-btn{position:fixed;bottom:25px;right:25px;z-index:1000;background:#d32f2f;color:#fff;border:0;border-radius:50%;width:64px;height:64px;font-size:1.6em;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+@media(max-width:700px){body{padding:10px}.container{padding:20px 15px;border-radius:18px}h1{font-size:1.75em}h3{font-size:1.1em;padding:10px}.speech-controls{padding:10px;gap:10px}.control-group{font-size:.9em}table{width:100%;min-width:0;table-layout:fixed}th,td{padding:8px 6px;font-size:.9em;word-break:normal;overflow-wrap:anywhere}.play-btn{width:100%;padding:10px 18px}.reading-block{padding:12px}.floating-stop-btn{width:52px;height:52px;font-size:1.3em;bottom:15px;right:15px}}
+@media(max-width:420px){th,td{padding:6px 4px;font-size:.78em}h1{font-size:1.45em}.speaker{min-width:60px}.vocab-element,.english-sentence,.dialogue-text{padding:3px 5px}}
+</style></head><body><div class="container"><div class="lesson-badge">PLUS PRIM 4 • UNIT 1 • LESSONS 5 &amp; 6</div><h1 id="main-title">Writing paragraphs / Project</h1><h2 id="sub-title">WHAT CAN I DO?</h2><div class="speech-controls"><div class="control-group"><label>🗣️ اللكنة:</label><select id="voice-select"><option value="en-US">American (US) 🇺🇸</option><option value="en-GB">British (UK) 🇬🇧</option></select></div><div class="control-group"><label>⚡ السرعة:</label><input type="range" id="speed-slider" min="0.5" max="1.2" value="0.9" step="0.1"><span id="speed-value">0.9x</span></div><div class="theme-switcher"><label>🎨</label><span class="theme-dot active" data-theme="blue" style="background:#0569b3" title="Blue"></span><span class="theme-dot" data-theme="yellow" style="background:#d89000" title="Yellow"></span><span class="theme-dot" data-theme="purple" style="background:#9333a8" title="Purple"></span></div></div><button id="play-all-vocab-btn" class="play-btn">▶️ نطق جميع الكلمات والتعبيرات</button><div id="lesson-content"></div></div><button id="stop-btn" class="floating-stop-btn" title="إيقاف النطق">⏹️</button><script>
+const lessonId="unit1_lessons5_6",data={"lesson_title": "Writing paragraphs / Project", "unit_title": "WHAT CAN I DO?", "lessons_label": "LESSONS 5 & 6", "section_order": ["key_vocabulary", "extra_vocabulary", "verbs", "expressions", "main_points", "texts"], "key_vocabulary": [{"en": "exercise", "ar": "يتدرب / تدريب"}, {"en": "healthy diet", "ar": "نظام غذائى صحى"}, {"en": "mental", "ar": "عقلى"}, {"en": "range", "ar": "سلسلة / مجموعة"}, {"en": "unhealthy habits", "ar": "عادات غير صحية"}, {"en": "summer camp", "ar": "معسكر صيفى"}, {"en": "physical", "ar": "بدنى / جسدى"}, {"en": "tips", "ar": "نصائح"}], "activities": [], "extra_vocabulary": [{"en": "routine", "ar": "نظام يومى"}, {"en": "snack", "ar": "وجبة خفيفة"}, {"en": "especially", "ar": "خصوصًا"}, {"en": "video games", "ar": "ألعاب فيديو"}, {"en": "nervous system", "ar": "الجهاز العصبى"}, {"en": "active", "ar": "نشيط"}, {"en": "fat", "ar": "دهون"}, {"en": "sugar", "ar": "سكر"}, {"en": "clear", "ar": "واضح"}, {"en": "unimportant information", "ar": "معلومات غير هامة"}, {"en": "mixture", "ar": "خليط"}, {"en": "aged", "ar": "ذو عمر / سن"}], "main_points": [{"topic": "Eat well and be healthy!", "word": "diet - fresh", "sentence": "A good diet includes lots of fresh food and plenty of water."}, {"topic": "Eat well and be healthy!", "word": "brain", "sentence": "Our brain needs water to work well."}, {"topic": "Eat well and be healthy!", "word": "carbohydrates - energy", "sentence": "Carbohydrates like bread, rice and pasta give us energy."}, {"topic": "Eat well and be healthy!", "word": "cakes - sweets", "sentence": "Too much sugar in cakes and sweets isn't good for us."}, {"topic": "Eat well and be healthy!", "word": "protein - grow", "sentence": "Protein in fish, cheese, eggs, and nuts helps us grow."}], "texts": [
+  {
+    "type": "reading",
+    "title": "How to start an exercise routine",
+    "paragraphs": [
+      {
+        "en": "Starting an exercise routine is hard, but it's a good idea to try to do some exercise three to five times a week.",
+        "ar": "بدء روتين تمارين أمر صعب، لكنها فكرة جيدة أن تحاول القيام ببعض التمارين من ثلاث إلى خمس مرات في الأسبوع."
+      },
+      {
+        "en": "It's easier if you find a sport you enjoy doing, perhaps something you can do with friends.",
+        "ar": "يكون الأمر أسهل إذا وجدت رياضة تستمتع بممارستها، ربما شيئاً يمكنك القيام به مع الأصدقاء."
+      },
+      {
+        "en": "Find a time that is easy for everyone in your family.",
+        "ar": "ابحث عن وقت سهل للجميع في عائلتك."
+      }
+    ],
+    "dialogue": []
+  },
+  {
+    "type": "reading",
+    "title": "Tips for a healthy diet",
+    "paragraphs": [
+      {
+        "en": "Eating the right food is very important for our health.",
+        "ar": "تناول الطعام الصحيح مهم جداً لصحتنا."
+      },
+      {
+        "en": "We need a range of different kinds of food, with lots of vitamins and minerals.",
+        "ar": "نحن بحاجة إلى مجموعة من أنواع مختلفة من الطعام، مع الكثير من الفيتامينات والمعادن."
+      },
+      {
+        "en": "We shouldn't eat too much sugar or fat, but fruit and vegetables are healthy choices.",
+        "ar": "لا ينبغي لنا أن نأكل الكثير من السكر أو الدهون، لكن الفاكهة والخضروات خيارات صحية."
+      },
+      {
+        "en": "It's important to drink lots of water, too, especially on hot days.",
+        "ar": "من المهم شرب الكثير من الماء أيضاً، خاصة في الأيام الحارة."
+      }
+    ],
+    "dialogue": []
+  },
+  {
+    "type": "reading",
+    "title": "Unhealthy habits",
+    "paragraphs": [
+      {
+        "en": "It's fun to play video games sometimes, but it's good to be active as well.",
+        "ar": "من الممتع لعب ألعاب الفيديو أحياناً، ولكن من الجيد أن تكون نشيطاً أيضاً."
+      },
+      {
+        "en": "Sitting still for a long time isn't good for your health.",
+        "ar": "الجلوس ساكناً لفترة طويلة ليس جيداً لصحتك."
+      },
+      {
+        "en": "Sometimes people eat more unhealthy snacks when they are watching TV or playing on the computer.",
+        "ar": "أحياناً يأكل الناس المزيد من الوجبات الخفيفة غير الصحية عندما يشاهدون التلفزيون أو يلعبون على الكمبيوتر."
+      },
+      {
+        "en": "Try not to develop unhealthy habits.",
+        "ar": "حاول ألا تطور عادات غير صحية."
+      }
+    ],
+    "dialogue": []
+  },
+  {
+    "type": "reading",
+    "title": "Eat well and be healthy !",
+    "paragraphs": [
+      {
+        "en": "We all need to eat a good diet to stay healthy.",
+        "ar": "نحتاج جميعاً إلى تناول نظام غذائي جيد للبقاء بصحة جيدة."
+      },
+      {
+        "en": "But what is a good diet ?",
+        "ar": "ولكن ما هو النظام الغذائي الجيد؟"
+      },
+      {
+        "en": "A good diet includes lots of fresh food and plenty of water to drink.",
+        "ar": "يشتمل النظام الغذائي الجيد على الكثير من الأطعمة الطازجة والكثير من الماء للشرب."
+      },
+      {
+        "en": "Our brain is about 75 % water and it needs water to work well.",
+        "ar": "يتكون دماغنا من حوالي ٧٥٪ ماء ويحتاج إلى الماء ليعمل بشكل جيد."
+      },
+      {
+        "en": "We should eat fresh fruit and vegetables because they have a lot of fiber and are full of vitamins and minerals.",
+        "ar": "يجب أن نأكل الفاكهة والخضروات الطازجة لأنها تحتوي على الكثير من الألياف ومليئة بالفيتامينات والمعادن."
+      },
+      {
+        "en": "We need these for healthy skin, muscles, bones, and teeth.",
+        "ar": "نحتاج إلى هذه من أجل بشرة وعضلات وعظام وأسنان صحية."
+      },
+      {
+        "en": "We should eat plenty of protein too, as this helps us grow.",
+        "ar": "يجب أن نتناول الكثير من البروتين أيضاً، لأن هذا يساعدنا على النمو."
+      },
+      {
+        "en": "Foods with protein include fish, cheese, eggs, beans, nuts, and meat.",
+        "ar": "تشمل الأطعمة التي تحتوي على البروتين السمك والجبن والبيض والفاصوليا والمكسرات واللحوم."
+      },
+      {
+        "en": "We need fats for a healthy nervous system and these include nuts, oily fish, oil, and butter.",
+        "ar": "نحتاج إلى الدهون من أجل جهاز عصبي صحي وتشمل المكسرات والأسماك الزيتية والزيت والزبدة."
+      },
+      {
+        "en": "Carbohydrates like bread, rice, and pasta give us energy.",
+        "ar": "الكربوهيدرات مثل الخبز والأرز والمكرونة تمنحنا الطاقة."
+      },
+      {
+        "en": "Sugar also gives us energy, but too much sugar isn't good for us.",
+        "ar": "السكر أيضاً يمنحنا الطاقة، لكن الكثير من السكر ليس جيداً لنا."
+      },
+      {
+        "en": "Sugar is in cakes, cookies, and candy, so try not to have too much of these.",
+        "ar": "يوجد السكر في الكيك والبسكويت والحلوى، لذا حاول ألا تتناول الكثير منها."
+      },
+      {
+        "en": "Eat a good diet with lots of different fresh food, and you'll be healthy.",
+        "ar": "تناول نظاماً غذائياً جيداً مع الكثير من الأطعمة الطازجة المختلفة، وستكون بصحة جيدة."
+      }
+    ],
+    "dialogue": []
+  },
+  {
+    "type": "reading",
+    "title": "Summer camp !",
+    "paragraphs": [
+      {
+        "en": "To lead a healthy life, we need a mixture of physical and mental activities.",
+        "ar": "لعيش حياة صحية، نحتاج إلى مزيج من الأنشطة البدنية والعقلية."
+      },
+      {
+        "en": "Physical activity is good for your body.",
+        "ar": "النشاط البدني جيد لجسمك."
+      },
+      {
+        "en": "It makes your muscles strong and helps us use up the calories we get from food.",
+        "ar": "إنه يجعل عضلاتك قوية ويساعدنا على استهلاك السعرات الحرارية التي نحصل عليها من الطعام."
+      },
+      {
+        "en": "Mental activities are good for your brain.",
+        "ar": "الأنشطة العقلية جيدة لدماغك."
+      },
+      {
+        "en": "When you draw, paint, write, or play an instrument, you really focus on the creative activity, so you relax.",
+        "ar": "عندما ترسم أو تلون أو تكتب أو تعزف على آلة موسيقية، فإنك تركز حقاً على النشاط الإبداعي، وبذلك تسترخي."
+      },
+      {
+        "en": "Come to our three-day summer camp. Play sports and learn new skills. Make friends and have fun !",
+        "ar": "تعال إلى معسكرنا الصيفي الذي يستمر ثلاثة أيام. مارس الرياضة وتعلم مهارات جديدة. كون صداقات واستمتع!"
+      }
+    ],
+    "dialogue": []
+  }
+], "verbs": [{"present": "organize", "past": "organized", "pp": "organized", "ar": "ينظم"}, {"present": "develop", "past": "developed", "pp": "developed", "ar": "ينمى"}, {"present": "summarize", "past": "summarized", "pp": "summarized", "ar": "يلخص"}, {"present": "stay", "past": "stayed", "pp": "stayed", "ar": "يبقى"}, {"present": "try", "past": "tried", "pp": "tried", "ar": "يحاول"}, {"present": "find", "past": "found", "pp": "found", "ar": "يجد"}, {"present": "write", "past": "wrote", "pp": "written", "ar": "يكتب"}, {"present": "give", "past": "gave", "pp": "given", "ar": "يعطى"}], "definitions": [], "expressions": [{"en": "do exercise", "ar": "يتدرب"}, {"en": "easy for", "ar": "سهل لـ"}, {"en": "plan for", "ar": "يخطط لـ"}, {"en": "as well", "ar": "أيضًا"}, {"en": "sitting still", "ar": "الجلوس بدون حركة"}, {"en": "make friends", "ar": "يكون صداقات"}, {"en": "plenty of", "ar": "كمية وفيرة من"}]},synth=window.speechSynthesis;let voices=[],queue=[],playing=false,current=null;
+const themes={blue:{a:'#0569b3',d:'#034a80',h:'#fff0a8',s:'#075985',b:'#f2b705',bs:'#bd8500',br:'#76b9e8',bg:'#eef7ff',so:'#e4f2ff',ro:'#f7fbff',rd:'#fffdf2',g:'#ffd43b',sh:'rgba(3,74,128,.16)'},yellow:{a:'#b45309',d:'#7c2d12',h:'#fde68a',s:'#92400e',b:'#f59e0b',bs:'#b45309',br:'#f5c451',bg:'#fffbeb',so:'#fef3c7',ro:'#fffdf2',rd:'#fffaf0',g:'#fb7185',sh:'rgba(146,64,14,.16)'},purple:{a:'#9333a8',d:'#701a75',h:'#f5d0fe',s:'#86198f',b:'#d946ef',bs:'#a21caf',br:'#d8a4e3',bg:'#fdf4ff',so:'#fae8ff',ro:'#fffaff',rd:'#fff8ff',g:'#f0abfc',sh:'rgba(112,26,117,.16)'}};
+function theme(n){const t=themes[n],r=document.documentElement.style;r.setProperty('--accent',t.a);r.setProperty('--dark',t.d);r.setProperty('--highlight',t.h);r.setProperty('--speak',t.s);r.setProperty('--button',t.b);r.setProperty('--button-shadow',t.bs);r.setProperty('--border',t.br);r.setProperty('--bg',t.bg);r.setProperty('--soft',t.so);r.setProperty('--row',t.ro);r.setProperty('--reading',t.rd);r.setProperty('--glow',t.g);r.setProperty('--shadow',t.sh)}
+function lang(){return document.getElementById('voice-select').value||'en-US'}function loadVoices(){voices=synth.getVoices()}function clear(){if(current)current.classList.remove('speaking-highlight');current=null}function stop(){synth.cancel();queue=[];playing=false;clear()}function say(text,el){if(!text)return;stop();const u=new SpeechSynthesisUtterance(text);u.lang=lang();const v=voices.find(x=>x.lang.toLowerCase()===lang().toLowerCase())||voices.find(x=>x.lang.toLowerCase().startsWith(lang().split('-')[0]));if(v)u.voice=v;u.rate=parseFloat(document.getElementById('speed-slider').value);if(el){el.classList.add('speaking-highlight');current=el;el.scrollIntoView({behavior:'smooth',block:'center'})}u.onend=clear;u.onerror=clear;synth.speak(u)}
+function play(items){stop();if(!items.length)return;queue=[...items];playing=true;let i=0;function next(){if(!playing||i>=queue.length){playing=false;clear();return}const el=queue[i++],text=el.innerText.trim();if(!text){next();return}const u=new SpeechSynthesisUtterance(text);u.lang=lang();const v=voices.find(x=>x.lang.toLowerCase()===lang().toLowerCase())||voices.find(x=>x.lang.toLowerCase().startsWith(lang().split('-')[0]));if(v)u.voice=v;u.rate=parseFloat(document.getElementById('speed-slider').value);el.classList.add('speaking-highlight');current=el;el.scrollIntoView({behavior:'smooth',block:'center'});u.onend=()=>{clear();next()};u.onerror=()=>{clear();next()};synth.speak(u)}next()}
+function cell(text,cls='vocab-element'){const s=document.createElement('span');s.className=cls;s.innerText=text;s.onclick=()=>say(text,s);return s}
+function pairTable(items,headers){const w=document.createElement('div');w.className='table-wrap';const t=document.createElement('table'),head=document.createElement('thead'),tr=document.createElement('tr');headers.forEach(x=>{const th=document.createElement('th');th.innerText=x;tr.appendChild(th)});head.appendChild(tr);t.appendChild(head);const body=document.createElement('tbody');items.forEach(x=>{const r=document.createElement('tr'),en=document.createElement('td');en.className='english-cell';en.appendChild(cell(x.en));const ar=document.createElement('td');ar.className='arabic-cell';ar.innerText=x.ar;r.append(en,ar);body.appendChild(r)});t.appendChild(body);w.appendChild(t);return w}
+function mainPoints(items){const w=document.createElement('div');w.className='table-wrap';const t=document.createElement('table'),h=document.createElement('thead'),r=document.createElement('tr');['Topic','Guiding word','Sentence'].forEach(x=>{const th=document.createElement('th');th.innerText=x;r.appendChild(th)});h.appendChild(r);t.appendChild(h);const b=document.createElement('tbody');items.forEach(x=>{const tr=document.createElement('tr');const a=document.createElement('td');a.className='english-cell';a.innerText=x.topic;const c=document.createElement('td');c.className='english-cell';c.appendChild(cell(x.word));const d=document.createElement('td');d.className='english-cell';d.appendChild(cell(x.sentence,'english-sentence'));tr.append(a,c,d);b.appendChild(tr)});t.appendChild(b);w.appendChild(t);return w}
+function verbs(items){const w=document.createElement('div');w.className='table-wrap';const t=document.createElement('table'),h=document.createElement('thead'),r=document.createElement('tr');['Present\nالمضارع','Past\nالماضي','P.P.\nالتصريف الثالث','المعنى'].forEach(x=>{const th=document.createElement('th');th.innerText=x;r.appendChild(th)});h.appendChild(r);t.appendChild(h);const b=document.createElement('tbody');items.forEach(x=>{const tr=document.createElement('tr');['present','past','pp'].forEach(k=>{const td=document.createElement('td');td.className='english-cell';td.appendChild(cell(x[k]));tr.appendChild(td)});const ar=document.createElement('td');ar.className='arabic-cell';ar.innerText=x.ar;tr.appendChild(ar);b.appendChild(tr)});t.appendChild(b);w.appendChild(t);return w}
+function defs(items){const w=document.createElement('div');w.className='table-wrap';const t=document.createElement('table'),h=document.createElement('thead'),r=document.createElement('tr');['Word\nالكلمة','Definition\nالتعريف'].forEach(x=>{const th=document.createElement('th');th.innerText=x;r.appendChild(th)});h.appendChild(r);t.appendChild(h);const b=document.createElement('tbody');items.forEach(x=>{const tr=document.createElement('tr');const a=document.createElement('td');a.className='english-cell';a.appendChild(cell(x.word));const d=document.createElement('td');d.className='english-cell';d.appendChild(cell(x.definition));tr.append(a,d);b.appendChild(tr)});t.appendChild(b);w.appendChild(t);return w}
+function textBlock(x){const box=document.createElement('div');box.className='reading-block';const title=document.createElement('div');title.className='reading-heading';title.innerText=x.title;box.appendChild(title);const items=[];const btn=document.createElement('button');btn.className='play-btn text-play-btn';btn.innerText=x.type==='dialogue'?'▶️ نطق المحادثة كاملة':'▶️ نطق النص كاملًا';box.appendChild(btn);(x.paragraphs||[]).forEach(p=>{const line=document.createElement('div');if(p.heading){const hh=document.createElement('div');hh.className='reading-heading';hh.innerText=p.heading;line.appendChild(hh)}if(p.en){const en=cell(p.en,'english-sentence');line.appendChild(en);items.push(en)}if(p.ar){const ar=document.createElement('span');ar.className='arabic-translation';ar.innerText=p.ar;line.appendChild(ar)}box.appendChild(line)});(x.dialogue||[]).forEach(p=>{const line=document.createElement('div');line.className='dialogue-line';const sp=document.createElement('span');sp.className='speaker'+(p.speaker.toLowerCase().includes('hesham')?' alt':'');sp.innerText=p.speaker+':';const en=cell(p.en,'dialogue-text');line.append(sp,en);const ar=document.createElement('span');ar.className='arabic-translation';ar.innerText=p.ar;line.appendChild(ar);box.appendChild(line);items.push(en)});btn.onclick=()=>play(items);return box}
+const labels={key_vocabulary:'📚 Key Vocabulary (الكلمات الأساسية)',activities:'🎨 Activities & Arts (الأنشطة والفنون)',extra_vocabulary:'➕ Extra Vocabulary (مفردات إضافية)',main_points:'🔗 Main Points on Listening and Reading Texts (نقاط هامة على نصوص الاستماع والقراءة)',texts:'📖 Listening and Reading Texts (نصوص الاستماع والقراءة)',verbs:'🔄 Conjugation of Irregular Verbs (تصريف الأفعال غير المنتظمة)',definitions:'📘 Study These Definitions (ادرس تلك التعريفات)',expressions:'🔗 Important Expressions and Prepositions (تعبيرات وحروف جر هامة)'};
+const content=document.getElementById('lesson-content'),all=[];let n=0;data.section_order.forEach(key=>{const val=data[key];if(!val||!val.length)return;const h=document.createElement('h3');h.innerHTML='<span class="section-number">'+(++n)+'.</span> '+(labels[key]||key);content.appendChild(h);if(key==='key_vocabulary'||key==='activities'||key==='extra_vocabulary'){const node=pairTable(val,['English','المعنى']);content.appendChild(node);val.forEach(x=>all.push(...[x.en].map(t=>cell(t))))}else if(key==='main_points'){content.appendChild(mainPoints(val))}else if(key==='verbs'){content.appendChild(verbs(val))}else if(key==='definitions'){content.appendChild(defs(val));val.forEach(x=>{all.push(cell(x.word));all.push(cell(x.definition))})}else if(key==='expressions'){content.appendChild(pairTable(val,['English','المعنى']))}else if(key==='texts'){val.forEach(x=>content.appendChild(textBlock(x)))}});
+document.getElementById('play-all-vocab-btn').onclick=()=>{const els=[...document.querySelectorAll('#lesson-content .vocab-element')];play(els)};document.getElementById('stop-btn').onclick=stop;document.getElementById('voice-select').onchange=()=>localStorage.setItem(lessonId+'_voice',lang());document.getElementById('speed-slider').oninput=e=>{document.getElementById('speed-value').innerText=e.target.value+'x';localStorage.setItem(lessonId+'_speed',e.target.value)};document.querySelectorAll('.theme-dot').forEach(d=>d.onclick=()=>{document.querySelectorAll('.theme-dot').forEach(x=>x.classList.remove('active'));d.classList.add('active');theme(d.dataset.theme);localStorage.setItem(lessonId+'_theme',d.dataset.theme)});const savedTheme=localStorage.getItem(lessonId+'_theme')||'blue',savedSpeed=localStorage.getItem(lessonId+'_speed')||'0.9',savedVoice=localStorage.getItem(lessonId+'_voice')||'en-US';theme(savedTheme);document.getElementById('speed-slider').value=savedSpeed;document.getElementById('speed-value').innerText=savedSpeed+'x';document.getElementById('voice-select').value=savedVoice;loadVoices();if(synth.onvoiceschanged!==undefined)synth.onvoiceschanged=loadVoices;
+</script></body></html>
