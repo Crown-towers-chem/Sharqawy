@@ -1,0 +1,267 @@
+﻿<div style="position:sticky; top:0; background-color:#ffffff; padding:15px 0; text-align:center; font-family:Arial, sans-serif; box-shadow:0 4px 6px rgba(0,0,0,0.1); z-index:1000; display:flex; flex-direction:column; align-items:center;">
+  <h3 style="margin:2px 0; color:#333; text-align:center;">Mr. Ameen Sharqawy</h2>
+
+  <div style="margin-top:8px;">
+    <a href="tel:+201279217092" style="display:inline-block; background-color:#007BFF; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      📞 01279217092
+    </a>
+    <a href="https://wa.me/+201279217092" target="_blank" style="display:inline-block; background-color:#25D366; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      💬 تواصل عبر الواتس
+    </a>
+  </div>
+</div><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: Greetings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;700;800&family=Changa:wght@300;400;600;700&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root{--bg:#FFF8F0;--fg:#2D2A26;--muted:#8A8279;--accent:#FF6B35;--accent2:#04A777;--card:#FFFFFF;--border:#F0E6D8;--shadow:0 8px 32px rgba(45,42,38,.10);--primary:#4a90e2;--secondary:#6c5ce7;--highlight:#fff9c4;--success:#00b894;--danger:#ff7675}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Changa',sans-serif;background:var(--bg);color:var(--fg);min-height:100vh;overflow-x:hidden}
+        .stars-overlay{position:fixed;inset:0;pointer-events:none;display:flex;align-items:center;justify-content:center;font-size:60px;z-index:2000;opacity:0;transition:opacity .3s}
+        .stars-overlay.show{opacity:1}
+        .unit-content{max-width:900px;margin:20px auto;padding:20px;width:100%;font-family:'Cairo',sans-serif}
+        
+        .sticky-audio-bar{position:sticky;top:0;z-index:9;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);width:95%;max-width:800px;margin:0 auto 10px;padding:12px 0;display:flex;justify-content:center;gap:10px;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+        .btn-audio-control{border:none;padding:10px 22px;border-radius:50px;font-family:'Cairo',sans-serif;font-size:15px;font-weight:bold;cursor:pointer;color:white;transition:.3s}
+        .btn-audio-control:hover{transform:scale(1.05)}
+        .audio-play{background-color:#00b894}.audio-pause{background-color:#f1c40f;color:#333;display:none}.audio-stop{background-color:#ff7675;display:none}
+        .settings-bar{background:white;width:95%;max-width:800px;padding:15px;border-radius:20px;box-shadow:0 4px 15px rgba(0,0,0,.05);display:flex;flex-wrap:wrap;gap:15px;justify-content:center;margin:0 auto 15px}
+        
+        .main-container{background:white;width:95%;max-width:800px;margin:0 auto;border-radius:24px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.08);min-height:400px}
+        .section-nav{display:flex;justify-content:center;gap:10px;margin-bottom:20px;border-bottom:2px solid #eee;padding-bottom:15px}
+        .sec-btn{background:#f0f0f0;border:none;padding:10px 22px;border-radius:15px;cursor:pointer;font-weight:bold;font-size:15px;transition:.3s;font-family:'Cairo',sans-serif}
+        .sec-btn.active{background:var(--secondary);color:white}
+        
+        .vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+        .vocab-item{border:2px solid #f0f0f0;padding:14px 10px;border-radius:18px;text-align:center;cursor:pointer;transition:.3s;position:relative}
+        .vocab-item:hover{transform:translateY(-5px);border-color:var(--primary);box-shadow:0 6px 20px rgba(74,144,226,.15)}
+        .vocab-item.active-reading{background:var(--highlight);border-color:orange;animation:pulse .6s infinite}
+        @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+        
+        .sentence-box{padding:16px;margin:10px 0;border-radius:18px;border-right:6px solid var(--secondary);background:#f9f9f9;cursor:pointer;transition:.3s;direction:ltr;text-align:left}
+        .sentence-box:hover{background:#f0f0f0}
+        .sentence-box.active-reading{background:var(--highlight);border-color:orange;transform:scale(1.02)}
+        .s-en{font-size:20px;font-weight:bold;color:#2d3436;display:block}
+        .s-ar{font-size:16px;color:#636e72;display:block;margin-top:5px;text-align:right}
+        
+        .quiz-card{text-align:center;padding:20px}
+        .quiz-card h3{margin-bottom:20px;font-size:18px}
+        .opt-btn{display:block;width:100%;padding:16px;margin:10px 0;border:2px solid #ddd;border-radius:18px;font-size:17px;cursor:pointer;background:white;font-weight:bold;font-family:'Cairo',sans-serif;transition:.3s}
+        .opt-btn:hover{border-color:var(--primary);background:#f8f9ff}
+        .opt-btn.correct{background:var(--success);color:white;border-color:var(--success)}
+        .opt-btn.wrong{background:var(--danger);color:white;border-color:var(--danger)}
+        
+        @media(max-width:640px){.unit-content{padding:15px 10px}.sticky-audio-bar{gap:6px}.btn-audio-control{padding:8px 16px;font-size:13px}.settings-bar{gap:10px;padding:12px}.vocab-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}}
+    </style>
+</head>
+<body>
+
+<div class="stars-overlay" id="starsOverlay">🌟🎉🌟</div>
+
+<div class="unit-content">
+    <!-- شريط تشغيل الصوتيات -->
+    <div class="sticky-audio-bar">
+        <button class="btn-audio-control audio-play" id="u1Play" onclick="unitApp.playAll()">قراءة آلية ▶️</button>
+        <button class="btn-audio-control audio-pause" id="u1Pause" onclick="unitApp.togglePause()">مؤقت ⏸️</button>
+        <button class="btn-audio-control audio-stop" id="u1Stop" onclick="unitApp.stop()">إيقاف ⏹️</button>
+    </div>
+
+    <!-- إعدادات الصوت -->
+    <div class="settings-bar">
+        <div><label>🐢 السرعة 🐇</label> <input type="range" id="u1Rate" min="0.3" max="1" step="0.1" value="0.7"></div>
+        <div><label>🌍 اللكنة</label> <select id="u1Voice" class="voice-select" style="padding:5px;border-radius:10px;"></select></div>
+    </div>
+
+    <!-- المحتوى الخاص بالدرس -->
+    <div class="main-container">
+        <!-- التنقل بين أقسام الدرس الحالي فقط (كلمات / محادثة / اختبار) -->
+        <div class="section-nav" id="u1Nav">
+            <button class="sec-btn active" onclick="unitApp.switchSec('vocab')">🔤 الكلمات</button>
+            <button class="sec-btn" onclick="unitApp.switchSec('story')">📖 المحادثة</button>
+            <button class="sec-btn" onclick="unitApp.switchSec('quiz')">✍️ اختبار</button>
+        </div>
+
+        <h2 id="u1Title" style="text-align:center;color:var(--secondary);">Lesson 1: Greetings</h2>
+        <div id="u1Content" style="margin-top:20px;"></div>
+    </div>
+</div>
+
+<script>
+const synth = window.speechSynthesis;
+
+// بيانات الدرس الأول بفرده
+const lessonData = {
+    title: "Lesson 1: Greetings",
+    vocab: [
+        {en:"Hello", ar:"أهلًا", emoji:"👋"},
+        {en:"Goodbye", ar:"مع السلامة", emoji:"🙋"},
+        {en:"Shake hands", ar:"يصافح", emoji:"🤝"},
+        {en:"Play", ar:"يلعب", emoji:"🎾"},
+        {en:"Name", ar:"اسم", emoji:"📛"},
+        {en:"Meet", ar:"يقابل", emoji:"🙌"},
+        {en:"Friends", ar:"أصدقاء", emoji:"👫"}
+    ],
+    story: [
+        {en:"Maya: Hello!", ar:"مايا: أهلًا!"},
+        {en:"Hana: Hello! What's your name?", ar:"هَنا: أهلًا! ما اسمك؟"},
+        {en:"Maya: My name is Maya.", ar:"مايا: اسمي مايا."},
+        {en:"Hana: I'm Hana! Nice to meet you, Maya!", ar:"هَنا: أنا هَنا! تشرفت بلقائك يا مايا!"},
+        {en:"Maya: Nice to meet you, too, Hana! Do you want to shake hands?", ar:"مايا: وأنا أيضًا تشرفت بلقائك يا هَنا! هل تودين أن نصافح بعضنا؟"},
+        {en:"Hana: Yes!", ar:"هَنا: نعم!"},
+        {en:"Maya: Goodbye, Hana!", ar:"مايا: إلى اللقاء يا هَنا!"}
+    ]
+};
+
+let currentSec = 'vocab', isPlaying = false, isPaused = false;
+
+function el(id){ return document.getElementById('u1' + id); }
+
+function loadVoices(){
+    let voices = synth.getVoices();
+    const norm = l => (l||'').toLowerCase().replace('_','-');
+    let enV = voices.filter(v => { const l = norm(v.lang); return l==='en-us'||l==='en-gb'||l.startsWith('en-us')||l.startsWith('en-gb'); });
+    if(!enV.length) enV = voices.filter(v => norm(v.lang).startsWith('en'));
+    if(!enV.length) return;
+    const sel = el('Voice');
+    if(!sel) return;
+    const prev = sel.value;
+    sel.innerHTML = '';
+    enV.forEach(v => {
+        const o = document.createElement('option');
+        o.value = v.name;
+        o.dataset.lang = v.lang;
+        o.textContent = (norm(v.lang).startsWith('en-gb')?'🇬🇧 ':'🇺🇸 ') + v.name;
+        sel.appendChild(o);
+    });
+    if(prev && [...sel.options].some(o => o.value === prev)) sel.value = prev;
+    else {
+        const p = [...sel.options].find(o => /female|google us|samantha/i.test(o.value));
+        if(p) sel.value = p.value;
+    }
+}
+
+synth.onvoiceschanged = loadVoices;
+loadVoices();
+
+function switchSec(sec){
+    currentSec = sec;
+    const map = {vocab:'الكلمات', story:'المحادثة', quiz:'اختبار'};
+    el('Nav').querySelectorAll('.sec-btn').forEach(b => b.classList.toggle('active', b.innerText.includes(map[sec])));
+    render();
+}
+
+function render(){
+    stop();
+    const area = el('Content');
+    area.innerHTML = '';
+
+    if(currentSec === 'vocab'){
+        const g = document.createElement('div'); g.className = 'vocab-grid';
+        lessonData.vocab.forEach(v => {
+            const d = document.createElement('div'); d.className = 'vocab-item';
+            d.innerHTML = `<span style="font-size:36px;display:block;">${v.emoji}</span><b style="color:var(--primary);font-size:17px;">${v.en}</b><br><small>${v.ar}</small>`;
+            d.onclick = () => speak(v.en, d);
+            g.appendChild(d);
+        });
+        area.appendChild(g);
+    } else if(currentSec === 'story'){
+        lessonData.story.forEach(s => {
+            const b = document.createElement('div'); b.className = 'sentence-box';
+            b.innerHTML = `<span class="s-en">${s.en}</span><span class="s-ar">${s.ar}</span>`;
+            b.onclick = () => speak(s.en, b);
+            area.appendChild(b);
+        });
+    } else {
+        renderQuiz();
+    }
+}
+
+function speak(text, element, callback){
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    const sel = el('Voice');
+    const chosen = synth.getVoices().find(v => v.name === sel.value);
+    if(chosen){ u.voice = chosen; u.lang = chosen.lang; } else u.lang = 'en-US';
+    u.rate = parseFloat(el('Rate').value);
+    u.onstart = () => element?.classList.add('active-reading');
+    u.onend = () => { element?.classList.remove('active-reading'); if(callback) callback(); };
+    synth.speak(u);
+}
+
+async function playAll(){
+    if(isPlaying) return;
+    isPlaying = true; isPaused = false;
+    el('Play').style.display = 'none'; el('Stop').style.display = 'inline-block'; el('Pause').style.display = 'none';
+    const items = el('Content').querySelectorAll(currentSec === 'vocab' ? '.vocab-item' : '.sentence-box');
+    const d = currentSec === 'vocab' ? lessonData.vocab : lessonData.story;
+    for(let i = 0; i < items.length; i++){
+        if(!isPlaying) break;
+        while(isPaused && isPlaying) await new Promise(r => setTimeout(r, 100));
+        if(!isPlaying) break;
+        items[i].scrollIntoView({behavior:'smooth', block:'center'});
+        await new Promise(res => speak(d[i].en, items[i], res));
+        await new Promise(r => setTimeout(r, 600));
+    }
+    stop();
+}
+
+function togglePause(){
+    isPaused = !isPaused;
+    el('Pause').textContent = isPaused ? 'استئناف ▶️' : 'مؤقت ⏸️';
+    isPaused ? synth.pause() : synth.resume();
+}
+
+function stop(){
+    isPlaying = false; isPaused = false; synth.cancel();
+    el('Play').style.display = 'inline-block'; el('Stop').style.display = 'none'; el('Pause').style.display = 'none';
+    el('Pause').textContent = 'مؤقت ⏸️';
+    document.querySelectorAll('.active-reading').forEach(e => e.classList.remove('active-reading'));
+}
+
+// دالة الاختبار الديناميكية المفصلة بناءً على عدد كلمات الدرس
+function renderQuiz(){
+    const area = el('Content');
+    const vocabList = lessonData.vocab;
+    
+    // اختيار كلمة عشوائية كإجابة صحيحة
+    const correct = vocabList[Math.floor(Math.random() * vocabList.length)];
+    let opts = [correct.ar];
+    
+    // تحديد عدد الخيارات المتاحة (3 خيارات أو أقل إذا كانت كلمات الدرس أقل)
+    const optionsCount = Math.min(3, vocabList.length);
+    
+    while(opts.length < optionsCount){
+        let r = vocabList[Math.floor(Math.random() * vocabList.length)].ar;
+        if(!opts.includes(r)) opts.push(r);
+    }
+    opts.sort(() => Math.random() - .5);
+    
+    area.innerHTML = `
+        <div class="quiz-card">
+            <h3>ما معنى كلمة: <span style="color:var(--primary);font-size:28px;">${correct.en}</span>؟</h3>
+            ${opts.map(o => `<button class="opt-btn" onclick="checkAns(this,'${o}','${correct.ar}')">${o}</button>`).join('')}
+        </div>
+    `;
+}
+
+function checkAns(btn, selected, correct){
+    if(selected === correct){
+        btn.classList.add('correct');
+        document.getElementById('starsOverlay').classList.add('show');
+        setTimeout(() => document.getElementById('starsOverlay').classList.remove('show'), 900);
+        speak("Great job!", null, () => setTimeout(renderQuiz, 1200));
+    } else {
+        btn.classList.add('wrong');
+        speak("Try again", null);
+    }
+}
+
+const unitApp = {switchSec, playAll, togglePause, stop, checkAns};
+window.onload = render;
+</script>
+</body>
+</html>

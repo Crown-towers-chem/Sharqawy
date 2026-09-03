@@ -1,0 +1,221 @@
+﻿<div style="position:sticky; top:0; background-color:#ffffff; padding:15px 0; text-align:center; font-family:Arial, sans-serif; box-shadow:0 4px 6px rgba(0,0,0,0.1); z-index:1000; display:flex; flex-direction:column; align-items:center;">
+  <h3 style="margin:2px 0; color:#333; text-align:center;">Mr. Ameen Sharqawy</h2>
+
+  <div style="margin-top:8px;">
+    <a href="tel:+201279217092" style="display:inline-block; background-color:#007BFF; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      📞 01279217092
+    </a>
+    <a href="https://wa.me/+201279217092" target="_blank" style="display:inline-block; background-color:#25D366; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      💬 تواصل عبر الواتس
+    </a>
+  </div>
+</div><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1 - Classroom Greetings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #4a90e2; --secondary: #6c5ce7; --highlight: #fff9c4; --success: #00b894; --danger: #ff7675; --bg: #f8f9fa; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg); margin: 0; padding-top: 90px; display: flex; flex-direction: column; align-items: center; font-size: 17px; }
+        .stars-overlay { position: fixed; inset: 0; pointer-events: none; display: flex; align-items: center; justify-content: center; font-size: 60px; z-index: 2000; opacity: 0; transition: opacity 0.3s; }
+        .stars-overlay.show { opacity: 1; }
+        .settings-bar { background: white; width: 95%; max-width: 800px; padding: 15px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 15px; }
+        .main-container { background: white; width: 95%; max-width: 800px; border-radius: 30px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); min-height: 500px; }
+        .section-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 25px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
+        .sec-btn { background: #f0f0f0; border: none; padding: 10px 25px; border-radius: 15px; cursor: pointer; font-weight: bold; font-size: 15px; transition: 0.3s; font-family: 'Cairo', sans-serif; }
+        .sec-btn.active { background: var(--secondary); color: white; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; }
+        .vocab-item { border: 2px solid #f0f0f0; padding: 15px; border-radius: 20px; text-align: center; cursor: pointer; transition: 0.3s; }
+        .vocab-item:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .vocab-item.active, .sentence-box.active { background: var(--highlight); border-color: orange; }
+        .sentence-box { padding: 18px; margin: 12px 0; border-radius: 20px; border-left: 6px solid var(--secondary); background: #f9f9f9; cursor: pointer; transition: 0.3s; direction: ltr; text-align: left; }
+        .s-en { font-size: 22px; font-weight: bold; color: #2d3436; display: block; }
+        .s-ar { font-size: 17px; color: #636e72; display: block; margin-top: 5px; text-align: right; }
+        .quiz-card { text-align: center; padding: 20px; }
+        .opt-btn { display: block; width: 100%; padding: 18px; margin: 10px 0; border: 2px solid #ddd; border-radius: 20px; font-size: 18px; cursor: pointer; background: white; font-weight: bold; font-family: 'Cairo', sans-serif; }
+        .opt-btn.correct { background: var(--success); color: white; border-color: var(--success); }
+        .opt-btn.wrong { background: var(--danger); color: white; border-color: var(--danger); }
+        .sticky-audio-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: white; padding: 15px 10px; display: flex; justify-content: center; gap: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); flex-wrap: wrap; }
+        .btn-audio-control { border: none; padding: 12px 25px; border-radius: 50px; font-family: 'Cairo', sans-serif; font-size: 16px; font-weight: bold; cursor: pointer; color: white; transition: 0.3s; }
+        #playAllBtn { background-color: #00b894; } #pauseBtn { background-color: #f1c40f; color: #333; display: none; } #stopBtn { background-color: #ff7675; display: none; }
+        .empty-message { text-align: center; color: #888; font-size: 20px; padding: 40px 0; background: #fafafa; border-radius: 20px; border: 2px dashed #ddd; }
+    </style>
+</head>
+<body>
+<div class="stars-overlay" id="starsOverlay">🌟🎉🌟</div>
+
+<div class="sticky-audio-bar">
+    <button class="btn-audio-control" id="playAllBtn" onclick="playCurrentSection()">📢 قراءة آلية</button>
+    <button class="btn-audio-control" id="pauseBtn" onclick="togglePause()">⏸️ مؤقت</button>
+    <button class="btn-audio-control" id="stopBtn" onclick="stopSpeech()">⏹️ إيقاف</button>
+</div>
+
+<div class="settings-bar">
+    <div><label>🐢 السرعة 🐇</label> <input type="range" id="rate" min="0.3" max="1" step="0.1" value="0.7"></div>
+    <div><label>🌍 اللكنة</label> <select id="voiceSelect" style="padding: 5px; border-radius: 10px;"></select></div>
+</div>
+
+<div class="main-container">
+    <div class="section-nav">
+        <button class="sec-btn active" data-section="vocab" onclick="switchSection('vocab')">🔤 الكلمات</button>
+        <button class="sec-btn" data-section="phonics" onclick="switchSection('phonics')">🔡 الأصوات</button>
+        <button class="sec-btn" data-section="story" onclick="switchSection('story')">📖 المحادثة</button>
+        <button class="sec-btn" data-section="quiz" onclick="switchSection('quiz')">✍️ اختبار</button>
+    </div>
+
+    <h2 style="text-align: center; color: var(--secondary); margin-bottom: 20px;">Lesson 1: Classroom Greetings</h2>
+    <div id="contentArea"></div>
+</div>
+
+<script>
+    const lessonData = {
+        title: "Lesson 1: Classroom Greetings",
+        vocab: [
+            {en: "Good morning", ar: "صباح الخير", emoji: "☀️"}, {en: "Hello", ar: "مرحبًا", emoji: "👋"},
+            {en: "Goodbye", ar: "إلى اللقاء", emoji: "🙋"}, {en: "Chair", ar: "كرسي", emoji: "🪑"},
+            {en: "Desk", ar: "مكتب", emoji: "🗄️"}, {en: "Teacher", ar: "معلم", emoji: "👨‍🏫"},
+            {en: "Student", ar: "طالب", emoji: "🧑‍🎓"}, {en: "Learn", ar: "يتعلم", emoji: "📚"},
+            {en: "Teach", ar: "يُعلّم / يُدرّس", emoji: "📝"}, {en: "School", ar: "مدرسة", emoji: "🏫"},
+            {en: "Say", ar: "يقول", emoji: "💬"}, {en: "Sit down", ar: "يجلس", emoji: "⬇️"},
+            {en: "Sit on", ar: "يجلس على", emoji: "🪑"}, {en: "Kind", ar: "طيب", emoji: "😊"},
+            {en: "Friends", ar: "أصدقاء", emoji: "👫"}
+        ],
+        story: [
+            {en: "Hello. My name is Ahmed.", ar: "مرحبًا. اسمي أحمد."},
+            {en: "I sit on a chair at school.", ar: "أجلس على كرسي في المدرسة."},
+            {en: "My teacher is kind.", ar: "معلمتي طيبة."},
+            {en: "She helps me learn.", ar: "تساعدني على التعلم."},
+            {en: "At the end of the day, I say goodbye.", ar: "في نهاية اليوم، أقول إلى اللقاء."}
+        ]
+    };
+
+    let currentSec = 'vocab', isPlaying = false, isPaused = false, resolvePlay = null;
+    const synth = window.speechSynthesis;
+    let quizOrder = [], quizIndex = 0, quizScore = 0;
+
+    function loadVoices() {
+        let voices = synth.getVoices();
+        const select = document.getElementById('voiceSelect');
+        const prevValue = select.value;
+        select.innerHTML = '';
+        const norm = l => (l || '').toLowerCase().replace('_', '-');
+        let usGb = voices.filter(v => norm(v.lang).startsWith('en'));
+        if(!usGb.length) usGb = voices;
+        usGb.forEach(v => {
+            const opt = document.createElement('option');
+            opt.value = v.name; opt.textContent = (norm(v.lang).startsWith('en-gb') ? "🇬🇧 " : "🇺🇸 ") + v.name;
+            select.appendChild(opt);
+        });
+        if(prevValue && [...select.options].some(o => o.value === prevValue)) select.value = prevValue;
+    }
+    synth.onvoiceschanged = loadVoices; loadVoices();
+
+    function switchSection(sec) {
+        currentSec = sec;
+        if(sec === 'quiz') startQuiz();
+        document.querySelectorAll('.sec-btn').forEach(b => b.classList.toggle('active', b.dataset.section === sec));
+        renderContent();
+    }
+
+    function renderContent() {
+        stopSpeech();
+        const area = document.getElementById('contentArea'); area.innerHTML = '';
+
+        if(currentSec === 'vocab') {
+            const grid = document.createElement('div'); grid.className = 'vocab-grid';
+            lessonData.vocab.forEach(v => {
+                const item = document.createElement('div'); item.className = 'vocab-item';
+                item.innerHTML = `<span style="font-size:40px; display:block;">${v.emoji}</span><b style="color:var(--primary); font-size:18px;">${v.en}</b><br><small>${v.ar}</small>`;
+                item.onclick = () => speak(v.en, item); grid.appendChild(item);
+            });
+            area.appendChild(grid);
+        } else if(currentSec === 'phonics') {
+            area.innerHTML = `<div class="empty-message">🔡 لا توجد أصوات (فونيكس) في هذا الدرس</div>`;
+        } else if(currentSec === 'story') {
+            lessonData.story.forEach(s => {
+                const box = document.createElement('div'); box.className = 'sentence-box';
+                box.innerHTML = `<span class="s-en">${s.en}</span><span class="s-ar">${s.ar}</span>`;
+                box.onclick = () => speak(s.en, box); area.appendChild(box);
+            });
+        } else { renderQuiz(); }
+    }
+
+    function speak(text, element, callback) {
+        if(isPaused) return; synth.cancel();
+        const utter = new SpeechSynthesisUtterance(text);
+        const chosen = synth.getVoices().find(v => v.name === document.getElementById('voiceSelect').value);
+        if(chosen) { utter.voice = chosen; utter.lang = chosen.lang; }
+        utter.rate = document.getElementById('rate').value;
+        utter.onstart = () => element?.classList.add('active');
+        utter.onend = () => { element?.classList.remove('active'); if(callback) callback(); };
+        synth.speak(utter);
+    }
+
+    async function playCurrentSection() {
+        if(isPlaying) return; isPlaying = true; isPaused = false;
+        document.getElementById('playAllBtn').style.display = 'none';
+        document.getElementById('stopBtn').style.display = 'inline-block';
+        document.getElementById('pauseBtn').style.display = 'inline-block';
+
+        const items = document.querySelectorAll(currentSec==='story' ? '.sentence-box' : '.vocab-item');
+        const data = currentSec === 'vocab' ? lessonData.vocab : (currentSec === 'story' ? lessonData.story : []);
+        if(!data.length) { stopSpeech(); return; }
+
+        for(let i=0; i<items.length; i++) {
+            if(!isPlaying) break;
+            while(isPaused && isPlaying) await new Promise(r => resolvePlay = r);
+            if(!isPlaying) break;
+            items[i].scrollIntoView({behavior:'smooth', block:'center'});
+            await new Promise(res => speak(data[i].en, items[i], res));
+            await new Promise(r => setTimeout(r, 800));
+        }
+        stopSpeech();
+    }
+
+    function togglePause() {
+        isPaused = !isPaused;
+        document.getElementById('pauseBtn').innerText = isPaused ? '▶️ استئناف' : '⏸️ مؤقت';
+        isPaused ? synth.pause() : (synth.resume(), resolvePlay && resolvePlay());
+    }
+
+    function stopSpeech() {
+        isPlaying = false; isPaused = false;
+        if(resolvePlay) resolvePlay();
+        synth.cancel();
+        document.getElementById('playAllBtn').style.display = 'inline-block';
+        document.getElementById('stopBtn').style.display = 'none';
+        document.getElementById('pauseBtn').style.display = 'none';
+    }
+
+    function startQuiz() {
+        quizOrder = lessonData.vocab.map((_, i) => i).sort(() => Math.random() - 0.5);
+        quizIndex = 0; quizScore = 0;
+    }
+
+    function renderQuiz() {
+        const area = document.getElementById('contentArea');
+        if(quizIndex >= quizOrder.length) {
+            area.innerHTML = `<div class="quiz-card"><span style="font-size:60px;">🏆</span><h3>خلصت كل كلمات الدرس!</h3><p>نتيجتك: <b style="color:var(--success);">${quizScore}</b> من ${quizOrder.length}</p><button class="opt-btn" style="background:var(--secondary); color:white;" onclick="startQuiz(); renderQuiz();">🔄 إعادة الاختبار</button></div>`;
+            return;
+        }
+        const correct = lessonData.vocab[quizOrder[quizIndex]];
+        let opts = lessonData.vocab.map(v => v.ar).filter(a => a !== correct.ar).sort(() => Math.random() - 0.5).slice(0, 2);
+        opts.push(correct.ar); opts.sort(() => Math.random() - 0.5);
+        area.innerHTML = `<div class="quiz-card"><p>سؤال ${quizIndex+1} من ${quizOrder.length}</p><h3>ما معنى كلمة: <span style="color:var(--primary); font-size:30px;">${correct.en}</span>؟</h3>${opts.map(o => `<button class="opt-btn" onclick="checkAns(this, '${o}', '${correct.ar}')">${o}</button>`).join('')}</div>`;
+    }
+
+    function checkAns(btn, selected, correct) {
+        if(selected === correct) {
+            btn.classList.add('correct'); quizScore++;
+            document.getElementById('starsOverlay').classList.add('show');
+            setTimeout(() => document.getElementById('starsOverlay').classList.remove('show'), 900);
+            speak("Great job!", null, () => setTimeout(() => { quizIndex++; renderQuiz(); }, 1000));
+        } else { btn.classList.add('wrong'); speak("Try again", null); }
+    }
+
+    renderContent();
+</script>
+</body>
+</html>
