@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>Prep 2 Unit 1: Lessons 1 & 2 - Meet Gen Alpha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --A: #0f766e; --A2: #0d5c55; --blue4: #ccfbf1; --blue5: #f0fdfa;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --radius: 14px; --stop: #EF4444; --pause: #94A3B8;
+            --highlight-bg: rgba(37,99,235,0.13);
+            --word-highlight: #fde047;
+            --fab-bg: #1e293b; --fab-text: #fff;
+        }
+        [data-theme="ocean"] {
+            --A: #1d4ed8; --A2: #1e3a8a; --blue4: #dbeafe; --blue5: #eff6ff;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --stop: #EF4444; --highlight-bg: rgba(37,99,235,0.13);
+            --fab-bg: #1e3a8a; --fab-text: #fff;
+        }
+        [data-theme="garden"] {
+            --A: #15803d; --A2: #14532d; --blue4: #dcfce7; --blue5: #f0fdf4;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --stop: #EF4444; --highlight-bg: rgba(21,128,61,0.13);
+            --fab-bg: #14532d; --fab-text: #fff;
+        }
+        [data-theme="sunset"] {
+            --A: #c2410c; --A2: #9a3412; --blue4: #ffedd5; --blue5: #fff7ed;
+            --text: #1E293B; --text2: #64748B; --card: #fff; --border: #E2E8F0;
+            --bg: #F1F5F9; --stop: #EF4444; --highlight-bg: rgba(194,65,12,0.13);
+            --fab-bg: #9a3412; --fab-text: #fff;
+        }
+        [data-theme="dark"] {
+            --A: #2dd4bf; --A2: #0d9488; --blue4: #134e4a; --blue5: #0f172a;
+            --text: #f8fafc; --text2: #94a3b8; --card: #1e293b; --border: #334155;
+            --bg: #0f172a; --stop: #f87171; --pause: #64748b; --highlight-bg: rgba(45,212,191,0.15);
+            --word-highlight: #facc15; --fab-bg: #facc15; --fab-text: #1e293b;
+        }
+        *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+        body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:100px;overflow-x:hidden;transition:background .3s,color .3s;}
+        body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(135deg,rgba(37,99,235,.03) 25%,transparent 25%),linear-gradient(225deg,rgba(37,99,235,.03) 25%,transparent 25%),linear-gradient(315deg,rgba(37,99,235,.03) 25%,transparent 25%),linear-gradient(45deg,rgba(37,99,235,.03) 25%,transparent 25%);background-size:30px 30px;z-index:-1;pointer-events:none;}
+        .hero{color:#fff;text-align:center;padding:28px 20px 22px;margin-bottom:24px;background:linear-gradient(135deg, var(--A), var(--A2));}
+        .hero .emoji-big{font-size:2.8rem;display:block;margin-bottom:8px;}
+        .hero h1{font-size:1.55rem;font-weight:900;}
+        .hero .sub{font-size:.9rem;opacity:.85;margin-top:5px;font-family:'Cairo',sans-serif;font-weight:600;}
+        .toolbar{max-width:780px;margin:0 auto 24px;padding:0 16px;text-align:center;}
+        .toolbar-inner{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:9px 20px;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+        .toolbar label{font-weight:800;color:var(--A);font-size:13px;}
+        input[type=range]{width:100px;accent-color:var(--A);}
+        .rate-badge{font-weight:900;font-size:13px;color:var(--A);min-width:34px;}
+        select{padding:5px 8px;border-radius:6px;border:1px solid var(--border);font-weight:600;background:var(--card);color:var(--text);}
+        .theme-switcher{display:flex;align-items:center;gap:8px;margin-left:auto;}
+        .theme-btn{-webkit-appearance:none;appearance:none;border:2px solid transparent;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;color:#fff;letter-spacing:.5px;transition:all .2s;}
+        .theme-btn.t-teal{background:linear-gradient(135deg,#0f766e,#2dd4bf);}
+        .theme-btn.t-ocean{background:linear-gradient(135deg,#1d4ed8,#0ea5e9);}
+        .theme-btn.t-garden{background:linear-gradient(135deg,#15803d,#4ade80);}
+        .theme-btn.t-sunset{background:linear-gradient(135deg,#c2410c,#f97316);}
+        .theme-btn.t-dark{background:linear-gradient(135deg,#1e293b,#475569);color:#e2e8f0;}
+        .theme-btn.active{border-color:#fff;box-shadow:0 0 0 2px currentColor;transform:scale(1.08);}
+        .container{max-width:780px;margin:auto;padding:0 16px;}
+        .section-block{background:var(--card);border-radius:var(--radius);margin-bottom:22px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid var(--border);}
+        .sec-title{color:#fff;font-size:.85rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:12px 18px;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--A),var(--A2));}
+        .sec-title::before{content:"";display:inline-block;width:6px;height:6px;background:rgba(255,255,255,.5);border-radius:50%;flex-shrink:0;}
+        .sec-body{padding:16px;}
+        .sec-play-bar{display:flex;gap:7px;margin-bottom:16px;flex-wrap:wrap;align-items:center;}
+        .big-btn{-webkit-appearance:none;appearance:none;border:none;border-radius:9px;padding:10px 17px;font-size:13px;font-weight:800;cursor:pointer;color:#fff;display:inline-flex;align-items:center;gap:5px;transition:transform .12s;font-family:'Nunito',sans-serif;}
+        .big-btn:active{transform:scale(.95);}
+        .big-btn.pause-btn{background:var(--pause);}
+        .big-btn.stop-btn{background:var(--stop);}
+        .big-btn.play-all-btn{background:linear-gradient(135deg, var(--A), var(--A2)); margin-left: 12px;}
+        .info-box{background:#FAFAFA;border:1px solid var(--border);border-radius:11px;padding:13px;margin-bottom:14px;}
+        [data-theme="dark"] .info-box{background:#0f172a;}
+        .info-title{display:flex;align-items:center;gap:5px;font-weight:900;font-size:.78rem;margin-bottom:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--A2);}
+        .vocab{display:flex;flex-wrap:wrap;gap:7px;}
+        .pill{padding:8px 13px;border-radius:8px;background:var(--card);border:1px solid var(--blue4);text-align:center;cursor:pointer;flex:1 1 auto;min-width:78px;transition:all .15s;}
+        .pill:active{transform:scale(.96);}
+        .pill .en{font-weight:800;font-size:14px;display:block;color:var(--A);}
+        .pill .tr{font-size:11px;color:var(--text2);font-family:'Cairo',sans-serif;font-weight:600;}
+        .story-card{background:var(--blue5);border:1px solid var(--blue4);border-left:4px solid var(--A);border-radius:11px;padding:15px 17px;margin-bottom:13px;}
+        
+        .sentence {
+            display: block;
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            transition: background .2s;
+            line-height: 1.8;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text);
+            background: rgba(255,255,255,0.4);
+        }
+        [data-theme="dark"] .sentence { background: rgba(255,255,255,0.05); }
+        
+        .sentence .word {
+            transition: background 0.15s;
+            border-radius: 3px;
+            padding: 0 2px;
+            pointer-events: none;
+        }
+        .sentence .word.highlight, .pill .word.highlight, .rule-item .word.highlight {
+            background: var(--word-highlight);
+            color: #000;
+        }
+        
+        .sentence.active-sent{
+            background: var(--highlight-bg);
+            outline:2px solid var(--A);
+            outline-offset:1px;
+        }
+
+        .pill.active-sent{background: var(--highlight-bg); outline:2px solid var(--A); outline-offset:1px;}
+        .rule-item.active-sent{background: var(--highlight-bg); outline:2px solid var(--A); outline-offset:1px;}
+        
+        .story-ar{font-family:'Cairo',sans-serif;color:var(--text2);font-size:14px;text-align:right;direction:rtl;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-weight:600;line-height:2;}
+        .rules-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:13px;}
+        .rule-item{display:flex;align-items:flex-start;gap:10px;background:var(--blue5);border:1px solid var(--blue4);border-radius:9px;padding:11px 13px;cursor:pointer;transition:all .2s;}
+        .rule-item .rule-text{flex:1;}
+        .rule-item .rule-text .en{font-size:15px;font-weight:700;color:var(--text);}
+        .rule-item .rule-text .ar{font-family:'Cairo',sans-serif;font-size:12px;color:var(--text2);text-align:right;direction:rtl;font-weight:600;margin-top:2px;}
+        footer{text-align:center;margin-top:14px;padding:16px;color:var(--text2);font-size:11px;}
+        footer strong{color:var(--A);}
+        .voice-note{font-size:11px;color:#b45309;margin-top:4px;display:block;}
+        .fab-pause{
+            position: fixed; bottom: 24px; right: 24px; z-index: 999;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--fab-bg); color: var(--fab-text);
+            border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            font-size: 24px; display: none; align-items: center; justify-content: center;
+            cursor: pointer; transition: transform 0.2s, opacity 0.2s;
+        }
+        .fab-pause:active{transform: scale(0.9);}
+        .fab-pause.show{display: flex;}
+    </style>
+</head>
+<body>
+
+<div class="hero"><span class="emoji-big">📱</span><h1>Prep 2: Unit 1</h1><p class="sub">Lessons 1 & 2 - Meet Gen Alpha</p></div>
+
+<div class="toolbar"><div class="toolbar-inner">
+    <label for="rateRange">Speed</label><input id="rateRange" type="range" min="0.5" max="1.2" step="0.1" value="1"/>
+    <span class="rate-badge" id="rateBadge">1.0x</span>
+    <select id="voiceSelect" style="max-width:180px;"></select>
+    <span id="voiceNote" class="voice-note"></span>
+    <div class="theme-switcher">
+        <button class="theme-btn t-teal" onclick="setTheme('teal',this)">Teal</button>
+        <button class="theme-btn t-ocean" onclick="setTheme('ocean',this)">Ocean</button>
+        <button class="theme-btn t-garden" onclick="setTheme('garden',this)">Garden</button>
+        <button class="theme-btn t-sunset" onclick="setTheme('sunset',this)">Sunset</button>
+        <button class="theme-btn t-dark" onclick="setTheme('dark',this)">Dark</button>
+    </div>
+    <button class="big-btn play-all-btn" onclick="playAll()">🔊 Play All</button>
+</div></div>
+
+<main class="container">
+    <div id="sections-container"></div>
+</main>
+
+<button class="fab-pause" id="fabPause" onclick="toggleFabPause()" title="إيقاف / استئناف">⏯️</button>
+
+<script>
+// ===================== دالة تنظيف النص للصوت =====================
+function cleanForSpeech(text) {
+    let result = text;
+    // 1. إزالة الأقواس وكل ما بداخلها
+    result = result.replace(/\([^)]*\)/g, ' ');
+    // 2. إزالة علامات الترقيم والرموز الخاصة
+    result = result.replace(/[\/\:\"\']/g, ' ');
+    // 3. إزالة الأسهم
+    result = result.replace(/[→]/g, ' ');
+    // 4. تنظيف المسافات الزائدة
+    result = result.replace(/\s+/g, ' ').trim();
+    return result;
+}
+
+// ===================== بيانات المحتوى (Prep 2 - Unit 1 - Lessons 1 & 2) =====================
+
+// 1. Key Vocabulary (L1 & L2)
+const keyVocabL1L2 = [
+    ["Gen = generation (n)", "جيل"],
+    ["Gen Alpha", "جيل ألفا (الأطفال الذين ولدوا بعد 2010)"],
+    ["trend (n)", "اتجاه / موضة"],
+    ["limit (ed) (v, n)", "يحد / حد"],
+    ["screen time (n)", "وقت استخدام الشاشة"],
+    ["emoji (n)", "رمز تعبيري (إيموجي)"],
+    ["identity (n)", "هوية"],
+    ["balance (d) (v, n)", "يوازن / توازن"],
+    ["memes (n)", "صور / مقطتفات هزلية تنتشر على الإنترنت"],
+    ["platform (n)", "منصة"],
+    ["emotion (n)", "عاطفة / شعور"],
+    ["digital native (n)", "مواطن رقمي (من ولد مع التكنولوجيا)"]
+];
+
+// 2. Lesson 1 Vocabulary
+const l1Vocab = [
+    ["discover (ed) (v)", "يكتشف"],
+    ["apps = applications (n)", "تطبيقات"],
+    ["encourage (d) (v)", "يشجع"],
+    ["real-life (adj)", "واقعي / من واقع الحياة"],
+    ["rarely (adv)", "نادراً"],
+    ["tools (n)", "أدوات"],
+    ["represent (ed) (v)", "يمثل / يرمز إلى"],
+    ["constantly (adv)", "باستمرار"],
+    ["powerful (adj)", "قوي / ذو نفوذ"],
+    ["creative (adj)", "مبدع / إبداعي"],
+    ["wonder (ed) (v)", "يتعجب / يتساءل"],
+    ["connection (n)", "اتصال / ارتباط"],
+    ["devices (n)", "أجهزة"]
+];
+
+// 3. Lesson 2 Vocabulary
+const l2Vocab = [
+    ["global (adj)", "عالمي / دولي"],
+    ["onwards (adv)", "فصاعداً"],
+    ["Artificial Intelligence (AI) (n)", "الذكاء الاصطناعي"],
+    ["challenge (n)", "تحدي"],
+    ["social media (n)", "وسائل التواصل الاجتماعي"],
+    ["adaptive (adj)", "سريع التكيف"],
+    ["wisely (adv)", "بحكمة / بفعل"],
+    ["worldwide (adv)", "على مستوى العالم"],
+    ["relationship (n)", "علاقة"],
+    ["coding (n)", "البرمجة"],
+    ["online learning (n)", "التعلم عبر الإنترنت"],
+    ["affect (ed) (v)", "يؤثر على"]
+];
+
+// 4. Collocations
+const collocationsData = [
+    ["limit screen time", "يحد من وقت استخدام الشاشة"],
+    ["express feelings", "يعبر عن المشاعر"],
+    ["spend time online", "يقضي وقتاً عبر الإنترنت"],
+    ["share memes", "يشارك مقاطع مضحكة"],
+    ["create identity", "يؤسس هوية"],
+    ["face challenge", "يواجه تحدياً"]
+];
+
+// 5. Synonyms & Antonyms (Original Combined Data)
+const combinedSynAntData = [
+    {word: "creative (adj)", syn: "imaginative", ant: "uncreative"},
+    {word: "modern (adj)", syn: "new / current", ant: "old / traditional"},
+    {word: "encourage (v)", syn: "support / motivate", ant: "discourage"},
+    {word: "global (adj)", syn: "worldwide / international", ant: "local / national"},
+    {word: "online (adj)", syn: "connected", ant: "offline"}
+];
+
+// Splitting into two separate arrays for Synonyms and Antonyms
+const synData = combinedSynAntData.map(({word, syn}) => ({word, syn}));
+const antData = combinedSynAntData.map(({word, ant}) => ({word, ant}));
+
+// 6. Prefixes & Suffixes
+const affixData = [
+    {word: "generate (v) → generation (n)", affix: "-ion", func: "تحول الفعل إلى اسم"},
+    {word: "constant (adj) → constantly (adv)", affix: "-ly", func: "تحول الصفة إلى ظرف"},
+    {word: "digit (n) → digital (adj)", affix: "-al", func: "تحول الاسم إلى صفة"},
+    {word: "power (n) → powerful (adj)", affix: "-ful", func: "تحول الاسم إلى صفة"},
+    {word: "behave (v) → behavior (n)", affix: "-ior", func: "تحول الفعل إلى اسم"},
+    {word: "create (v) → creative (adj)", affix: "-ive", func: "تحول الفعل إلى صفة"}
+];
+
+// 7. Irregular Verbs
+const conjData = [
+    {present: "spread", past: "spread", pp: "spread"},
+    {present: "grow up", past: "grew up", pp: "grown up"},
+    {present: "know", past: "knew", pp: "known"},
+    {present: "spend", past: "spent", pp: "spent"},
+    {present: "bear", past: "bore", pp: "born"}
+];
+
+// 8. Definitions
+const defsData = [
+    {word: "trends", def: "popular new developments, often seen in digital content or social behavior"},
+    {word: "screen time", def: "the amount of time spent looking at a screen"},
+    {word: "emojis", def: "small digital images or icons used to express ideas or emotions in electronic communication"},
+    {word: "generation", def: "a group of people born around the same time"},
+    {word: "balance", def: "a situation in which different things are of equal or proper weight or amount"},
+    {word: "digital natives", def: "individuals who have grown up with technology such as computers, the internet, and mobile devices"},
+    {word: "memes", def: "humorous images or videos that are spread quickly by internet users"}
+];
+
+// ===================== النصوص =====================
+
+// Reading Text 1 (Lesson 1: Gen Alpha: The Young Digital Natives)
+const readingTextL1 = [
+    {en: "Do you know that you are one of Gen Alpha, who were born from around 2010 to the mid-2020s?", ar: "هل تعلم أنك واحد من جيل ألفا، الذين ولدوا من حوالي 2010 إلى منتصف عشرينيات القرن الحادي والعشرين؟"},
+    {en: "Today's young generation, Gen Alpha, is changing the way we live and communicate.", ar: "جيل الشباب اليوم، جيل ألفا، يغير الطريقة التي نعيش ونتواصل بها."},
+    {en: "They are digital natives because they were born in the digital age.", ar: "إنهم مواطنون رقميون لأنهم ولدوا في العصر الرقمي."},
+    {en: "Before they can read, they usually spend a lot of time online, exploring the latest trends.", ar: "قبل أن يتمكنوا من القراءة، يقضون عادةً الكثير من الوقت عبر الإنترنت، يستكشفون أحدث الاتجاهات."},
+    {en: "They like creating short videos to show their hobbies or opinions.", ar: "إنهم يحبون إنشاء مقاطع فيديو قصيرة لإظهار هواياتهم أو آرائهم."},
+    {en: "At the moment, many Gen Alpha children are using social media to learn about the world and to connect with others.", ar: "في الوقت الحالي، يستخدم العديد من أطفال جيل ألفا وسائل التواصل الاجتماعي للتعلم عن العالم والتواصل مع الآخرين."},
+    {en: "They are constantly discovering new trends that quickly spread across their digital communities.", ar: "إنهم يكتشفون باستمرار اتجاهات جديدة تنتشر بسرعة عبر مجتمعاتهم الرقمية."},
+    {en: "For example, they share memes and sometimes send emojis instead of words.", ar: "على سبيل المثال، يشاركون الميمات وأحياناً يرسلون الرموز التعبيرية بدلاً من الكلمات."},
+    {en: "Teachers and parents often wonder how this generation will grow up with so much technology around them.", ar: "غالباً ما يتساءل المعلمون والآباء كيف سينمو هذا الجيل مع كل هذه التكنولوجيا من حولهم."},
+    {en: "They are learning to balance online activities with real-life connections.", ar: "إنهم يتعلمون الموازنة بين الأنشطة عبر الإنترنت والاتصالات الواقعية."},
+    {en: "This generation represents a powerful trend that is shaping the future.", ar: "يمثل هذا الجيل اتجاهاً قوياً يشكل المستقبل."},
+    {en: "Gen Alpha always looks for new ways to express themselves and create their identity in the modern world using digital tools.", ar: "يبحث جيل ألفا دائماً عن طرق جديدة للتعبير عن أنفسهم وإنشاء هويتهم في العالم الحديث باستخدام الأدوات الرقمية."}
+];
+
+// Reading Text 2 (Lesson 2: Gen Alpha's Digital Life)
+const readingTextL2 = [
+    {en: "Gen Alpha are children born from 2010 onwards and are called digital natives.", ar: "جيل ألفا هم الأطفال الذين ولدوا من عام 2010 فصاعداً ويُطلق عليهم اسم المواطنين الرقميين."},
+    {en: "Technology is normal for Gen Alpha: smartphones, tablets, social media, and artificial intelligence.", ar: "التكنولوجيا أمر طبيعي بالنسبة لجيل ألفا: الهواتف الذكية والأجهزة اللوحية ووسائل التواصل الاجتماعي والذكاء الاصطناعي."},
+    {en: "Their daily life is highly connected to technology and full of digital experiences.", ar: "حياتهم اليومية مرتبطة بشكل كبير بالتكنولوجيا ومليئة بالتجارب الرقمية."},
+    {en: "They use online platforms for online learning and connecting with friends worldwide.", ar: "يستخدمون المنصات عبر الإنترنت للتعلم عبر الإنترنت والتواصل مع الأصدقاء في جميع أنحاء العالم."},
+    {en: "The main challenge is balance, as too much screen time affects health and relationships.", ar: "التحدي الرئيسي هو التوازن، حيث يؤثر وقت الشاشة الكثير على الصحة والعلاقات."},
+    {en: "Parents try to limit screen time and encourage useful skills.", ar: "يحاول الآباء الحد من وقت الشاشة وتشجيع المهارات المفيدة."}
+];
+
+// Listening Text (Lesson 2: Interview)
+const listeningTextL2 = [
+    {en: "Interviewer: Welcome, Dr. Wessam. We often hear the term Gen Alpha. Could you tell us exactly who they are?", ar: "المذيع: مرحباً دكتور وسام. نسمع غالباً مصطلح جيل ألفا. هل يمكنك أن تخبرنا بالضبط من هم؟"},
+    {en: "Dr. Wessam: Sure. Gen Alpha are children born from 2010 onwards. Because they grow up completely in a digital environment, they are called digital natives.", ar: "د. وسام: بالتأكيد. جيل ألفا هم الأطفال الذين ولدوا من عام 2010 فصاعداً. لأنهم ينشؤون بالكامل في بيئة رقمية، يُطلق عليهم اسم المواطنين الرقميين."},
+    {en: "For them, smartphones, tablets, social media, and even artificial intelligence is normal.", ar: "بالنسبة لهم، الهواتف الذكية والأجهزة اللوحية ووسائل التواصل الاجتماعي وحتى الذكاء الاصطناعي أمر طبيعي."},
+    {en: "Interviewer: And how are their habits different from other generations?", ar: "المذيع: وكيف تختلف عاداتهم عن الأجيال الأخرى؟"},
+    {en: "Dr. Wessam: Well, Gen Alpha use technology from a very young age. Many of them learn to use apps before they can read.", ar: "د. وسام: حسناً، يستخدم جيل ألفا التكنولوجيا منذ سن مبكرة جداً. يتعلم الكثير منهم استخدام التطبيقات قبل أن يتمكنوا من القراءة."},
+    {en: "Their daily life is highly connected to technology and full of digital experiences.", ar: "حياتهم اليومية مرتبطة للغاية بالتكنولوجيا ومليئة بالتجارب الرقمية."},
+    {en: "Interviewer: That's very interesting. So, what do they usually do online?", ar: "المذيع: هذا مثير للاهتمام للغاية. إذن، ماذا يفعلون عادةً عبر الإنترنت؟"},
+    {en: "Dr. Wessam: They spend hours online, but not only for games. They share memes, use emojis to express feelings, and make short videos to show hobbies or opinions.", ar: "د. وسام: يقضون ساعات عبر الإنترنت، ولكن ليس فقط للألعاب. يشاركون الميمات، ويستخدمون الرموز التعبيرية للتعبير عن المشاعر، ويصنعون مقاطع فيديو قصيرة لإظهار الهوايات أو الآراء."},
+    {en: "They also use online platforms for learning and connecting with friends worldwide.", ar: "يستخدمون أيضاً المنصات عبر الإنترنت للتعلم والتواصل مع الأصدقاء حول العالم."},
+    {en: "Interviewer: What are the main challenges they face?", ar: "المذيع: ما هي التحديات الرئيسية التي يواجهونها؟"},
+    {en: "Dr. Wessam: The main challenge is balance. Too much screen time can affect health and relationships.", ar: "د. وسام: التحدي الرئيسي هو التوازن. الكثير من وقت الشاشة يمكن أن يؤثر على الصحة والعلاقات."},
+    {en: "Parents try to limit screen time and encourage useful skills, like coding or online learning.", ar: "يحاول الآباء الحد من وقت الشاشة وتشجيع المهارات المفيدة، مثل البرمجة أو التعلم عبر الإنترنت."},
+    {en: "They also make sure their children play sports or spend time with family.", ar: "كما يتأكدون من أن أطفالهم يمارسون الرياضة أو يقضون وقتاً مع العائلة."},
+    {en: "Interviewer: So, what positive things do you see in Gen Alpha?", ar: "المذيع: إذن، ما هي الأشياء الإيجابية التي تراها في جيل ألفا؟"},
+    {en: "Dr. Wessam: They are creative, quick learners, and very adaptive. If guided well, they can use technology to improve education, communication, and even solve global problems.", ar: "د. وسام: إنهم مبدعون، ويتعلمون بسرعة، ومتكيفون للغاية. إذا تم توجيههم جيداً، يمكنهم استخدام التكنولوجيا لتحسين التعليم والتواصل وحتى حل المشكلات العالمية."},
+    {en: "Interviewer: Thank you, Dr. Wessam. That was very helpful.", ar: "المذيع: شكراً لك دكتور وسام. كان ذلك مفيداً جداً."}
+];
+
+// ===================== دوال HTML المساعدة =====================
+function makeWordSpans(text) {
+    const words = text.trim().split(/\s+/);
+    return words.map((w, idx) => `<span class="word" data-word-index="${idx}">${w}</span>`).join(' ');
+}
+
+function makePills(wordsArray, sectionId) {
+    return wordsArray.map((w, i) => {
+        const id = `${sectionId}_p${i}`;
+        const wordHtml = makeWordSpans(w[0]);
+        const speakText = cleanForSpeech(w[0]);
+        return `<div class="pill" id="${id}" data-speak="${speakText}" onclick="playOne('${id}')"><span class="en">${wordHtml}</span><span class="tr">${w[1]}</span></div>`;
+    }).join('');
+}
+
+function makeRuleItem(icon, sectionId, index, speakText, arText, displayText) {
+    const id = `${sectionId}_${index}`;
+    const wordHtml = makeWordSpans(displayText || speakText);
+    const finalSpeak = cleanForSpeech(speakText);
+    return `<div class="rule-item" id="${id}" data-speak="${finalSpeak}" onclick="playOne('${id}')">
+        <span class="rule-icon">${icon}</span>
+        <div class="rule-text">
+            <span class="en">${wordHtml}</span>
+            <span class="ar">${arText || ''}</span>
+        </div>
+    </div>`;
+}
+
+function playBar(sectionId) {
+    return `<div class="sec-play-bar">
+        <button class="big-btn" style="background:linear-gradient(135deg,var(--A),var(--A2))" onclick="playSection('${sectionId}')">▶ Play</button>
+        <button class="big-btn pause-btn" onclick="pauseAll()">⏸ Pause</button>
+        <button class="big-btn stop-btn" onclick="stopAll()">⏹ Stop</button>
+    </div>`;
+}
+
+function makeStorySection(title, storyData) {
+    // إيموجيات خاصة بالمتحدثين (للحوارات)
+    const speakerEmojis = {
+        "Interviewer": "🎙️",
+        "Dr. Wessam": "👨‍⚕️"
+    };
+
+    return `<div class="story-card">
+        <div style="font-weight:bold;color:var(--A);margin-bottom:10px;">${title}</div>
+        ${storyData.map((s,i) => {
+            const id = `secStory_${title.replace(/[^a-zA-Z0-9]/g,'')}_${i}`;
+            let enText = s.en;
+            let speaker = '';
+            let dialogueText = enText;
+
+            const colonIndex = enText.indexOf(': ');
+            if (colonIndex > 0) {
+                speaker = enText.substring(0, colonIndex);
+                dialogueText = enText.substring(colonIndex + 2);
+            }
+
+            const emoji = speakerEmojis[speaker] || '💬';
+            const wordHtml = makeWordSpans(dialogueText);
+            
+            let speakerHtml = '';
+            if (speaker) {
+                speakerHtml = `<span class="speaker-label">${emoji} ${speaker}</span> `;
+            }
+
+            return `<div class="sentence" id="${id}" data-speak="${cleanForSpeech(s.en)}" onclick="playOne('${id}')">
+                ${speakerHtml} ${wordHtml}
+            </div> `;
+        }).join('')}
+        <div class="story-ar">${storyData.map(s => s.ar).join(' ')}</div>
+    </div>`;
+}
+
+// ===================== بناء الواجهة =====================
+function buildAllSections() {
+    const container = document.getElementById('sections-container');
+
+    const sections = [
+        { title:"🔑 Key Vocabulary (L1 & L2)", id:"secKeyL1L2", content: `<div class="info-box"><div class="info-title">Key Vocabulary (Lessons 1 & 2)</div><div class="vocab">${makePills(keyVocabL1L2, "secKeyL1L2")}</div></div>` },
+        { title:"📚 Vocabulary on Reading (Lesson 1)", id:"secL1", content: `<div class="info-box"><div class="info-title">Vocabulary on Reading and Listening (Lesson 1)</div><div class="vocab">${makePills(l1Vocab, "secL1")}</div></div>` },
+        { title:"📚 Vocabulary on Reading (Lesson 2)", id:"secL2", content: `<div class="info-box"><div class="info-title">Vocabulary on Reading and Listening (Lesson 2)</div><div class="vocab">${makePills(l2Vocab, "secL2")}</div></div>` },
+        { title:"🔗 Collocations", id:"secCollocations", content: `<div class="rules-grid">${collocationsData.map((c,i) => makeRuleItem('🔗', 'secCollocations', i, c[0], c[1], c[0])).join('')}</div>` },
+        { title:"🔄 Synonyms", id:"secSyn", content: `<div class="rules-grid">${synData.map((s,i) => makeRuleItem('↔️', 'secSyn', i, `${s.word} | ${s.syn}`, s.syn, `${s.word} → ${s.syn}`)).join('')}</div>` },
+        { title:"🚫 Antonyms", id:"secAnt", content: `<div class="rules-grid">${antData.map((a,i) => makeRuleItem('🛑', 'secAnt', i, `${a.word} | ${a.ant}`, a.ant, `${a.word} → ${a.ant}`)).join('')}</div>` },
+        { title:"🔚 Prefixes & Suffixes", id:"secAffix", content: `<div class="rules-grid">${affixData.map((p,i) => makeRuleItem('🔤', 'secAffix', i, `${p.word} | ${p.affix}`, `${p.affix} ${p.func}`, p.word)).join('')}</div>` },
+        { title:"⏳ Irregular Verbs", id:"secConj", content: `<div class="rules-grid">${conjData.map((c,i) => makeRuleItem('🕒', 'secConj', i, `${c.present} | ${c.past} | ${c.pp}`, 'مضارع / ماضي / تصريف ثالث', `${c.present} → ${c.past} → ${c.pp}`)).join('')}</div>` },
+        { title:"📝 Definitions", id:"secDefs", content: `<div class="rules-grid">${defsData.map((d,i) => makeRuleItem('📖', 'secDefs', i, `${d.word} | ${d.def}`, d.def, d.word)).join('')}</div>` },
+        { title:"📖 Reading Text (Lesson 1)", id:"secReadL1", content: makeStorySection("Gen Alpha: The Young Digital Natives", readingTextL1) },
+        { title:"📖 Reading Text (Lesson 2)", id:"secReadL2", content: makeStorySection("Gen Alpha's Digital Life", readingTextL2) },
+        { title:"🎧 Listening Text (Lesson 2)", id:"secListenL2", content: makeStorySection("Interview with Dr. Wessam", listeningTextL2) }
+    ];
+
+    let html = '';
+    sections.forEach(sec => {
+        html += `<div class="section-block" id="${sec.id}">
+            <div class="sec-title">${sec.title}</div>
+            <div class="sec-body">
+                ${playBar(sec.id)}
+                ${sec.content}
+            </div>
+        </div>`;
+    });
+    container.innerHTML = html;
+}
+
+// ===================== نظام الصوت والمزامنة =====================
+const rateRange = document.getElementById('rateRange');
+const rateBadge = document.getElementById('rateBadge');
+const fabPause = document.getElementById('fabPause');
+
+const savedRate = localStorage.getItem('speechRate') || 1;
+rateRange.value = savedRate;
+rateBadge.textContent = parseFloat(savedRate).toFixed(1)+'x';
+rateRange.addEventListener('input', () => {
+    const val = parseFloat(rateRange.value).toFixed(1);
+    rateBadge.textContent = val+'x';
+    localStorage.setItem('speechRate', val);
+});
+
+let voices = [];
+let voiceLoadAttempt = 0;
+const MAX_VOICE_LOAD_ATTEMPTS = 6;
+const VOICE_RETRY_DELAYS = [0, 150, 400, 800, 1500, 2500];
+
+const normalizeVoiceLang = (lang) => String(lang || '').replace('_', '-');
+const isVoiceLangMatch = (voiceLang, targetLang) => {
+    const normalized = normalizeVoiceLang(voiceLang).toLowerCase();
+    const target = targetLang.toLowerCase();
+    return normalized === target || normalized.startsWith(target + '-');
+};
+const voiceQualityScore = (voice) => {
+    const name = String(voice.name || '').toLowerCase();
+    let score = 0;
+    if (name.includes('google')) score += 30;
+    if (name.includes('microsoft')) score += 25;
+    if (name.includes('samantha')) score += 20;
+    if (voice.localService) score += 2;
+    return score;
+};
+const sortVoicesByQuality = (voiceList) => [...voiceList].sort((a, b) => {
+    const scoreDifference = voiceQualityScore(b) - voiceQualityScore(a);
+    return scoreDifference || String(a.name || '').localeCompare(String(b.name || ''));
+});
+
+function loadVoices() {
+    const availableVoices = window.speechSynthesis.getVoices();
+    if (availableVoices.length) {
+        voices = availableVoices;
+        voiceLoadAttempt = 0;
+        populateVoiceSelect();
+        return;
+    }
+
+    if (voiceLoadAttempt < MAX_VOICE_LOAD_ATTEMPTS) {
+        const delay = VOICE_RETRY_DELAYS[voiceLoadAttempt] || VOICE_RETRY_DELAYS[VOICE_RETRY_DELAYS.length - 1];
+        voiceLoadAttempt++;
+        window.setTimeout(loadVoices, delay);
+    }
+}
+
+function populateVoiceSelect() {
+    const vs = document.getElementById('voiceSelect');
+    const note = document.getElementById('voiceNote');
+    if (!vs || !voices.length) return;
+
+    const englishVoices = voices.filter(v =>
+        isVoiceLangMatch(v.lang, 'en-US') || isVoiceLangMatch(v.lang, 'en-GB')
+    );
+    const displayedVoices = englishVoices.length ? sortVoicesByQuality(englishVoices) :
+        sortVoicesByQuality(voices.filter(v => normalizeVoiceLang(v.lang).toLowerCase().startsWith('en')));
+
+    if (!displayedVoices.length) {
+        note.textContent = '⚠️ No English voice found.';
+        return;
+    }
+
+    note.textContent = englishVoices.length ? '' : '⚠️ No US/UK voice found; showing English voices.';
+    const savedURI = localStorage.getItem('voiceURI');
+    const savedLang = localStorage.getItem('voiceLang');
+    vs.innerHTML = displayedVoices.map((voice) => {
+        const lang = normalizeVoiceLang(voice.lang);
+        const label = `${isVoiceLangMatch(lang, 'en-US') ? '🇺🇸 American' : isVoiceLangMatch(lang, 'en-GB') ? '🇬🇧 British' : 'English'} — ${voice.name} (${lang})`;
+        const option = document.createElement('option');
+        option.value = voice.voiceURI;
+        option.textContent = label;
+        option.dataset.lang = lang;
+        return option.outerHTML;
+    }).join('');
+
+    const savedOption = [...vs.options].find(option => option.value === savedURI) ||
+        [...vs.options].find(option => option.dataset.lang === savedLang);
+    vs.value = savedOption ? savedOption.value : vs.options[0].value;
+    const selected = voices.find(v => v.voiceURI === vs.value) || displayedVoices[0];
+    localStorage.setItem('voiceURI', selected.voiceURI);
+    localStorage.setItem('voiceLang', normalizeVoiceLang(selected.lang));
+}
+
+document.getElementById('voiceSelect').addEventListener('change', function() {
+    const selected = voices.find(v => v.voiceURI === this.value);
+    if (selected) {
+        localStorage.setItem('voiceURI', selected.voiceURI);
+        localStorage.setItem('voiceLang', normalizeVoiceLang(selected.lang));
+    }
+});
+
+function getSelectedVoice() {
+    const select = document.getElementById('voiceSelect');
+    const savedURI = localStorage.getItem('voiceURI');
+    const savedLang = localStorage.getItem('voiceLang');
+    const selectedURI = savedURI || (select && select.value);
+    return voices.find(v => v.voiceURI === selectedURI) ||
+        voices.find(v => savedLang && normalizeVoiceLang(v.lang) === savedLang) ||
+        voices.find(v => select && v.voiceURI === select.value) || null;
+}
+
+window._q = []; window._qi = 0;
+window._currentUtterance = null;
+let currentHighlightedId = null;
+
+function clearAllHighlights() {
+    document.querySelectorAll('.active-sent').forEach(e => e.classList.remove('active-sent'));
+    document.querySelectorAll('.word.highlight').forEach(e => e.classList.remove('highlight'));
+    currentHighlightedId = null;
+}
+
+function showFab(show) {
+    if (show) fabPause.classList.add('show');
+    else fabPause.classList.remove('show');
+}
+
+function updateFabIcon() {
+    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+        fabPause.innerHTML = '⏸️';
+    } else if (window.speechSynthesis.paused) {
+        fabPause.innerHTML = '▶️';
+    } else {
+        fabPause.innerHTML = '⏯️';
+    }
+}
+
+function playQueue() {
+    if (window._qi >= window._q.length) {
+        clearAllHighlights();
+        showFab(false);
+        return;
+    }
+    const item = window._q[window._qi];
+    const el = document.getElementById(item.id);
+    
+    if (currentHighlightedId !== item.id) {
+        clearAllHighlights();
+        if (el) {
+            el.classList.add('active-sent');
+            el.scrollIntoView({behavior:'smooth',block:'nearest'});
+            currentHighlightedId = item.id;
+        }
+    }
+
+    const u = new SpeechSynthesisUtterance(item.text);
+    u.rate = parseFloat(rateRange.value) || 1;
+    const voice = getSelectedVoice();
+    // Set the language explicitly; several browsers otherwise ignore the selected voice.
+    u.lang = voice ? normalizeVoiceLang(voice.lang) : (localStorage.getItem('voiceLang') || 'en-US');
+    if (voice) u.voice = voice;
+
+    u.onboundary = (event) => {
+        if (event.name === 'word' && el) {
+            const wordSpans = el.querySelectorAll('.word');
+            const textUntilIndex = item.text.substring(0, event.charIndex);
+            const wordIndex = textUntilIndex.trim().split(/\s+/).filter(Boolean).length;
+            
+            wordSpans.forEach(span => span.classList.remove('highlight'));
+            if (wordSpans[wordIndex]) {
+                wordSpans[wordIndex].classList.add('highlight');
+            }
+        }
+    };
+
+    u.onstart = () => {
+        showFab(true);
+        updateFabIcon();
+    };
+
+    u.onend = function() {
+        if (el) el.querySelectorAll('.word').forEach(span => span.classList.remove('highlight'));
+        window._qi++;
+        playQueue();
+    };
+
+    u.onerror = function(e) {
+        console.warn('Speech error', e);
+        window._qi++;
+        playQueue();
+    };
+
+    u.onpause = () => updateFabIcon();
+    u.onresume = () => updateFabIcon();
+
+    window._currentUtterance = u;
+    window.speechSynthesis.speak(u);
+}
+
+function splitAndQueue(textParts, id) {
+    textParts.forEach((p) => {
+        const trimmed = cleanForSpeech(p);
+        if (trimmed) {
+            window._q.push({id: id, text: trimmed});
+        }
+    });
+}
+
+function playSection(secId) {
+    stopAll();
+    const sec = document.getElementById(secId);
+    const els = [...sec.querySelectorAll('[data-speak]')];
+    els.forEach(el => {
+        const text = el.dataset.speak;
+        const parts = text.split('|').map(p => p.trim());
+        splitAndQueue(parts, el.id);
+    });
+    window._qi = 0;
+    playQueue();
+}
+
+function playAll() {
+    stopAll();
+    const els = [...document.querySelectorAll('[data-speak]')];
+    els.forEach(el => {
+        const text = el.dataset.speak;
+        const parts = text.split('|').map(p => p.trim());
+        splitAndQueue(parts, el.id);
+    });
+    window._qi = 0;
+    playQueue();
+}
+
+function playOne(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const text = el.dataset.speak;
+    
+    stopAll();
+    const parts = text.split('|').map(p => p.trim());
+    splitAndQueue(parts, id);
+    window._qi = 0;
+    playQueue();
+}
+
+function pauseAll() {
+    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+        window.speechSynthesis.pause();
+        updateFabIcon();
+    } else if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        updateFabIcon();
+    }
+}
+
+function stopAll() {
+    window._q = []; window._qi = 0;
+    clearAllHighlights();
+    window.speechSynthesis.cancel();
+    showFab(false);
+}
+
+function toggleFabPause() {
+    pauseAll();
+}
+
+// ===================== الثيمات =====================
+function setTheme(theme, btn) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    localStorage.setItem('theme', theme);
+}
+const savedTheme = localStorage.getItem('theme') || 'teal';
+document.documentElement.setAttribute('data-theme', savedTheme);
+document.querySelectorAll('.theme-btn').forEach(b => {
+    if (b.classList.contains('t-'+savedTheme)) b.classList.add('active');
+});
+
+// ===================== بدء التشغيل =====================
+buildAllSections();
+loadVoices();
+if (speechSynthesis.onvoiceschanged !== undefined) speechSynthesis.onvoiceschanged = loadVoices;
+</script>
+</body>
+</html>
