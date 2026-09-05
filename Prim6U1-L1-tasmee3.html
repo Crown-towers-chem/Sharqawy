@@ -1,0 +1,753 @@
+﻿<div style="position:sticky; top:0; background-color:#ffffff; padding:15px 0; text-align:center; font-family:Arial, sans-serif; box-shadow:0 4px 6px rgba(0,0,0,0.1); z-index:1000; display:flex; flex-direction:column; align-items:center;">
+  <h3 style="margin:2px 0; color:#333; text-align:center;">Mr. Ameen Sharqawy</h2>
+
+  <div style="margin-top:8px;">
+    <a href="tel:+201279217092" style="display:inline-block; background-color:#007BFF; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      📞 01279217092
+    </a>
+    <a href="https://wa.me/+201279217092" target="_blank" style="display:inline-block; background-color:#25D366; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      💬 تواصل عبر الواتس
+    </a>
+  </div>
+</div><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>تسميع — 🇪🇬 Prim 6 - Unit 1: A day in Egypt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#12213f;
+  --navy-2:#1c3164;
+  --navy-3:#24397a;
+  --gold:#f0a202;
+  --gold-2:#ffc857;
+  --cream:#f8f3e6;
+  --paper:#fffdf7;
+  --ink:#16213a;
+  --ink-soft:#5a6485;
+  --coral:#e2574c;
+  --green:#2f9e6e;
+  --line:#e1d6b8;
+  --radius:18px;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:
+    radial-gradient(1200px 600px at 15% -10%, #1d2f5c 0%, transparent 60%),
+    var(--cream);
+  font-family:'Cairo',sans-serif;
+  color:var(--ink);
+  min-height:100vh;
+  padding:18px 14px 60px;
+  -webkit-font-smoothing:antialiased;
+}
+.en{font-family:'Space Grotesk',sans-serif;direction:ltr;unicode-bidi:isolate;}
+.en-body{font-family:'Inter',sans-serif;direction:ltr;unicode-bidi:isolate;}
+
+/* ---------- Header ---------- */
+.passport{
+  max-width:640px;margin:0 auto;
+}
+.header{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-3) 100%);
+  border-radius:22px;
+  padding:22px 22px 20px;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 10px 30px -8px rgba(18,33,63,.45);
+}
+.header::after{
+  content:"";
+  position:absolute; inset:0;
+  background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.035) 0 2px, transparent 2px 26px);
+  pointer-events:none;
+}
+.header-top{display:flex;align-items:center;justify-content:space-between;gap:10px;position:relative;z-index:1;}
+.eyebrow{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--gold-2); font-weight:600; margin:0 0 4px;
+}
+.title{font-size:22px;font-weight:800;margin:0;line-height:1.35;}
+.title .en{font-size:15px;font-weight:600;color:#c9d3f2;display:block;margin-top:2px;}
+.badge-unit{
+  background:var(--gold);
+  color:var(--navy);
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700; font-size:22px;
+  border-radius:12px; padding:8px 14px; text-align:center; min-width:52px;
+  box-shadow:0 4px 0 #b97600;
+}
+.badge-unit small{display:block;font-size:9px;font-weight:600;letter-spacing:.06em;}
+
+/* passport strip / progress */
+.strip{
+  margin-top:16px; position:relative; z-index:1;
+  background:rgba(255,255,255,.08);
+  border:1px dashed rgba(255,200,87,.55);
+  border-radius:14px;
+  padding:10px 12px;
+  display:flex; align-items:center; gap:10px;
+}
+.strip-track{
+  flex:1; height:8px; border-radius:8px; background:rgba(255,255,255,.15); overflow:hidden;
+}
+.strip-fill{
+  height:100%; width:0%; border-radius:8px;
+  background:linear-gradient(90deg,var(--gold) 0%,var(--gold-2) 100%);
+  transition:width .4s ease;
+}
+.strip-label{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;color:var(--gold-2);white-space:nowrap;}
+
+/* ---------- Module selector ---------- */
+.modules{
+  display:grid; grid-template-columns:repeat(5,1fr); gap:7px;
+  margin:14px auto 0; max-width:640px;
+}
+.mod-pill{
+  background:var(--navy-2); border:1.5px solid transparent;
+  border-radius:12px; padding:9px 3px; text-align:center; cursor:pointer;
+  color:#cfd7f0; transition:.15s; user-select:none;
+}
+.mod-pill .mnum{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;display:block;}
+.mod-pill .mrange{font-family:'Space Grotesk',sans-serif;font-size:9.5px;color:#9fb0e0;display:block;margin-top:1px;}
+.mod-pill.active{background:var(--gold);border-color:#c98600;}
+.mod-pill.active .mnum{color:var(--navy);}
+.mod-pill.active .mrange{color:#6b4c00;}
+.modules-wrap{max-width:640px;margin:0 auto;padding:0 0 2px;}
+.modules-hint{text-align:center;color:var(--ink-soft);font-size:11.5px;margin-top:6px;}
+
+/* ---------- Mode tabs ---------- */
+.tabs{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:8px;
+  margin:16px auto 0; max-width:640px;
+}
+.tab{
+  background:var(--paper); border:1.5px solid var(--line);
+  border-radius:13px; padding:10px 4px; text-align:center; cursor:pointer;
+  font-family:'Cairo',sans-serif; font-weight:700; font-size:12.5px; color:var(--ink-soft);
+  transition:.15s;
+  user-select:none;
+}
+.tab .ic{display:block;font-size:18px;margin-bottom:3px;}
+.tab.active{
+  background:var(--navy); color:#fff; border-color:var(--navy);
+  box-shadow:0 6px 14px -6px rgba(18,33,63,.5);
+}
+
+/* ---------- Card zone ---------- */
+.zone{max-width:640px;margin:16px auto 0;}
+.panel{
+  background:var(--paper);
+  border-radius:var(--radius);
+  border:1.5px solid var(--line);
+  padding:20px 18px 22px;
+  position:relative;
+}
+.hint{
+  text-align:center;color:var(--ink-soft);font-size:13px;margin:2px 0 14px;
+}
+
+/* Flashcard */
+.card-outer{perspective:1200px; max-width:420px; margin:0 auto;}
+.card-inner{
+  position:relative; width:100%; min-height:210px;
+  transform-style:preserve-3d; transition:transform .55s cubic-bezier(.4,.2,.2,1);
+}
+.card-inner.flipped{transform:rotateY(180deg);}
+.face{
+  position:absolute; inset:0; backface-visibility:hidden;
+  border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:22px; text-align:center;
+}
+.face-front{
+  background:linear-gradient(160deg,var(--navy-2),var(--navy));
+  color:#fff; border:1px solid #0e1a33;
+}
+.face-front .pos{font-family:'Space Grotesk',sans-serif;font-size:12px;color:var(--gold-2);letter-spacing:.05em;margin-bottom:8px;}
+.face-front .word{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;}
+.face-front .tapme{position:absolute;bottom:12px;font-size:11px;color:#9fb0e0;}
+.face-back{
+  background:var(--gold);
+  color:var(--navy); transform:rotateY(180deg);
+  border:1px solid #c98600;
+}
+.face-back .ar{font-size:21px;font-weight:800;}
+.stamp{
+  position:absolute; top:8px; left:8px;
+  border:3px solid var(--green); color:var(--green);
+  border-radius:50%; width:64px;height:64px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px; font-weight:800; text-align:center; line-height:1.1;
+  transform:rotate(-18deg) scale(0); opacity:0;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1), opacity .2s;
+  pointer-events:none; z-index:3;
+  background:rgba(255,255,255,.85);
+}
+.stamp.show{transform:rotate(-18deg) scale(1); opacity:1;}
+.fc-actions{display:flex;gap:10px;justify-content:center;margin-top:16px;}
+.fc-actions button, .speak-btn{
+  border:none; border-radius:12px; padding:11px 16px; font-family:'Cairo',sans-serif;
+  font-weight:700; font-size:13.5px; cursor:pointer; transition:.15s;
+}
+.btn-know{background:var(--green);color:#fff;}
+.btn-review{background:#fff;color:var(--coral);border:1.5px solid var(--coral) !important;}
+.btn-know:active,.btn-review:active{transform:scale(.96);}
+.speak-btn{background:var(--navy);color:#fff;width:42px;height:42px;padding:0;border-radius:50%;font-size:17px;}
+.fc-top{display:flex;justify-content:center;margin-bottom:10px;}
+
+/* MCQ */
+.q-word{
+  text-align:center; margin-bottom:16px;
+}
+.q-word .pos{color:var(--ink-soft);font-size:12px;font-family:'Space Grotesk',sans-serif;}
+.q-word .en{font-size:24px;font-weight:700;color:var(--navy);}
+.options{display:grid;gap:10px;}
+.opt{
+  border:1.5px solid var(--line); background:var(--paper);
+  border-radius:12px; padding:13px 14px; text-align:right; font-size:15px; font-weight:600;
+  cursor:pointer; transition:.15s;
+}
+.opt:active{transform:scale(.985);}
+.opt.correct{background:#e7f7ef;border-color:var(--green);color:#1c6b47;}
+.opt.wrong{background:#fdecea;border-color:var(--coral);color:#a5342a;}
+.opt.disabled{pointer-events:none;}
+.next-row{display:flex;justify-content:center;margin-top:16px;}
+.btn-next{
+  background:var(--navy); color:#fff; border:none; border-radius:12px;
+  padding:11px 26px; font-family:'Cairo',sans-serif; font-weight:700; font-size:14px; cursor:pointer;
+}
+.btn-next[disabled]{opacity:.35;pointer-events:none;}
+
+/* Spelling */
+.sp-prompt{text-align:center;margin-bottom:14px;}
+.sp-prompt .ar{font-size:19px;font-weight:800;}
+.sp-prompt .pos{color:var(--ink-soft);font-size:12px;font-family:'Space Grotesk',sans-serif;margin-top:4px;}
+.sp-input-row{display:flex;gap:8px;align-items:center;}
+#spInput{
+  flex:1; border:1.5px solid var(--line); border-radius:12px; padding:13px 14px;
+  font-family:'Space Grotesk',sans-serif; font-size:16px; text-align:center; direction:ltr;
+  outline:none;
+}
+#spInput.correct{border-color:var(--green);background:#f0faf5;}
+#spInput.wrong{border-color:var(--coral);background:#fdf1f0;}
+.sp-btns{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap;}
+.sp-btns button{
+  border:none;border-radius:12px;padding:11px 16px;font-family:'Cairo',sans-serif;
+  font-weight:700;font-size:13.5px;cursor:pointer;
+}
+.btn-check{background:var(--navy);color:#fff;}
+.btn-hint{background:#fff;border:1.5px solid var(--gold) !important;color:#96650a;}
+.btn-reveal{background:#fff;border:1.5px solid var(--ink-soft) !important;color:var(--ink-soft);}
+.sp-feedback{text-align:center;margin-top:10px;font-size:13px;min-height:18px;font-weight:700;}
+.sp-feedback.ok{color:var(--green);}
+.sp-feedback.bad{color:var(--coral);}
+
+/* Matching */
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.match-tile{
+  border:1.5px solid var(--line);background:var(--paper);border-radius:11px;
+  padding:11px 8px;text-align:center;font-size:12.5px;font-weight:700;cursor:pointer;
+  min-height:46px; display:flex;align-items:center;justify-content:center; transition:.15s;
+}
+.match-tile.en{font-family:'Space Grotesk',sans-serif;}
+.match-tile.sel{border-color:var(--navy);background:#eef1fb;}
+.match-tile.done{border-color:var(--green);background:#e7f7ef;color:#1c6b47;opacity:.55;pointer-events:none;}
+.match-tile.bad{animation:shake .3s;border-color:var(--coral);}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-4px);}75%{transform:translateX(4px);}}
+.match-status{text-align:center;color:var(--ink-soft);font-size:12.5px;margin-top:12px;}
+
+/* Score bar */
+.scorebar{
+  display:flex; justify-content:space-between; align-items:center;
+  max-width:640px;margin:14px auto 0; padding:0 4px;
+}
+.scorebar .s{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12.5px;color:var(--ink-soft);}
+.scorebar .s b{color:var(--navy);font-size:14px;}
+.reset-link{background:none;border:none;color:var(--coral);font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;text-decoration:underline;}
+
+.done-screen{text-align:center;padding:20px 6px;}
+.done-screen .em{font-size:38px;}
+.done-screen h3{margin:8px 0 4px;font-size:19px;}
+.done-screen p{color:var(--ink-soft);font-size:13.5px;}
+
+/* Name field */
+.name-row{max-width:640px;margin:12px auto 0;}
+.field-input{
+  width:100%; border:1.5px solid var(--line); border-radius:12px; padding:12px 14px;
+  font-family:'Cairo',sans-serif; font-size:14px; text-align:right; box-sizing:border-box; outline:none;
+  background:var(--paper);
+}
+.field-input.en-field{font-family:'Space Grotesk',sans-serif;direction:ltr;text-align:left;}
+
+/* Persistent share-with-teacher widget */
+.share-persist{
+  max-width:640px;margin:16px auto 0;
+  background:linear-gradient(160deg,var(--navy-2),var(--navy));
+  border-radius:16px; padding:16px 16px 18px; color:#fff;
+  border:1.5px dashed rgba(255,200,87,.55);
+}
+.share-persist-title{font-weight:800;font-size:15px;margin-bottom:3px;}
+.share-persist-sub{font-size:12px;color:#c9d3f2;margin-bottom:12px;font-family:'Space Grotesk',sans-serif;}
+.share-persist input{margin-bottom:9px;}
+.share-persist .field-input{border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;}
+.share-persist .field-input::placeholder{color:#9fb0e0;}
+.share-btn{
+  width:100%; border:none; border-radius:12px; padding:12px; cursor:pointer;
+  background:var(--gold); color:var(--navy); font-family:'Cairo',sans-serif; font-weight:800; font-size:14px;
+}
+.share-btn:active{transform:scale(.98);}
+</style>
+</head>
+<body>
+
+<div class="passport">
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <p class="eyebrow">Vocabulary Passport · تسميع تفاعلي</p>
+        <h1 class="title">🇪🇬 Prim 6 - Unit 1: A day in Egypt
+          <span class="en">Lesson 1: A day in Egypt</span>
+        </h1>
+      </div>
+      <div class="badge-unit">🐊</div>
+    </div>
+    <div class="strip">
+      <span class="strip-label" id="stripLabel">0 / 15</span>
+      <div class="strip-track"><div class="strip-fill" id="stripFill"></div></div>
+      <span style="font-size:16px;">🛂</span>
+    </div>
+  </div>
+</div>
+
+<div class="name-row">
+  <input type="text" id="studentNameTop" class="field-input" placeholder="اكتب اسمك هنا (اختياري) ✏️">
+  <div style="text-align:center;color:var(--ink-soft);font-size:11px;margin-top:5px">يمكنك بدء التسميع مباشرةً بدون كتابة الاسم</div>
+</div>
+
+<div class="modules-wrap">
+  <div class="modules" id="modulesBar"></div>
+  <div class="modules-hint">كل مديول ٢٠ كلمة مسحوبة عشوائيًا من الـ15 كلمة/تعبير — وممكن تتكرر كلمة في أكتر من مديول، والترتيب بيتغير كل مرة تفتحه</div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" data-mode="flash"><span class="ic">🃏</span>بطاقات</div>
+  <div class="tab" data-mode="mcq"><span class="ic">✅</span>اختار الإجابة</div>
+  <div class="tab" data-mode="spell"><span class="ic">⌨️</span>إملاء</div>
+  <div class="tab" data-mode="match"><span class="ic">🧩</span>وصّل</div>
+</div>
+
+<div class="zone">
+  <div class="panel" id="panel"></div>
+  <div class="scorebar">
+    <span class="s">تم حفظها: <b id="masteredCount">0</b></span>
+    <button class="reset-link" id="resetBtn">إعادة تعيين الكل ↻</button>
+    <span class="s">النتيجة: <b id="scoreCount">0/0</b></span>
+  </div>
+
+  <div class="share-persist">
+    <div class="share-persist-title">📤 شارك تقدمك مع معلمك</div>
+    <div class="share-persist-sub" id="shareProgressLine">تم حفظ 0 من 0 كلمة</div>
+    <input type="text" id="teacherPhone" class="field-input en-field" placeholder="رقم واتساب المعلم — مثال: 201012345678">
+    <button class="share-btn" id="sharePersistBtn">إرسال على واتساب 🟢</button>
+  </div>
+</div>
+
+<script>
+const VOCAB = [{"en":"buy souvenirs","pos":"","ar":"يشتري هدايا تذكارية"},{"en":"make furniture","pos":"","ar":"يصنع الأثاث"},{"en":"play music","pos":"","ar":"يعزف الموسيقى"},{"en":"walk to a small museum","pos":"","ar":"يمشي إلى متحف صغير"},{"en":"visit ancient sites","pos":"","ar":"يزور مواقع أثرية"},{"en":"take photos","pos":"","ar":"يلتقط صوراً"},{"en":"furniture","pos":"","ar":"أثاث"},{"en":"bracelet","pos":"","ar":"إسورة"},{"en":"local","pos":"","ar":"محلي"},{"en":"carpenter","pos":"","ar":"نجار"},{"en":"design","pos":"","ar":"تصميم / يصمم"},{"en":"culture","pos":"","ar":"ثقافة"},{"en":"necklace","pos":"","ar":"عقد / قلادة"},{"en":"gate","pos":"","ar":"بوابة"},{"en":"tool","pos":"","ar":"أداة"}];
+
+/* ---------------- MODULES ---------------- */
+const MODULE_SIZE = 20;
+const MODULE_COUNT = 5;
+function moduleIndices(m){
+  const n = Math.min(MODULE_SIZE, VOCAB.length);
+  return shuffle(VOCAB.map((_,i)=>i)).slice(0, n); // عينة عشوائية من كل الكلمات — ممكن تتكرر كلمة في أكتر من مديول
+}
+let currentModule = 0;
+let pool = moduleIndices(currentModule);
+
+let mastered = new Set();
+let mode = "flash";
+let score = {right:0,total:0};
+
+function speak(text){
+  try{
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "en-US"; u.rate = 0.92;
+    window.speechSynthesis.speak(u);
+  }catch(e){}
+}
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}
+function updateStrip(){
+  const total = pool.length || 1;
+  const pct = Math.round(mastered.size/total*100);
+  document.getElementById('stripFill').style.width = pct+"%";
+  document.getElementById('stripLabel').textContent = mastered.size+" / "+pool.length;
+  document.getElementById('masteredCount').textContent = mastered.size;
+  document.getElementById('scoreCount').textContent = score.right+"/"+score.total;
+  updateShareProgressLine();
+}
+
+/* ---------------- STAGE FLOW (flash → mcq → spell → match) ---------------- */
+const STAGE_ORDER = ['flash','mcq','spell','match'];
+const STAGE_LABELS = {flash:'بطاقات', mcq:'اختيار من متعدد', spell:'إملاء', match:'توصيل'};
+function goToStage(nextMode){
+  mode = nextMode;
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active', x.dataset.mode===nextMode));
+  render();
+}
+function nextStageExtraHTML(stageKey){
+  const idx = STAGE_ORDER.indexOf(stageKey);
+  if(idx < STAGE_ORDER.length-1){
+    const next = STAGE_ORDER[idx+1];
+    return `<div class="next-row"><button class="btn-next" id="stageNextBtn">المرحلة الجاية: ${STAGE_LABELS[next]} ←</button></div>`;
+  }
+  return `<div class="done-screen" style="padding-top:4px;"><div class="em">🏆</div><h3>خلصت كل مراحل الاختبار!</h3><p>شارك نتيجتك مع معلمك من الخانة تحت 👇</p></div>`;
+}
+function wireStageButtons(stageKey, retryFn){
+  const r = document.querySelector('.done-restart');
+  if(r) r.onclick = retryFn;
+  const n = document.getElementById('stageNextBtn');
+  if(n) n.onclick = ()=>{ goToStage(STAGE_ORDER[STAGE_ORDER.indexOf(stageKey)+1]); };
+}
+
+/* ---------------- PERSISTENT SHARE-WITH-TEACHER ---------------- */
+function updateShareProgressLine(){
+  const line = document.getElementById('shareProgressLine');
+  if(!line) return;
+  let txt = "تم حفظ "+mastered.size+" من "+pool.length+" كلمة في مديول "+(currentModule+1);
+  if(score.total>0) txt += " • صح: "+score.right+"/"+score.total;
+  line.textContent = txt;
+}
+function buildShareMessage(){
+  const nameEl = document.getElementById('studentNameTop');
+  const name = (nameEl && nameEl.value.trim()) ? nameEl.value.trim() : "طالب";
+  let msg = "مرحباً، أنا "+name+" 👋\n";
+  msg += "تقدمي في تسميع 🇪🇬 Prim 6 - Unit 1: A day in Egypt - مديول "+(currentModule+1)+" - مرحلة "+STAGE_LABELS[mode]+":\n";
+  msg += "✅ كلمات اتحفظت: "+mastered.size+" من "+pool.length;
+  if(score.total>0){
+    const pct = Math.round(score.right/score.total*100);
+    msg += "\n📝 إجابات صح: "+score.right+" من "+score.total+" ("+pct+"%)";
+  }
+  return msg;
+}
+function normalizePhone(raw){
+  let d = raw.replace(/[^\d]/g,'');
+  if(d.startsWith('0')) d = '20'+d.slice(1); // لو الرقم مكتوب بصفر في الأول بنفترض مصر
+  return d;
+}
+document.getElementById('sharePersistBtn').onclick = ()=>{
+  const phoneRaw = document.getElementById('teacherPhone').value.trim();
+  if(!phoneRaw){ alert('من فضلك اكتب رقم واتساب المعلم الأول'); return; }
+  const phone = normalizePhone(phoneRaw);
+  window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(buildShareMessage()), "_blank");
+};
+
+/* fresh random 20-word set + fresh order for every mode — called whenever a module is opened */
+function freshModuleState(){
+  pool = moduleIndices(currentModule);
+  mastered = new Set();
+  score = {right:0,total:0};
+  flashOrder = shuffle(pool); flashIdx = 0;
+  mcqOrder = shuffle(pool); mcqIdx = 0;
+  spellQueue = shuffle(pool); spellPos = 0; spellDone = new Set(); spellScore = {right:0,total:0};
+  matchPool = shuffle(pool); matchBatchStart = 0;
+  updateStrip();
+}
+
+function renderModulesBar(){
+  const bar = document.getElementById('modulesBar');
+  bar.innerHTML = "";
+  for(let m=0; m<MODULE_COUNT; m++){
+    const pill = document.createElement('div');
+    pill.className = 'mod-pill' + (m===currentModule?' active':'');
+    pill.innerHTML = `<span class="mnum">${m+1}</span><span class="mrange">${Math.min(MODULE_SIZE,VOCAB.length)} كلمة</span>`;
+    pill.onclick = ()=>{
+      currentModule = m;
+      freshModuleState();
+      renderModulesBar();
+      render();
+    };
+    bar.appendChild(pill);
+  }
+}
+
+document.getElementById('resetBtn').onclick = ()=>{
+  freshModuleState(); render();
+};
+document.querySelectorAll('.tab').forEach(t=>{
+  t.onclick = ()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    mode = t.dataset.mode;
+    render();
+  };
+});
+
+/* ---------------- FLASHCARDS ---------------- */
+let flashOrder = [];
+let flashIdx = 0;
+function renderFlash(){
+  const panel = document.getElementById('panel');
+  if(flashIdx >= flashOrder.length){
+    panel.innerHTML = doneHTML("خلصت كل البطاقات في المديول ده!","اضغط تاني عشان تراجعها بترتيب عشوائي جديد.") + nextStageExtraHTML('flash');
+    wireStageButtons('flash', ()=>{flashOrder=shuffle(pool);flashIdx=0;renderFlash();});
+    return;
+  }
+  const item = VOCAB[flashOrder[flashIdx]];
+  panel.innerHTML = `
+    <div class="hint">اضغط على البطاقة عشان تشوف المعنى (${flashIdx+1}/${flashOrder.length})</div>
+    <div class="fc-top"><button class="speak-btn" id="speakBtn">🔊</button></div>
+    <div class="card-outer">
+      <div class="card-inner" id="cardInner">
+        <div class="face face-front">
+          <div class="pos en">${item.pos}</div>
+          <div class="word en">${item.en}</div>
+          <div class="tapme">اضغط لقلب البطاقة</div>
+        </div>
+        <div class="face face-back">
+          <div class="ar">${item.ar}</div>
+          <div class="stamp" id="stampEl">تم<br>الحفظ ✓</div>
+        </div>
+      </div>
+    </div>
+    <div class="fc-actions">
+      <button class="btn-review">أحتاج مراجعة ↻</button>
+      <button class="btn-know">أعرفها ✓</button>
+    </div>`;
+  document.getElementById('speakBtn').onclick = ()=>speak(item.en);
+  const inner = document.getElementById('cardInner');
+  inner.onclick = ()=> inner.classList.toggle('flipped');
+  panel.querySelector('.btn-know').onclick = (e)=>{
+    e.stopPropagation();
+    mastered.add(flashOrder[flashIdx]);
+    document.getElementById('stampEl').classList.add('show');
+    updateStrip();
+    setTimeout(()=>{flashIdx++;renderFlash();}, 420);
+  };
+  panel.querySelector('.btn-review').onclick = (e)=>{
+    e.stopPropagation();
+    flashIdx++; renderFlash();
+  };
+}
+
+/* ---------------- MCQ ---------------- */
+let mcqOrder = [];
+let mcqIdx = 0;
+function renderMCQ(){
+  const panel = document.getElementById('panel');
+  if(mcqIdx >= mcqOrder.length){
+    panel.innerHTML = doneHTML("خلصت كل الأسئلة في المديول ده!", "النتيجة: "+score.right+" من "+score.total) + nextStageExtraHTML('mcq');
+    wireStageButtons('mcq', ()=>{mcqOrder=shuffle(pool);mcqIdx=0;renderMCQ();});
+    return;
+  }
+  const item = VOCAB[mcqOrder[mcqIdx]];
+  let distractors = shuffle(VOCAB.filter(v=>v.ar!==item.ar)).slice(0,3).map(v=>v.ar);
+  let options = shuffle([item.ar, ...distractors]);
+  panel.innerHTML = `
+    <div class="hint">اختار المعنى الصح (${mcqIdx+1}/${mcqOrder.length})</div>
+    <div class="q-word">
+      <div class="pos en">${item.pos}</div>
+      <div class="en" style="cursor:pointer" id="mcqSpeak">${item.en} 🔊</div>
+    </div>
+    <div class="options" id="optsWrap"></div>
+    <div class="next-row"><button class="btn-next" id="nextBtn" disabled>التالي ←</button></div>`;
+  document.getElementById('mcqSpeak').onclick = ()=>speak(item.en);
+  const wrap = document.getElementById('optsWrap');
+  options.forEach(opt=>{
+    const b = document.createElement('div');
+    b.className='opt'; b.textContent=opt;
+    b.onclick = ()=>{
+      document.querySelectorAll('.opt').forEach(o=>o.classList.add('disabled'));
+      score.total++;
+      if(opt===item.ar){
+        b.classList.add('correct'); score.right++; mastered.add(mcqOrder[mcqIdx]);
+      }else{
+        b.classList.add('wrong');
+        [...wrap.children].find(c=>c.textContent===item.ar).classList.add('correct');
+      }
+      updateStrip();
+      document.getElementById('nextBtn').disabled=false;
+    };
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextBtn').onclick = ()=>{mcqIdx++;renderMCQ();};
+}
+
+/* ---------------- SPELLING ---------------- */
+let spellQueue = [];
+let spellPos = 0;
+let spellDone = new Set();          // كلمات اتجاوب عليها بشكل نهائي (صح أو غلط)
+let spellScore = {right:0, total:0}; // نتيجة قسم الإملاء بس (بتتحسب برضه جوه score العام)
+
+function renderSpell(){
+  const panel = document.getElementById('panel');
+  if(spellPos >= spellQueue.length){
+    const pct = spellScore.total ? Math.round(spellScore.right/spellScore.total*100) : 0;
+    panel.innerHTML = doneHTML("خلصت الإملاء في المديول ده!", "النتيجة: "+spellScore.right+" من "+spellScore.total+" ("+pct+"%)") + nextStageExtraHTML('spell');
+    wireStageButtons('spell', ()=>{
+      spellQueue=shuffle(pool); spellPos=0; spellDone=new Set(); spellScore={right:0,total:0}; renderSpell();
+    });
+    return;
+  }
+  const vocabIdx = spellQueue[spellPos];
+  const item = VOCAB[vocabIdx];
+  const remaining = spellQueue.length - spellPos;
+  panel.innerHTML = `
+    <div class="hint">اكتب الكلمة الإنجليزية الصح — اتحل ${spellDone.size} من ${pool.length} (متبقي ${remaining})</div>
+    <div class="sp-prompt">
+      <div class="ar">${item.ar}</div>
+      <div class="pos en">${item.pos}</div>
+    </div>
+    <div class="sp-input-row">
+      <button class="speak-btn" id="spSpeak" style="opacity:.3" disabled title="اتقفل لحد ما تجاوب">🔊</button>
+      <input type="text" id="spInput" placeholder="type here..." autocomplete="off" autocapitalize="off">
+    </div>
+    <div class="sp-feedback" id="spFeedback"></div>
+    <div class="sp-btns">
+      <button class="btn-hint" id="spHint">تلميح 💡</button>
+      <button class="btn-reveal" id="spSkip">مش فاكرها، بعدين ⏭</button>
+      <button class="btn-check" id="spCheck">تحقق ✓</button>
+    </div>`;
+  const input = document.getElementById('spInput');
+  const fb = document.getElementById('spFeedback');
+  let checked = false;
+  document.getElementById('spHint').onclick = ()=>{
+    fb.textContent = "بتبدأ بحرف: "+item.en[0].toUpperCase()+"   (عدد الحروف: "+item.en.replace(/\s/g,'').length+")";
+    fb.className="sp-feedback";
+  };
+  document.getElementById('spSkip').onclick = ()=>{
+    if(checked) return;
+    spellQueue.push(vocabIdx);   // ترجع في الآخر بدل ما تتحسب غلط
+    spellPos++;
+    renderSpell();
+  };
+  function doCheck(){
+    if(checked) return;
+    checked = true;
+    spellDone.add(vocabIdx);
+    score.total++; spellScore.total++;
+    const val = input.value.trim().toLowerCase();
+    const ok = val === item.en.toLowerCase();
+    if(ok){
+      input.classList.add('correct'); fb.textContent="إجابة صحيحة! ✓"; fb.className="sp-feedback ok";
+      score.right++; spellScore.right++; mastered.add(vocabIdx);
+    }else{
+      input.classList.add('wrong');
+      fb.innerHTML = 'غلط. الصح: <span class="en" style="font-weight:800">'+item.en+'</span>';
+      fb.className="sp-feedback bad";
+    }
+    updateStrip();
+    document.getElementById('spSpeak').disabled=false;
+    document.getElementById('spSpeak').style.opacity=1;
+    document.getElementById('spSkip').style.display='none';
+    document.getElementById('spCheck').textContent="التالي ←";
+    document.getElementById('spCheck').onclick = ()=>{spellPos++;renderSpell();};
+  }
+  document.getElementById('spCheck').onclick = doCheck;
+  document.getElementById('spSpeak').onclick = ()=>speak(item.en);
+  input.addEventListener('keydown', e=>{ if(e.key==='Enter') doCheck(); });
+  input.focus();
+}
+
+/* ---------------- MATCHING ---------------- */
+let matchPool = [];
+let matchBatchStart = 0;
+let matchSel = {en:null, ar:null};
+let matchDoneCount = 0;
+function renderMatch(){
+  const panel = document.getElementById('panel');
+  if(matchBatchStart >= matchPool.length){
+    panel.innerHTML = doneHTML("وصّلت كل كلمات المديول ده!", "أحسنت — كل الأزواج اتحلت.") + nextStageExtraHTML('match');
+    wireStageButtons('match', ()=>{matchPool=shuffle(pool);matchBatchStart=0;renderMatch();});
+    return;
+  }
+  const batchIdx = matchPool.slice(matchBatchStart, matchBatchStart+6);
+  const leftItems = batchIdx.map(i=>({idx:i, text:VOCAB[i].en}));
+  const rightItems = shuffle(batchIdx.map(i=>({idx:i, text:VOCAB[i].ar})));
+  matchSel = {en:null, ar:null};
+  matchDoneCount = 0;
+  panel.innerHTML = `
+    <div class="hint">اضغط كلمة إنجليزية وبعدين معناها بالعربي (مجموعة ${Math.floor(matchBatchStart/6)+1})</div>
+    <div class="match-cols">
+      <div id="colEn"></div>
+      <div id="colAr"></div>
+    </div>
+    <div class="match-status" id="matchStatus">اتوصل: 0 / ${batchIdx.length}</div>`;
+  const colEn = document.getElementById('colEn');
+  const colAr = document.getElementById('colAr');
+  leftItems.forEach(it=>{
+    const d = document.createElement('div');
+    d.className='match-tile en'; d.textContent=it.text; d.dataset.idx=it.idx;
+    d.onclick = ()=>onMatchClick(d,'en',it.idx);
+    colEn.appendChild(d);
+  });
+  rightItems.forEach(it=>{
+    const d = document.createElement('div');
+    d.className='match-tile'; d.textContent=it.text; d.dataset.idx=it.idx;
+    d.onclick = ()=>onMatchClick(d,'ar',it.idx);
+    colAr.appendChild(d);
+  });
+  function onMatchClick(el,side,idx){
+    if(el.classList.contains('done')) return;
+    document.querySelectorAll('.match-tile.sel').forEach(x=>{ if(x.dataset.side===side) x.classList.remove('sel'); });
+    el.dataset.side = side;
+    el.classList.add('sel');
+    matchSel[side] = {el, idx};
+    if(matchSel.en && matchSel.ar){
+      if(matchSel.en.idx === matchSel.ar.idx){
+        matchSel.en.el.classList.remove('sel'); matchSel.ar.el.classList.remove('sel');
+        matchSel.en.el.classList.add('done'); matchSel.ar.el.classList.add('done');
+        mastered.add(matchSel.en.idx);
+        matchDoneCount++;
+        updateStrip();
+        document.getElementById('matchStatus').textContent = "اتوصل: "+matchDoneCount+" / "+batchIdx.length;
+        matchSel = {en:null, ar:null};
+        if(matchDoneCount === batchIdx.length){
+          setTimeout(()=>{ matchBatchStart += 6; renderMatch(); }, 550);
+        }
+      }else{
+        [matchSel.en.el, matchSel.ar.el].forEach(x=>x.classList.add('bad'));
+        setTimeout(()=>{
+          matchSel.en.el.classList.remove('sel','bad');
+          matchSel.ar.el.classList.remove('sel','bad');
+          matchSel = {en:null, ar:null};
+        }, 420);
+      }
+    }
+  }
+}
+
+function doneHTML(title, sub){
+  return `<div class="done-screen">
+    <div class="em">🎉</div>
+    <h3>${title}</h3>
+    <p>${sub}</p>
+    <div class="fc-actions" style="margin-top:14px">
+      <button class="btn-know done-restart">ابدأ من جديد ↻</button>
+    </div>
+  </div>`;
+}
+
+function render(){
+  if(mode==='flash') renderFlash();
+  else if(mode==='mcq') renderMCQ();
+  else if(mode==='spell') renderSpell();
+  else if(mode==='match') renderMatch();
+}
+renderModulesBar();
+freshModuleState();
+render();
+</script>
+</body>
+</html>
