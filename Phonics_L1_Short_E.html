@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 1 - Short Vowels: Short E</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f0f4f8; --card-color: #ffffff; --accent-color: #2e7d32;
+            --text-color: #212121; --highlight-color: #c8e6c9; --speak-highlight: #1b5e20;
+            --play-all-btn: #4caf50; --secondary-text-color: #424242; --border-color: #81c784;
+            --speech-glow: #ffeb3b;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg-color); margin: 0; padding: 20px; text-align: center; color: var(--text-color); transition: background-color 0.3s; }
+        .container { max-width: 1000px; margin: 0 auto 50px auto; background-color: var(--card-color); border-radius: 25px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); padding: 40px; border: 8px solid var(--accent-color); transition: border-color 0.3s; }
+        h1 { color: var(--accent-color); font-size: 2.5em; margin-bottom: 10px; }
+        h2 { color: var(--speak-highlight); border-bottom: 2px solid var(--border-color); display: inline-block; padding-bottom: 5px; }
+        h3 { background-color: var(--highlight-color); padding: 12px; border-radius: 10px; margin-top: 30px; text-align: right; direction: ltr; font-size: 1.6em; }
+
+        .speech-controls { background: #e8f5e9; padding: 15px; border-radius: 15px; margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; align-items: center; }
+        .control-group { display: flex; align-items: center; gap: 8px; font-weight: bold; }
+        #speed-value { min-width: 32px; display: inline-block; font-weight: bold; color: var(--accent-color); }
+
+        .theme-switcher { display: flex; gap: 8px; align-items: center; }
+        .theme-dot { width: 26px; height: 26px; border-radius: 50%; cursor: pointer; border: 2px solid #fff; box-shadow: 0 0 0 1px #999; }
+        .theme-dot.active { box-shadow: 0 0 0 2px #333; }
+
+        .table-wrap { width: 100%; overflow-x: auto; }
+        table { width: 100%; min-width: 320px; border-collapse: separate; border-spacing: 0; margin-top: 15px; text-align: right; border-radius: 15px; overflow: hidden; }
+        th, td { border: 1px solid var(--border-color); padding: 12px; }
+        th { background-color: var(--accent-color); color: white; }
+        td:nth-child(odd) { background-color: #f1f8e9; }
+
+        .english-cell { text-align: left !important; direction: ltr !important; }
+        .arabic-cell { text-align: right !important; direction: rtl !important; }
+
+        .play-btn { background-color: var(--play-all-btn); color: white; border: none; padding: 12px 25px; border-radius: 12px; cursor: pointer; font-size: 1.1em; box-shadow: 0 5px #388e3c; margin: 10px 6px; transition: 0.1s; font-family: 'Cairo', sans-serif; }
+        .play-btn:active { transform: translateY(3px); box-shadow: 0 2px #388e3c; }
+
+        .vocab-element, .english-sentence {
+            cursor: pointer; transition: 0.2s; padding: 4px 8px; border-radius: 4px; display: inline-block;
+            font-family: 'Roboto', sans-serif; font-weight: 700; color: #1a237e;
+            border: 2px solid transparent;
+            direction: ltr !important; text-align: left;
+        }
+        .vocab-element:hover, .english-sentence:hover { background-color: var(--highlight-color); }
+        .english-sentence { display: block; text-align: left; margin-bottom: 5px; color: #000; }
+        .speaking-highlight {
+            background-color: var(--speak-highlight) !important;
+            color: white !important;
+            border-color: var(--speech-glow) !important;
+            box-shadow: 0 0 15px var(--speech-glow);
+            transform: scale(1.02);
+        }
+        .va { color: #e53935; }
+        .speaking-highlight .va { color: var(--speech-glow); }
+
+        .arabic-translation {
+            display: block; text-align: right; direction: rtl !important;
+            color: var(--secondary-text-color); border-bottom: 1px dashed #ccc;
+            margin-bottom: 15px; padding-bottom: 5px; font-size: 1.05em; font-weight: bold;
+        }
+
+        .reading-paragraph { margin-bottom: 16px; padding: 15px; background: #f9f9f9; border-radius: 10px; text-align: left; }
+
+        .chip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 10px; margin-top: 15px; direction: ltr; }
+        .chip-grid .vocab-element { font-size: 1.7em; text-align: center; padding: 10px 6px; background: #f1f8e9; border: 2px solid var(--border-color); border-radius: 12px; }
+        .chip-grid .vocab-element:hover { background-color: var(--highlight-color); }
+        .chip-grid .vocab-element.speaking-highlight { background-color: var(--speak-highlight) !important; }
+        .formula { font-family: 'Roboto', sans-serif; font-weight: 700; direction: ltr; background: #fffde7; border: 2px dashed var(--border-color); border-radius: 10px; padding: 8px 12px; margin-top: 12px; display: inline-block; }
+        .family-title { display: inline-block; background: var(--accent-color); color: #fff; font-family: 'Roboto', sans-serif; padding: 6px 18px; border-radius: 10px; margin: 22px 0 0 0; font-size: 1.2em; direction: ltr; }
+        .family-block { text-align: left; }
+
+        .floating-stop-btn { position: fixed; bottom: 25px; right: 25px; z-index: 1000; background:#d32f2f; color:white; border:none; border-radius:50%; width:64px; height:64px; font-size:1.6em; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center; transition: transform 0.15s; }
+        .floating-stop-btn:active { transform: scale(0.92); }
+
+        .quiz-question { background:#f9f9f9; border:2px solid var(--border-color); border-radius:12px; padding:15px; margin-bottom:15px; text-align:left; direction:ltr; }
+        .quiz-question p.q-text { font-size:1.15em; font-weight:bold; margin:0 0 10px 0; color:var(--text-color); }
+        .quiz-options { display:flex; flex-direction:column; gap:8px; }
+        .quiz-option { background:#fff; border:2px solid var(--border-color); border-radius:8px; padding:10px 15px; cursor:pointer; text-align:left; font-family:'Roboto',sans-serif; font-weight:700; transition:0.2s; direction:ltr; }
+        .quiz-option:hover { background: var(--highlight-color); }
+        .quiz-option.correct { background:#a5d6a7 !important; border-color:#2e7d32; color: #1b5e20; }
+        .quiz-option.wrong { background:#ef9a9a !important; border-color:#c62828; text-decoration: line-through; }
+        .quiz-option.show-correct { background:#a5d6a7 !important; border-color:#2e7d32; }
+        .quiz-score { font-size:1.3em; font-weight:bold; color:var(--accent-color); margin-top:15px; }
+        #quiz-progress { font-weight:bold; color:var(--secondary-text-color); margin-bottom:8px; }
+        .quiz-feedback { font-size:1.4em; font-weight:bold; margin-top:10px; min-height:1.4em; }
+        .quiz-feedback.correct { color:#2e7d32; }
+        .quiz-feedback.wrong { color:#c62828; }
+        .confetti-piece { position:absolute; top:10%; width:8px; height:8px; opacity:0.95; pointer-events:none; animation: confetti-fall 1.1s ease-out forwards; }
+        @keyframes confetti-fall { to { transform: translate(var(--x), 200px) rotate(720deg); opacity:0; } }
+
+        @media (max-width: 700px) {
+            body { padding: 10px; }
+            .container { padding: 20px 15px; border-radius: 18px; border-width: 5px; }
+            h1 { font-size: 1.7em; }
+            h3 { font-size: 1.2em; padding: 10px; }
+            .speech-controls { padding: 10px; gap: 10px; }
+            .control-group { font-size: 0.9em; }
+            th, td { padding: 8px 6px; font-size: 0.9em; }
+            .play-btn { padding: 10px 18px; font-size: 1em; width: 100%; margin: 6px 0; }
+            .reading-paragraph { padding: 10px; }
+            .english-sentence { font-size: 1.05em; }
+            .chip-grid { grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 8px; }
+            .chip-grid .vocab-element { font-size: 1.4em; }
+            .floating-stop-btn { width: 52px; height: 52px; font-size: 1.3em; bottom: 15px; right: 15px; }
+        }
+        @media (max-width: 420px) {
+            th, td { padding: 6px 4px; font-size: 0.8em; }
+            h1 { font-size: 1.4em; }
+        }
+    </style>
+</head>
+<body>
+<div style="position:sticky; top:0; background-color:#ffffff; padding:15px 0; text-align:center; font-family:Arial, sans-serif; box-shadow:0 4px 6px rgba(0,0,0,0.1); z-index:1000; display:flex; flex-direction:column; align-items:center;">
+  <h3 style="margin:2px 0; color:#333; text-align:center;">Ms. Engy Taha (Ms. Samia)</h3>
+  <div style="margin-top:8px;">
+    <a href="tel:+201150231594" style="display:inline-block; background-color:#007BFF; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      📞 01150231594
+    </a>
+    <a href="https://wa.me/+201150231594" target="_blank" style="display:inline-block; background-color:#25D366; color:#fff; padding:8px 16px; margin:3px; border-radius:5px; text-decoration:none; font-weight:bold;">
+      💬 تواصل عبر الواتس
+    </a>
+  </div>
+</div>
+
+<div class="container">
+    <h1 id="main-title">📚 Loading...</h1>
+    <h2 id="sub-title"></h2>
+
+    <div class="speech-controls">
+        <div class="control-group"><label>🗣️ اللكنة:</label>
+            <select id="voice-select"><option value="en-US">American (US) 🇺🇸</option><option value="en-GB">British (UK) 🇬🇧</option></select>
+        </div>
+        <div class="control-group"><label>⚡ السرعة:</label>
+            <input type="range" id="speed-slider" min="0.5" max="1.2" value="0.9" step="0.1">
+            <span id="speed-value">0.9x</span>
+        </div>
+        <div class="theme-switcher">
+            <label>🎨</label>
+            <span class="theme-dot active" data-theme="green" style="background:#2e7d32;"></span>
+            <span class="theme-dot" data-theme="blue" style="background:#1565c0;"></span>
+            <span class="theme-dot" data-theme="orange" style="background:#ef6c00;"></span>
+            <span class="theme-dot" data-theme="pink" style="background:#d81b60;"></span>
+        </div>
+    </div>
+
+    <button id="play-all-sounds-btn" class="play-btn">▶️ نطق الأصوات والدمج</button>
+    <button id="play-all-words-btn" class="play-btn">▶️ نطق جميع الكلمات</button>
+
+    <h3 id="intro-title">🔤 I. Letters & Vowels (الحروف والحركات)</h3>
+    <div class="table-wrap"><table id="intro"><tbody></tbody></table></div>
+
+    <h3 id="blends-title">🧩 II. Short E Blends: e + Consonant (دمج e مع حرف ساكن)</h3>
+    <div class="formula">e + b = eb</div>
+    <div id="blends-grid" class="chip-grid"></div>
+
+    <h3 id="cons-title">🧩 III. Consonant + e (دمج حرف ساكن مع e)</h3>
+    <div class="formula">B + e = be &nbsp;|&nbsp; K + e = ke &nbsp;|&nbsp; D + e = de</div>
+    <div id="cons-grid" class="chip-grid"></div>
+
+    <h3 id="awords-title">🥚 IV. Words that Start with E (كلمات تبدأ بـ E)</h3>
+    <div class="table-wrap"><table id="a-words"><tbody></tbody></table></div>
+
+    <h3 id="fam-title">👨‍👩‍👧 V. Short E Word Families - 3 Letters (عائلات الكلمات)</h3>
+    <div id="families"></div>
+
+    <h3 id="four-title">🔠 VI. Short E Words - 4 Letters (كلمات من 4 حروف)</h3>
+    <div class="table-wrap"><table id="four-words"><tbody></tbody></table></div>
+
+    <h3 id="story-title">📖 VII. Sound it. Blend it. Read it! (اقرأ الجمل)</h3>
+    <button id="play-all-story-btn" class="play-btn">▶️ نطق الجمل كاملة</button>
+    <div id="story-container" style="text-align:left; border: 2px solid var(--accent-color); padding: 20px; border-radius: 15px; margin-top:10px;"></div>
+
+    <h3 id="quiz-title">📝 VIII. Quick Quiz (اختبار سريع)</h3>
+    <div id="quiz-progress"></div>
+    <div id="quiz-container"></div>
+    <div id="quiz-feedback" class="quiz-feedback"></div>
+    <div id="quiz-score" class="quiz-score"></div>
+    <button id="quiz-reset-btn" class="play-btn" style="display:none;">🔄 إعادة الاختبار</button>
+</div>
+
+<button id="stop-btn" class="floating-stop-btn" title="إيقاف النطق">⏹️</button>
+
+<script>
+    // ============================================================
+    // 🟢 Lesson Data: Level 1 - Short Vowels - Short E
+    // ============================================================
+    const lessonData = {
+        meta: {
+            mainTitle: "🥚 Level 1 - Short Vowels: Short E",
+            subTitle: "Phonics is Fun! - Step by Step with Miss Engy Taha",
+            playAllSounds: "▶️ نطق الأصوات والدمج",
+            playAllWords: "▶️ نطق جميع الكلمات",
+            playAllStory: "▶️ نطق الجمل كاملة"
+        },
+
+        // ===== I. Letters & Vowels =====
+        intro: [
+            {en: "We have 26 letters.", ar: "لدينا 26 حرفًا."},
+            {en: "We have 5 vowels: a, e, i, o, u.", ar: "لدينا 5 حروف علة: a, e, i, o, u."},
+            {en: "Short E says e, as in egg.", ar: "حرف E القصير ينطق /e/ مثل egg."},
+            {en: "Sound it. Blend it. Read it!", ar: "انطقه. ادمجه. اقرأه!"}
+        ],
+
+        // ===== II. e + consonant =====
+        blends: ["eb", "ec", "ed", "ef", "eg", "eh", "ej", "ek", "el", "em", "en", "ep", "er", "es", "et", "ev", "ew", "ex", "ey", "ez"],
+
+        // ===== III. consonant + e =====
+        consA: ["be", "ce", "de", "fe", "ge", "he", "je", "ke", "le", "me", "ne", "pe", "qe", "re", "se", "te", "ve", "we", "xe", "ye", "ze"],
+
+        // ===== نطق الأصوات: الشاشة تعرض الحرفين، والصوت يقرأ الكتابة الصوتية =====
+        // (عشان المتصفح ما يقرأهم كحروف منفصلة. عدّلي أي نطق من هنا)
+        say: {"eb": "ebb", "ec": "eck", "ed": "Ed", "ef": "eff", "eg": "egg", "eh": "eh", "ej": "edge", "ek": "eck", "el": "ell", "em": "Em", "en": "en", "ep": "epp", "er": "err", "es": "ess", "et": "ett", "ev": "Ev", "ew": "ew", "ex": "ex", "ey": "ay", "ez": "ezz", "be": "beh", "ce": "keh", "de": "deh", "fe": "feh", "ge": "geh", "he": "heh", "je": "jeh", "ke": "keh", "le": "leh", "me": "meh", "ne": "neh", "pe": "peh", "qe": "kweh", "re": "reh", "se": "seh", "te": "teh", "ve": "veh", "we": "weh", "xe": "zeh", "ye": "yeh", "ze": "zeh"},
+
+        // ===== IV. Words starting with E =====
+        aWords: [
+            {en:"ear", ar:"أذن"}, {en:"eat", ar:"يأكل"}, {en:"egg", ar:"بيضة"}, {en:"elephant", ar:"فيل"},
+            {en:"elbow", ar:"مرفق"}, {en:"engine", ar:"محرك"}, {en:"eye", ar:"عين"}, {en:"eagle", ar:"نسر"},
+            {en:"earth", ar:"الأرض"}, {en:"exit", ar:"خروج"}, {en:"envelope", ar:"ظرف"}, {en:"eraser", ar:"ممحاة"},
+            {en:"earring", ar:"حلق"}, {en:"easy", ar:"سهل"}, {en:"exam", ar:"امتحان"}, {en:"everyone", ar:"الجميع"},
+            {en:"event", ar:"حدث"}, {en:"energy", ar:"طاقة"}, {en:"elf", ar:"قزم"}, {en:"email", ar:"بريد إلكتروني"},
+            {en:"enough", ar:"كافٍ"}, {en:"enjoy", ar:"يستمتع"}, {en:"episode", ar:"حلقة"}, {en:"elevator", ar:"مصعد"},
+            {en:"edit", ar:"يحرر"}, {en:"effect", ar:"تأثير"}, {en:"eleven", ar:"أحد عشر"}, {en:"eighty", ar:"ثمانون"},
+            {en:"empty", ar:"فارغ"}, {en:"escape", ar:"يهرب"}, {en:"exercise", ar:"تمرين"}, {en:"excited", ar:"متحمس"},
+            {en:"explain", ar:"يشرح"}, {en:"extra", ar:"إضافي"}, {en:"extend", ar:"يمد"}, {en:"exist", ar:"يكون / يوجد"},
+            {en:"end", ar:"نهاية"}, {en:"eight", ar:"ثمانية"}
+        ],
+
+        // ===== V. Word families (3 letters) =====
+        families: [
+            {name:"-en", words:[{en:"pen", ar:"قلم"}, {en:"hen", ar:"دجاجة"}, {en:"ten", ar:"عشرة"}, {en:"men", ar:"رجال"}, {en:"den", ar:"عرين"}]},
+            {name:"-et", words:[{en:"pet", ar:"حيوان أليف"}, {en:"net", ar:"شبكة"}, {en:"jet", ar:"طائرة نفاثة"}, {en:"wet", ar:"مبلل"}, {en:"set", ar:"مجموعة"}, {en:"vet", ar:"طبيب بيطري"}, {en:"get", ar:"يحصل على"}, {en:"let", ar:"يسمح"}, {en:"met", ar:"قابل"}]},
+            {name:"-ed", words:[{en:"bed", ar:"سرير"}, {en:"red", ar:"أحمر"}, {en:"fed", ar:"أطعم"}, {en:"led", ar:"قاد"}, {en:"wed", ar:"تزوج"}]},
+            {name:"-eg", words:[{en:"leg", ar:"ساق"}, {en:"peg", ar:"مشبك"}, {en:"keg", ar:"برميل"}, {en:"beg", ar:"يتوسل"}, {en:"egg", ar:"بيضة"}]},
+            {name:"-ell", words:[{en:"bell", ar:"جرس"}, {en:"tell", ar:"يخبر"}, {en:"sell", ar:"يبيع"}, {en:"well", ar:"بئر / جيد"}, {en:"yell", ar:"يصرخ"}]},
+            {name:"-em", words:[{en:"gem", ar:"جوهرة"}, {en:"hem", ar:"حافة القماش"}, {en:"stem", ar:"ساق النبات"}]}
+        ],
+
+        // ===== VI. Short E words (4 letters) =====
+        fourWords: [
+            {en:"best", ar:"الأفضل"}, {en:"rest", ar:"يستريح"}, {en:"nest", ar:"عش"}, {en:"test", ar:"اختبار"},
+            {en:"vest", ar:"سترة"}, {en:"desk", ar:"مكتب"}, {en:"mess", ar:"فوضى"}, {en:"fest", ar:"مهرجان"},
+            {en:"west", ar:"غرب"}, {en:"pest", ar:"حشرة ضارة"}, {en:"jest", ar:"دعابة"}, {en:"lend", ar:"يُعير"},
+            {en:"send", ar:"يرسل"}, {en:"bend", ar:"ينحني"}, {en:"rend", ar:"يمزق"}, {en:"text", ar:"نص"},
+            {en:"mend", ar:"يصلح"}, {en:"step", ar:"خطوة"}, {en:"fell", ar:"سقط"}, {en:"tend", ar:"يعتني"},
+            {en:"kept", ar:"احتفظ"}, {en:"left", ar:"يسار / غادر"}, {en:"felt", ar:"شعر"}, {en:"melt", ar:"يذوب"},
+            {en:"belt", ar:"حزام"}, {en:"help", ar:"يساعد"}, {en:"self", ar:"النفس"}, {en:"next", ar:"التالي"},
+            {en:"tent", ar:"خيمة"}, {en:"went", ar:"ذهب"}, {en:"cent", ar:"سنت"}, {en:"peck", ar:"ينقر"},
+            {en:"neck", ar:"رقبة"}, {en:"less", ar:"أقل"}, {en:"verb", ar:"فعل"}, {en:"herd", ar:"قطيع"},
+            {en:"fern", ar:"سرخس"}, {en:"jerk", ar:"يهز بعنف"}, {en:"perk", ar:"ميزة"}, {en:"term", ar:"مصطلح"}
+        ],
+
+        // ===== VII. Reading sentences =====
+        story: [
+            [{en: "The hen sat on the nest.", ar: "الدجاجة جلست على العش."}],
+            [{en: "Ben has ten red pens.", ar: "بن لديه عشرة أقلام حمراء."}],
+            [{en: "The pet is on the bed.", ar: "الحيوان الأليف على السرير."}],
+            [{en: "Get the net, Meg!", ar: "هاتي الشبكة يا ميج!"}],
+            [{en: "The vet will help the pet.", ar: "الطبيب البيطري سيساعد الحيوان الأليف."}],
+            [{en: "Ted went to the desk to rest.", ar: "تيد ذهب إلى المكتب ليستريح."}]
+        ]
+    };
+
+    // ============================================================
+    // ⚙️ Engine (same engine as the lesson template)
+    // ============================================================
+    const synth = window.speechSynthesis;
+    let availableVoices = [];
+    let voiceLoadAttempt = 0;
+    const MAX_VOICE_ATTEMPTS = 6;
+    const RETRY_DELAYS = [0, 150, 400, 800, 1500, 2500];
+
+    function loadAvailableVoices() {
+        const vList = synth.getVoices();
+        if (vList.length) {
+            availableVoices = vList;
+            voiceLoadAttempt = 0;
+            populateVoiceDropdown();
+            return;
+        }
+        if (voiceLoadAttempt < MAX_VOICE_ATTEMPTS) {
+            const delay = RETRY_DELAYS[voiceLoadAttempt] || 2500;
+            voiceLoadAttempt++;
+            setTimeout(loadAvailableVoices, delay);
+        }
+    }
+
+    function voiceQualityScore(v) {
+        const name = (v.name || '').toLowerCase();
+        let score = 0;
+        if (name.includes('google')) score += 30;
+        if (name.includes('microsoft')) score += 25;
+        if (name.includes('samantha')) score += 20;
+        if (v.localService) score += 2;
+        return score;
+    }
+
+    function populateVoiceDropdown() {
+        const vs = document.getElementById('voice-select');
+        if (!vs || !availableVoices.length) return;
+        const normLang = (l) => String(l||'').replace('_','-').toLowerCase();
+        const enVoices = availableVoices.filter(v => {
+            const lang = normLang(v.lang);
+            return lang.startsWith('en-us') || lang.startsWith('en-gb');
+        });
+        if (!enVoices.length) return;
+        enVoices.sort((a,b) => voiceQualityScore(b) - voiceQualityScore(a));
+        const savedLang = localStorage.getItem('lesson_voice') || 'en-US';
+        const savedVoiceURI = localStorage.getItem('lesson_voiceURI') || '';
+        vs.innerHTML = '';
+        enVoices.forEach(v => {
+            const lang = String(v.lang||'').replace('_','-');
+            const isUS = lang.toLowerCase().startsWith('en-us');
+            const flag = isUS ? '🇺🇸 American' : '🇬🇧 British';
+            const opt = document.createElement('option');
+            opt.value = v.voiceURI;
+            opt.dataset.lang = lang;
+            opt.textContent = flag + ' — ' + v.name;
+            vs.appendChild(opt);
+        });
+        const savedOpt = [...vs.options].find(o => o.value === savedVoiceURI) ||
+                         [...vs.options].find(o => o.dataset.lang.toLowerCase().startsWith(savedLang.toLowerCase()));
+        if (savedOpt) vs.value = savedOpt.value;
+    }
+
+    function getBestVoice() {
+        const vs = document.getElementById('voice-select');
+        if (!vs) return null;
+        const selectedURI = vs.value;
+        const found = availableVoices.find(v => v.voiceURI === selectedURI);
+        if (found) return found;
+        const targetLang = vs.options[vs.selectedIndex]?.dataset?.lang || vs.value || 'en-US';
+        const normTarget = targetLang.toLowerCase().replace('_','-');
+        const matches = availableVoices.filter(v => {
+            const vl = String(v.lang||'').replace('_','-').toLowerCase();
+            return vl === normTarget || vl.startsWith(normTarget + '-') || vl.startsWith(normTarget.split('-')[0] + '-' + normTarget.split('-')[1]);
+        });
+        if (matches.length) {
+            matches.sort((a,b) => voiceQualityScore(b) - voiceQualityScore(a));
+            return matches[0];
+        }
+        return null;
+    }
+
+    function getSelectedLang() {
+        const vs = document.getElementById('voice-select');
+        if (!vs) return 'en-US';
+        const opt = vs.options[vs.selectedIndex];
+        return (opt && opt.dataset && opt.dataset.lang) || vs.value || 'en-US';
+    }
+
+    loadAvailableVoices();
+    if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = loadAvailableVoices;
+
+    let speechQueue = [];
+    let isPlaying = false;
+    let currentSpeakingElement = null;
+
+    function loadPrefs() {
+        try {
+            const voice = localStorage.getItem('lesson_voice') || 'en-US';
+            const speed = localStorage.getItem('lesson_speed') || '0.9';
+            const theme = localStorage.getItem('lesson_theme') || 'green';
+            document.getElementById('voice-select').value = voice;
+            document.getElementById('speed-slider').value = speed;
+            document.getElementById('speed-value').innerText = speed + 'x';
+            applyTheme(theme);
+            document.querySelectorAll('.theme-dot').forEach(d => {
+                d.classList.toggle('active', d.dataset.theme === theme);
+            });
+        } catch(e) {}
+    }
+    function savePrefs() {
+        try {
+            localStorage.setItem('lesson_voice', getSelectedLang());
+            localStorage.setItem('lesson_voiceURI', document.getElementById('voice-select').value);
+            localStorage.setItem('lesson_speed', document.getElementById('speed-slider').value);
+            localStorage.setItem('lesson_theme', document.querySelector('.theme-dot.active')?.dataset?.theme || 'green');
+        } catch(e) {}
+    }
+
+    const themes = {
+        green:  { accent:'#2e7d32', highlight:'#c8e6c9', speak:'#1b5e20', play:'#4caf50', border:'#81c784' },
+        blue:   { accent:'#1565c0', highlight:'#bbdefb', speak:'#0d47a1', play:'#1e88e5', border:'#64b5f6' },
+        orange: { accent:'#ef6c00', highlight:'#ffe0b2', speak:'#e65100', play:'#fb8c00', border:'#ffb74d' },
+        pink:   { accent:'#d81b60', highlight:'#f8bbd0', speak:'#ad1457', play:'#ec407a', border:'#f48fb1' }
+    };
+    function applyTheme(t) {
+        const theme = themes[t];
+        if(!theme) return;
+        const root = document.documentElement.style;
+        root.setProperty('--accent-color', theme.accent);
+        root.setProperty('--highlight-color', theme.highlight);
+        root.setProperty('--speak-highlight', theme.speak);
+        root.setProperty('--play-all-btn', theme.play);
+        root.setProperty('--border-color', theme.border);
+    }
+
+    function cancelSpeech() {
+        synth.cancel();
+        isPlaying = false;
+        speechQueue = [];
+        if (currentSpeakingElement) {
+            currentSpeakingElement.classList.remove('speaking-highlight');
+            currentSpeakingElement = null;
+        }
+    }
+
+    function speakText(text, element) {
+        if (!text) return;
+        cancelSpeech();
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.lang = getSelectedLang();
+        { const _v = getBestVoice(); if (_v) utter.voice = _v; }
+        utter.rate = parseFloat(document.getElementById('speed-slider').value);
+
+        if (element) {
+            element.classList.add('speaking-highlight');
+            currentSpeakingElement = element;
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            utter.onend = () => {
+                if (currentSpeakingElement) {
+                    currentSpeakingElement.classList.remove('speaking-highlight');
+                    currentSpeakingElement = null;
+                }
+                isPlaying = false;
+            };
+            utter.onerror = () => {
+                if (currentSpeakingElement) {
+                    currentSpeakingElement.classList.remove('speaking-highlight');
+                    currentSpeakingElement = null;
+                }
+                isPlaying = false;
+            };
+        }
+        synth.speak(utter);
+        isPlaying = true;
+    }
+
+    function playQueue(elements) {
+        cancelSpeech();
+        if (!elements || elements.length === 0) return;
+        let index = 0;
+        speechQueue = [...elements];
+        isPlaying = true;
+
+        function next() {
+            if (!isPlaying || index >= speechQueue.length) {
+                isPlaying = false;
+                return;
+            }
+            const el = speechQueue[index];
+            const text = (el.dataset.say || el.innerText).trim();
+            if (!text) { index++; next(); return; }
+
+            const utter = new SpeechSynthesisUtterance(text);
+            utter.lang = getSelectedLang();
+            { const _v = getBestVoice(); if (_v) utter.voice = _v; }
+            utter.rate = parseFloat(document.getElementById('speed-slider').value);
+
+            el.classList.add('speaking-highlight');
+            currentSpeakingElement = el;
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            utter.onend = () => {
+                if (currentSpeakingElement) {
+                    currentSpeakingElement.classList.remove('speaking-highlight');
+                    currentSpeakingElement = null;
+                }
+                index++;
+                if (isPlaying) next();
+                else isPlaying = false;
+            };
+            utter.onerror = () => {
+                if (currentSpeakingElement) {
+                    currentSpeakingElement.classList.remove('speaking-highlight');
+                    currentSpeakingElement = null;
+                }
+                index++;
+                if (isPlaying) next();
+                else isPlaying = false;
+            };
+            synth.speak(utter);
+        }
+        next();
+    }
+
+    // ---------- helpers for this lesson ----------
+    // يلوّن أول حرف e في الكلمة بالأحمر (زي الشارتات)
+    function markA(text) {
+        const i = text.toLowerCase().indexOf('e');
+        if (i < 0) return text;
+        return text.slice(0, i) + '<span class="va">' + text[i] + '</span>' + text.slice(i + 1);
+    }
+
+    function makeSpeakSpan(text, mark) {
+        const span = document.createElement('span');
+        span.className = 'vocab-element';
+        if (mark) span.innerHTML = markA(text); else span.innerText = text;
+        const say = lessonData.say[text];
+        if (say) span.dataset.say = say;
+        span.onclick = () => speakText(say || text, span);
+        return span;
+    }
+
+    function fillPairs(tbody, data, mark, collector) {
+        tbody.innerHTML = '';
+        for (let i = 0; i < data.length; i += 2) {
+            const tr = document.createElement('tr');
+            [i, i + 1].forEach(idx => {
+                if (data[idx]) {
+                    const tdEn = document.createElement('td');
+                    tdEn.className = 'english-cell';
+                    const span = makeSpeakSpan(data[idx].en, mark);
+                    tdEn.appendChild(span);
+                    const tdAr = document.createElement('td');
+                    tdAr.className = 'arabic-cell';
+                    tdAr.innerText = data[idx].ar;
+                    tr.append(tdEn, tdAr);
+                    collector.push(span);
+                }
+            });
+            tbody.appendChild(tr);
+        }
+    }
+
+    function fillChips(gridId, items, collector) {
+        const grid = document.getElementById(gridId);
+        grid.innerHTML = '';
+        items.forEach(t => {
+            const span = makeSpeakSpan(t, true);
+            grid.appendChild(span);
+            collector.push(span);
+        });
+    }
+
+    function initLesson() {
+        const meta = lessonData.meta;
+        document.getElementById('main-title').innerText = meta.mainTitle;
+        document.getElementById('sub-title').innerText = meta.subTitle;
+        document.getElementById('play-all-sounds-btn').innerText = meta.playAllSounds;
+        document.getElementById('play-all-words-btn').innerText = meta.playAllWords;
+        document.getElementById('play-all-story-btn').innerText = meta.playAllStory;
+
+        const soundEls = [];
+        const wordEls = [];
+
+        // I. intro sentences
+        const introTbody = document.querySelector('#intro tbody');
+        introTbody.innerHTML = '';
+        lessonData.intro.forEach(k => {
+            const tr = document.createElement('tr');
+            const tdEn = document.createElement('td');
+            tdEn.className = 'english-cell';
+            const span = makeSpeakSpan(k.en, false);
+            tdEn.appendChild(span);
+            const tdAr = document.createElement('td');
+            tdAr.className = 'arabic-cell';
+            tdAr.innerText = k.ar;
+            tr.append(tdEn, tdAr);
+            introTbody.appendChild(tr);
+            soundEls.push(span);
+        });
+
+        // II + III. blends
+        fillChips('blends-grid', lessonData.blends, soundEls);
+        fillChips('cons-grid', lessonData.consA, soundEls);
+
+        // IV. A words
+        fillPairs(document.querySelector('#a-words tbody'), lessonData.aWords, true, wordEls);
+
+        // V. families
+        const famBox = document.getElementById('families');
+        famBox.innerHTML = '';
+        lessonData.families.forEach(f => {
+            const block = document.createElement('div');
+            block.className = 'family-block';
+            const title = document.createElement('div');
+            title.className = 'family-title';
+            title.innerText = 'Family ' + f.name;
+            const wrap = document.createElement('div');
+            wrap.className = 'table-wrap';
+            const table = document.createElement('table');
+            const tbody = document.createElement('tbody');
+            table.appendChild(tbody);
+            wrap.appendChild(table);
+            block.append(title, wrap);
+            famBox.appendChild(block);
+            fillPairs(tbody, f.words, true, wordEls);
+        });
+
+        // VI. 4-letter words
+        fillPairs(document.querySelector('#four-words tbody'), lessonData.fourWords, true, wordEls);
+
+        // VII. reading
+        const sBox = document.getElementById('story-container');
+        sBox.innerHTML = '';
+        const storySentences = [];
+        lessonData.story.forEach(paragraph => {
+            const partDiv = document.createElement('div');
+            partDiv.className = 'reading-paragraph';
+            paragraph.forEach(sentence => {
+                const line = document.createElement('div');
+                const sentSpan = document.createElement('span');
+                sentSpan.className = 'english-sentence';
+                sentSpan.innerText = sentence.en;
+                sentSpan.onclick = () => speakText(sentence.en, sentSpan);
+
+                const arSpan = document.createElement('span');
+                arSpan.className = 'arabic-translation';
+                arSpan.innerText = sentence.ar;
+
+                line.appendChild(sentSpan);
+                line.appendChild(arSpan);
+                partDiv.appendChild(line);
+                storySentences.push(sentSpan);
+            });
+            sBox.appendChild(partDiv);
+        });
+
+        document.getElementById('play-all-sounds-btn').onclick = () => playQueue(soundEls);
+        document.getElementById('play-all-words-btn').onclick = () => playQueue(wordEls);
+        document.getElementById('play-all-story-btn').onclick = () => playQueue(storySentences);
+        document.getElementById('stop-btn').onclick = cancelSpeech;
+
+        buildQuiz();
+        document.getElementById('quiz-reset-btn').onclick = buildQuiz;
+
+        document.getElementById('voice-select').onchange = savePrefs;
+        document.getElementById('speed-slider').oninput = () => {
+            document.getElementById('speed-value').innerText = document.getElementById('speed-slider').value + 'x';
+            savePrefs();
+        };
+        document.querySelectorAll('.theme-dot').forEach(dot => {
+            dot.onclick = () => {
+                document.querySelectorAll('.theme-dot').forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+                applyTheme(dot.dataset.theme);
+                savePrefs();
+            };
+        });
+    }
+
+    // ---------- Quiz ----------
+    let quizPool = [], quizItems = [], quizIndex = 0, quizScore = 0;
+
+    function shuffle(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
+
+    function fireConfetti(container) {
+        const colors = ['#e53935', '#fb8c00', '#fdd835', '#43a047', '#1e88e5', '#8e24aa'];
+        for (let i = 0; i < 28; i++) {
+            const conf = document.createElement('div');
+            conf.className = 'confetti-piece';
+            conf.style.left = (35 + Math.random() * 30) + '%';
+            conf.style.background = colors[Math.floor(Math.random() * colors.length)];
+            conf.style.animationDelay = (Math.random() * 0.25) + 's';
+            conf.style.setProperty('--x', (Math.random() * 220 - 110) + 'px');
+            container.appendChild(conf);
+            setTimeout(() => conf.remove(), 1400);
+        }
+    }
+
+    function buildQuiz() {
+        const famWords = lessonData.families.flatMap(f => f.words);
+        const allVocab = [...lessonData.aWords, ...famWords, ...lessonData.fourWords];
+        const uniq = []; const seenEn = new Set();
+        allVocab.forEach(w => { if (!seenEn.has(w.en)) { seenEn.add(w.en); uniq.push(w); } });
+        quizPool = shuffle(uniq);
+        quizItems = quizPool.slice(0, Math.min(10, quizPool.length));
+        quizIndex = 0; quizScore = 0;
+        document.getElementById('quiz-score').innerText = '';
+        document.getElementById('quiz-reset-btn').style.display = 'none';
+        showQuizQuestion();
+    }
+
+    function showQuizQuestion() {
+        const quizBox = document.getElementById('quiz-container');
+        const progress = document.getElementById('quiz-progress');
+        const feedback = document.getElementById('quiz-feedback');
+        const scoreDiv = document.getElementById('quiz-score');
+        feedback.innerText = ''; feedback.className = 'quiz-feedback';
+        quizBox.innerHTML = '';
+
+        if (quizIndex >= quizItems.length) {
+            progress.innerText = '';
+            scoreDiv.innerText = `🏆 انتهى الاختبار! نتيجتك: ${quizScore} / ${quizItems.length}`;
+            document.getElementById('quiz-reset-btn').style.display = 'inline-block';
+            return;
+        }
+
+        progress.innerText = `سؤال ${quizIndex + 1} من ${quizItems.length}`;
+        const item = quizItems[quizIndex];
+
+        // اختيارات خاطئة بمعاني مختلفة وغير مكررة
+        const seen = new Set([item.ar]);
+        const distractors = [];
+        for (const p of shuffle([...quizPool])) {
+            if (!seen.has(p.ar)) { seen.add(p.ar); distractors.push(p.ar); }
+            if (distractors.length === 3) break;
+        }
+        const options = shuffle([item.ar, ...distractors]);
+
+        const qDiv = document.createElement('div'); qDiv.className = 'quiz-question'; qDiv.style.position = 'relative';
+        qDiv.innerHTML = `<p class="q-text">ما معنى كلمة "<span style="color:var(--accent-color)">${item.en}</span>"؟</p>`;
+        const optWrap = document.createElement('div'); optWrap.className = 'quiz-options';
+        let locked = false;
+
+        options.forEach(opt => {
+            const optBtn = document.createElement('div');
+            optBtn.className = 'quiz-option';
+            optBtn.innerText = opt;
+            optBtn.onclick = () => {
+                if (locked) return;
+                locked = true;
+                document.querySelectorAll('.quiz-option').forEach(b => b.style.pointerEvents = 'none');
+
+                if (opt === item.ar) {
+                    optBtn.classList.add('correct');
+                    feedback.innerText = '🎉 إجابة صحيحة!'; feedback.className = 'quiz-feedback correct';
+                    fireConfetti(qDiv);
+                    speakText('Correct!');
+                    quizScore++;
+                    setTimeout(() => { quizIndex++; showQuizQuestion(); }, 1200);
+                } else {
+                    optBtn.classList.add('wrong');
+                    document.querySelectorAll('.quiz-option').forEach(b => {
+                        if (b.innerText === item.ar) b.classList.add('show-correct');
+                    });
+                    feedback.innerText = `❌ خطأ! الإجابة الصحيحة: "${item.ar}"`;
+                    feedback.className = 'quiz-feedback wrong';
+                    speakText('Wrong!');
+                    setTimeout(() => { quizIndex++; showQuizQuestion(); }, 2000);
+                }
+            };
+            optWrap.appendChild(optBtn);
+        });
+        qDiv.appendChild(optWrap);
+        quizBox.appendChild(qDiv);
+    }
+
+    window.onload = () => {
+        loadPrefs();
+        initLesson();
+    };
+</script>
+</body>
+</html>
